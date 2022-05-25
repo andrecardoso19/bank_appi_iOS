@@ -19,7 +19,7 @@ struct Client {
     var balance: Double
     var account: Int
 }
-//teste alteração git
+//teste alteração git2
 
 //var clients: [Client] = [Client(name: "", cpf: "", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "", balance: 99.9)]
 var clients: [Client] = []
