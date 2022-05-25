@@ -1,0 +1,195 @@
+//
+//  RegisterPixKeyViewController.swift
+//  CRUD MVVM
+//
+//  Created by user217586 on 5/20/22.
+//
+
+import UIKit
+
+class RegisterPixKeyViewController: UIViewController {
+    let viewModel: RegisterPixKeyViewModel?
+    
+    private lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone"]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        // Present modaly in botton
+        if let presentationController = presentationController as? UISheetPresentationController {
+                presentationController.detents = [
+                    .medium(),
+                    .large()
+                ]
+            }
+        
+        view.backgroundColor = .systemBackground
+    }
+   
+    //MARK: - UIElements
+    private lazy var descriptionLabel: UILabel = {
+       let view = UILabel()
+        view.text = "Cadastrar uma chave PIX"
+        view.font = .boldSystemFont(ofSize: 24)
+        view.numberOfLines = -1
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var keyTypeDescriptionLabel: UILabel = {
+        let view = UILabel()
+        view.text = "Selecione o tipo de chave desejada:"
+        view.numberOfLines = -1
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var yourKeyDescriptionLabel: UILabel = {
+       let view = UILabel()
+        view.text = "Sua chave:"
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var yourKeyTextField: UITextField = {
+        let view = UITextField()
+        view.text = "Chave Teste"
+        view.borderStyle = .roundedRect
+        view.isUserInteractionEnabled = false
+        view.textColor = .systemPink
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    //RegisterKey button
+    private lazy var registerPixKeyButton: UIButton = {
+       let view = UIButton()
+        view.backgroundColor = .systemPink
+        let color: UIColor = .systemBackground
+        view.setTitle("Cadastrar", for: .normal)
+        view.setTitleColor(color, for: .normal)
+        view.layer.cornerRadius = 5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    //MARK: - PickerView
+    private lazy var selectOptionTextField: UITextField = {
+        let view = UITextField()
+         view.textAlignment = .center
+         view.textColor = .systemPink
+         view.text = "Selecionar"
+         view.backgroundColor = .systemGray5
+         view.inputView = Picker
+         view.inputAccessoryView = toolBar
+         view.layer.cornerRadius = 5
+         view.isSecureTextEntry = false
+         view.translatesAutoresizingMaskIntoConstraints = false
+         return view
+    }()
+    
+    private lazy var toolBar: UIToolbar = {
+        let view = UIToolbar()
+        view.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(performDone))
+        view.setItems([doneButton], animated: true)
+        return view
+    }()
+    
+    private lazy var Picker: UIPickerView = {
+        let view = UIPickerView()
+        view.backgroundColor = .clear
+        view.delegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    //MARK: - init
+    init(viewModel: RegisterPixKeyViewModel = RegisterPixKeyViewModel()){
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel?.delegate = self
+        
+        setupView()
+        setupLayoutConstraints()
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - setupview
+    func setupView() {
+        view.addSubview(descriptionLabel)
+        view.addSubview(keyTypeDescriptionLabel)
+        view.addSubview(yourKeyDescriptionLabel)
+        view.addSubview(yourKeyTextField)
+        view.addSubview(registerPixKeyButton)
+        
+        view.addSubview(selectOptionTextField)
+        inputView?.addSubview(toolBar)
+    }
+    
+    //MARK: - setuplayoutconstraints
+    func setupLayoutConstraints() {
+        NSLayoutConstraint.activate([
+            descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            descriptionLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+            descriptionLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 15),
+            
+            keyTypeDescriptionLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            keyTypeDescriptionLabel.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
+            keyTypeDescriptionLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4),
+            
+            yourKeyDescriptionLabel.topAnchor.constraint(equalTo: keyTypeDescriptionLabel.bottomAnchor, constant: 10),
+            yourKeyDescriptionLabel.leadingAnchor.constraint(equalTo: keyTypeDescriptionLabel.leadingAnchor),
+            yourKeyDescriptionLabel.widthAnchor.constraint(equalTo: keyTypeDescriptionLabel.widthAnchor),
+            
+            yourKeyTextField.centerYAnchor.constraint(equalTo: yourKeyDescriptionLabel.centerYAnchor),
+            yourKeyTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            yourKeyTextField.leadingAnchor.constraint(equalTo: yourKeyDescriptionLabel.trailingAnchor),
+            
+            registerPixKeyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            registerPixKeyButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+            registerPixKeyButton.topAnchor.constraint(equalTo: yourKeyTextField.bottomAnchor, constant: 20),
+            
+            //textfield with pickerview
+            selectOptionTextField.centerYAnchor.constraint(equalTo: keyTypeDescriptionLabel.centerYAnchor),
+            selectOptionTextField.leadingAnchor.constraint(equalTo: yourKeyDescriptionLabel.trailingAnchor),
+            selectOptionTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5)
+        ])
+    }
+    
+    //MARK: - Button Perform
+    @objc private func performDone() {
+        self.selectOptionTextField.endEditing(true)
+    }
+}
+
+//MARK: - pickerview Delegate/DataSource
+extension RegisterPixKeyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        pickerOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let chooseOption: String = pickerOptions[row]
+        selectOptionTextField.text = chooseOption
+    }
+}
+
+//MARK: - protocol
+extension RegisterPixKeyViewController: RegisterPixKeyViewModelDelegate {
+    
+}
