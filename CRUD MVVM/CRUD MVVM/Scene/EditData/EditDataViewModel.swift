@@ -80,7 +80,7 @@ final class EditDataViewModel {
         
         if verify == true && verifyEmail == true && verifyCpf == true{
             clients[editIndex] = updateClient
-            service.updateClient(editClient: updateClient)
+            //service.updateClient(editClient: updateClient)
             
             reloadUpdateAllRegister()
             displayAlertWithDismissAction(title: "Sucesso", message: "Atualização realizada")
@@ -153,7 +153,7 @@ final class EditDataViewModel {
     //MARK: - Delete
     func deleteClient(){
         clients.remove(at: editIndex)
-        service.deleteClient()
+        //service.deleteClient()
         //reloadUpdateAllRegister()
         //dismissView()
         pushToIntro()

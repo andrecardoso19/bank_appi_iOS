@@ -60,7 +60,7 @@ final class PixKeyDetailViewModel {
             if pixKeyType == "CPF"{
                 updatePix.cpfKey = "S/ Cadastro"
                 allPix[loginIndex] = updatePix
-                pixService.updateClientPix(editClientPix: updatePix)
+                //pixService.updateClientPix(editClientPix: updatePix)
                 reloadUpdateAllPixKeys()
                 dismissView()
             }
@@ -68,7 +68,7 @@ final class PixKeyDetailViewModel {
             if pixKeyType == "Chave aleatória"{
                 updatePix.randomKey = "S/ Cadastro"
                 allPix[loginIndex] = updatePix
-                pixService.updateClientPix(editClientPix: updatePix)
+                //pixService.updateClientPix(editClientPix: updatePix)
                 reloadUpdateAllPixKeys()
                 dismissView()
             }
@@ -76,7 +76,7 @@ final class PixKeyDetailViewModel {
             if pixKeyType == "Telefone"{
                 updatePix.phoneKey = "S/ Cadastro"
                 allPix[loginIndex] = updatePix
-                pixService.updateClientPix(editClientPix: updatePix)
+                //pixService.updateClientPix(editClientPix: updatePix)
                 reloadUpdateAllPixKeys()
                 dismissView()
             }

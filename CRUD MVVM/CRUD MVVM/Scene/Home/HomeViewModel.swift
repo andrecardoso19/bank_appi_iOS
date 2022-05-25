@@ -63,11 +63,11 @@ final class HomeViewModel {
     
     //MARK: - fetchdata
     func fetchData(){
-        coreDataService.fetchData()
+        //coreDataService.fetchData()
     }
     
     func fetchPixData(){
-        coreDataPìxService.fetchData()
+        //coreDataPìxService.fetchData()
     }
     
     //MARK: - Gotopix

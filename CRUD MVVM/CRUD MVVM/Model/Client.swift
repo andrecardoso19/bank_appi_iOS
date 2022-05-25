@@ -19,17 +19,11 @@ struct Client {
     var balance: Double
     var account: Int
 }
-//teste alteração git2
-// comentário git
-// teste LULU
-// teste luan
-
-//teste Branchdevelop update 1.2
-//teste branchdevelop update 2.0
 
 
-//var clients: [Client] = [Client(name: "", cpf: "", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "", balance: 99.9)]
-var clients: [Client] = []
+
+var clients: [Client] = [Client(name: "ADM", cpf: "198.234.930-14", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "1", balance: 999.9, account: 1)]
+//var clients: [Client] = []
 
 //Login/Edit Index
 var editIndex = 0

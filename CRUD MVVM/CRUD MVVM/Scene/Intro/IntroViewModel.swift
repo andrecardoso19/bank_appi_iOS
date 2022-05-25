@@ -14,11 +14,11 @@ class IntroViewModel {
     let servicePix = CoreDataPixService()
     
     func fetchData() {
-        service.fetchData()
+        //service.fetchData()
     }
     
     func fetchDataPix() {
-        servicePix.fetchData()
+        //servicePix.fetchData()
     }
     
 }

@@ -71,22 +71,22 @@ final class RegisterViewModel {
         let newClient = Client(name: newClientName, cpf: newClientCpf, birthDate: newClientBirthDate, email: newClientEmail, monthlyIncome: newClientMonthlyIncome, netWorth: newClientNetWorth, password: newClientPassword, balance: newClientBalance, account: newClientAccount)
         let newClientPix = Pix(account: newClientAccount, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "")
         
-        //let verify = verifyTf()
+        let verify = verifyTf()
         let verifyPassword = verifyPassword(password: newClientPassword, confirmPassword: newClientCOnfirmPassword)
-       // let verifyEmail = verifyEmail(email: newClient.email)
-        //let verifyCpf = verifyCpf(cpf: newClientCpf)
+        let verifyEmail = verifyEmail(email: newClient.email)
+        let verifyCpf = verifyCpf(cpf: newClientCpf)
         
         // for tests below
-        let verify = true
-        let verifyEmail = true
-        let verifyCpf = true
+        //let verify = true
+        //let verifyEmail = true
+        //let verifyCpf = true
         
         if verify == true && verifyEmail == true && verifyCpf == true && verifyPassword == true{
             clients.append(newClient)
-            service.addClient(newClient: newClient)
+            //service.addClient(newClient: newClient)
             
             allPix.append(newClientPix)
-            servicePix.addClientPix(newClientPix: newClientPix)
+            //servicePix.addClientPix(newClientPix: newClientPix)
             
             //displayAlertWithAction(title: "Sucsso", message: "Cadastro concluído!")
             //popViewController()
