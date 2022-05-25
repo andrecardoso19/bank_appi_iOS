@@ -25,6 +25,7 @@ struct Client {
 // teste luan
 
 //teste Branchdevelop update 1.2
+//teste branchdevelop update 2.0
 
 
 //var clients: [Client] = [Client(name: "", cpf: "", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "", balance: 99.9)]
