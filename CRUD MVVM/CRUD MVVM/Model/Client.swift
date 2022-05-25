@@ -21,8 +21,7 @@ struct Client {
 }
 //teste alteração git2
 // comentário git
-
-//testando
+// teste LULU
 
 //var clients: [Client] = [Client(name: "", cpf: "", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "", balance: 99.9)]
 var clients: [Client] = []
