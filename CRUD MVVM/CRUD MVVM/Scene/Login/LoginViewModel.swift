@@ -43,7 +43,7 @@ final class LoginViewModel {
     //MARK: verify functions
     func verifyLogin() -> Bool{
         for i in 0...clients.count-1{
-            if clients[i].agency == loginAgency && clients[i].password == loginPassword && String(clients[i].account) == loginAccount{
+            if clients[i].agency == loginAgency && clients[i].password == loginPassword && "\(String(clients[i].account))-\(String(clients[i].verifyDigit))" == loginAccount{
                 loginIndex = i
                 return true
             }

@@ -69,7 +69,7 @@ extension HomeViewController{
         
         let greetingsText = "Olá, \(clients[loginIndex].name)"
         let balanceText = "R$\(String(format: "%.2f", clients[loginIndex].balance))"
-        let accountText = "Conta: \(String(clients[loginIndex].account))"
+        let accountText = "Conta: \(String(clients[loginIndex].account))-\(String(clients[loginIndex].verifyDigit))"
         
         header.setupView(greetingsText: greetingsText, balanceText: balanceText, accountText: accountText)
         return header

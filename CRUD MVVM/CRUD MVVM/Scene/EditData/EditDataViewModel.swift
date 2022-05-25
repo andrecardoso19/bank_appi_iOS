@@ -70,9 +70,10 @@ final class EditDataViewModel {
     var editClientPassword = clients[editIndex].password
     var editClientBalance = clients[editIndex].balance
     var editClientAccount = clients[editIndex].account
+    var editClientVerifyDigit = clients[editIndex].verifyDigit
     
     func updateClient(){
-        let updateClient = Client(name: editClientName, cpf: editClientCpf, birthDate: editClientBirthDate, email: editClientEmail, monthlyIncome: editClientMonthlyIncome, netWorth: editClientNetWorth, password: editClientPassword, balance: Double(editClientBalance) , account: editClientAccount)
+        let updateClient = Client(name: editClientName, cpf: editClientCpf, birthDate: editClientBirthDate, email: editClientEmail, monthlyIncome: editClientMonthlyIncome, netWorth: editClientNetWorth, password: editClientPassword, balance: Double(editClientBalance) , account: editClientAccount, verifyDigit: editClientVerifyDigit)
         let verify = verifyTf()
         let verifyEmail = verifyEmail(email: updateClient.email)
         print(updateClient.cpf)

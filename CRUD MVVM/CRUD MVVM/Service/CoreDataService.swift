@@ -54,7 +54,7 @@ final class CoreDataService {
         do{
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject]{
-                clients.append(Client(name:data.value(forKey: "name") as! String? ?? "", cpf:data.value(forKey: "cpf") as! String? ?? "", birthDate:data.value(forKey: "birthDate") as! String? ?? "", email: data.value(forKey: "email") as! String? ?? "", monthlyIncome:data.value(forKey: "monthlyIncome") as! String? ?? "", netWorth: data.value(forKey: "netWorth") as! String? ?? "", password: data.value(forKey: "password") as! String? ?? "", balance: data.value(forKey: "balance") as! Double? ?? 0.0, account: data.value(forKey: "account") as! Int? ?? -1))
+                clients.append(Client(name:data.value(forKey: "name") as! String? ?? "", cpf:data.value(forKey: "cpf") as! String? ?? "", birthDate:data.value(forKey: "birthDate") as! String? ?? "", email: data.value(forKey: "email") as! String? ?? "", monthlyIncome:data.value(forKey: "monthlyIncome") as! String? ?? "", netWorth: data.value(forKey: "netWorth") as! String? ?? "", password: data.value(forKey: "password") as! String? ?? "", balance: data.value(forKey: "balance") as! Double? ?? 0.0, account: data.value(forKey: "account") as! Int? ?? -1, verifyDigit: data.value(forKey: "verifyDigit") as! Int? ?? -1))
             }
         }catch{
             print("Fetch data failed")

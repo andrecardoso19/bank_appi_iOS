@@ -66,20 +66,23 @@ final class RegisterViewModel {
     var newClientPassword = ""
     var newClientCOnfirmPassword = ""
     var newClientAccount = clients.count+1
+    var newClientVerifyDigit = 0
     
     func addNewClient(){
-        let newClient = Client(name: newClientName, cpf: newClientCpf, birthDate: newClientBirthDate, email: newClientEmail, monthlyIncome: newClientMonthlyIncome, netWorth: newClientNetWorth, password: newClientPassword, balance: newClientBalance, account: newClientAccount)
+        newClientVerifyDigit = verifyDigit(account: String(newClientAccount))
+        
+        let newClient = Client(name: newClientName, cpf: newClientCpf, birthDate: newClientBirthDate, email: newClientEmail, monthlyIncome: newClientMonthlyIncome, netWorth: newClientNetWorth, password: newClientPassword, balance: newClientBalance, account: newClientAccount, verifyDigit: newClientVerifyDigit)
         let newClientPix = Pix(account: newClientAccount, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "")
         
-        let verify = verifyTf()
+        //let verify = verifyTf()
         let verifyPassword = verifyPassword(password: newClientPassword, confirmPassword: newClientCOnfirmPassword)
-        let verifyEmail = verifyEmail(email: newClient.email)
-        let verifyCpf = verifyCpf(cpf: newClientCpf)
+        //let verifyEmail = verifyEmail(email: newClient.email)
+        //let verifyCpf = verifyCpf(cpf: newClientCpf)
         
         // for tests below
-        //let verify = true
-        //let verifyEmail = true
-        //let verifyCpf = true
+        let verify = true
+        let verifyEmail = true
+        let verifyCpf = true
         
         if verify == true && verifyEmail == true && verifyCpf == true && verifyPassword == true{
             clients.append(newClient)
@@ -179,6 +182,23 @@ final class RegisterViewModel {
         } else {
             return true
         }
+    }
+    
+    //MARK: - VerifyDigits
+    private func verifyDigit(account: String) -> Int{
+        // cut string in parts, add to array and reverse array
+        var digits = account.compactMap{ $0.wholeNumberValue }
+        digits.reverse()
+        
+        var totalSum: Int = 0
+        
+        for i in 0...digits.count-1{
+            totalSum = totalSum + (digits[i] * (i+2))
+        }
+        
+        let digitReturn = (totalSum * 10) % 11
+        
+        return digitReturn
     }
 }
 
