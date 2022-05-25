@@ -23,6 +23,8 @@ struct Client {
 // comentário git
 // teste LULU
 // teste luan
+
+
 //var clients: [Client] = [Client(name: "", cpf: "", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "", balance: 99.9)]
 var clients: [Client] = []
 
