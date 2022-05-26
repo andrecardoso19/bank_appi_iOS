@@ -21,7 +21,7 @@ struct Client {
     
     var verifyDigit: Int
 }
-
+//teste merge update1.1
 
 
 var clients: [Client] = [Client(name: "ADM", cpf: "198.234.930-14", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "1", balance: 999.9, account: 1, verifyDigit: 2)]
