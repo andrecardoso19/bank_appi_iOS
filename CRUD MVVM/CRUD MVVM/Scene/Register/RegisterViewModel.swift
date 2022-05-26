@@ -38,8 +38,8 @@ struct RegisterData {
 }
 
 final class RegisterViewModel {
-    private let service = CoreDataService()
-    private let servicePix = CoreDataPixService()
+    //private let service = CoreDataService()
+    //private let servicePix = CoreDataPixService()
     
     weak var delegate: RegisterViewModelDelegate?
     

@@ -10,8 +10,8 @@ import UIKit
 import CoreData
 
 class IntroViewModel {
-    let service = CoreDataService()
-    let servicePix = CoreDataPixService()
+    //let service = CoreDataService()
+    //let servicePix = CoreDataPixService()
     
     func fetchData() {
         //service.fetchData()

@@ -41,8 +41,8 @@ final class HomeViewModel {
     ]
     
     weak var delegate: HomeViewModelDelegate?
-    var coreDataService = CoreDataService()
-    var coreDataPìxService = CoreDataPixService()
+    //var coreDataService = CoreDataService()
+    //var coreDataPìxService = CoreDataPixService()
     
     var hide: Bool = false
     

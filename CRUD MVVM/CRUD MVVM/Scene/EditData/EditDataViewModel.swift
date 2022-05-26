@@ -34,7 +34,7 @@ protocol EditDataViewModeling {
 }
 
 final class EditDataViewModel {
-    let service = CoreDataService()
+    //let service = CoreDataService()
     weak var delegate: EditDataViewModelDelegate?
     weak var reloadDelegate: ShowDataViewModelReloadDelegate?
     

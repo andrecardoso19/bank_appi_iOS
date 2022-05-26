@@ -23,7 +23,7 @@ protocol PixKeyDetailViewModeling {
 }
 
 final class PixKeyDetailViewModel {
-    let pixService = CoreDataPixService()
+    //let pixService = CoreDataPixService()
     
     weak var delegate: PixKeyDetailViewModelDelegate?
     weak var reloadDelegate: MyKeysViewModelReloadDelegate?

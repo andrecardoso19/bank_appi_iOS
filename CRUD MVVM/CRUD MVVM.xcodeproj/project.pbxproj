@@ -241,6 +241,15 @@
 			path = OldScenes;
 			sourceTree = "<group>";
 		};
+		90D587F5283FA5C900A22B45 /* OldService */ = {
+			isa = PBXGroup;
+			children = (
+				E6C32C37282430FF00067CE6 /* CoreDataService.swift */,
+				901D0D7C28354DB20095155D /* CoreDataPixService.swift */,
+			);
+			path = OldService;
+			sourceTree = "<group>";
+		};
 		D326CB3C28368F210030AB89 /* PixHome */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,8 +445,7 @@
 		E690833E2820784A0006B26D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				E6C32C37282430FF00067CE6 /* CoreDataService.swift */,
-				901D0D7C28354DB20095155D /* CoreDataPixService.swift */,
+				90D587F5283FA5C900A22B45 /* OldService */,
 			);
 			path = Service;
 			sourceTree = "<group>";
