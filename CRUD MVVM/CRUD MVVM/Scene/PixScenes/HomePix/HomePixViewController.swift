@@ -194,6 +194,7 @@ class HomePixViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.tintColor = .systemPink
         view.backgroundColor = .systemGray5
+        view.addTarget(self, action: #selector(performGoToCharge), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -355,5 +356,9 @@ class HomePixViewController: UIViewController {
     @objc func performGoToMyKeys() {
         let myKeysViewController = MyKeysViewController()
         self.navigationController?.pushViewController(myKeysViewController, animated: true)
+    }
+    @objc func performGoToCharge() {
+        let cobrarViewController = cobrarViewController()
+        self.navigationController?.pushViewController(cobrarViewController, animated: true)
     }
 }

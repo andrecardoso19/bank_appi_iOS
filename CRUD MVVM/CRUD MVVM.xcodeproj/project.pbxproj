@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EE5BE9A284016170074B27B /* cobrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5BE99284016170074B27B /* cobrarViewController.swift */; };
 		900479F5283D36BE005D7208 /* HomePixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F4283D36BE005D7208 /* HomePixViewController.swift */; };
 		900479FA283D5C21005D7208 /* MyKeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F9283D5C21005D7208 /* MyKeysViewController.swift */; };
 		900479FC283D5C30005D7208 /* MyKeysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479FB283D5C30005D7208 /* MyKeysViewModel.swift */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EE5BE99284016170074B27B /* cobrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cobrarViewController.swift; sourceTree = "<group>"; };
 		900479F4283D36BE005D7208 /* HomePixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePixViewController.swift; sourceTree = "<group>"; };
 		900479F9283D5C21005D7208 /* MyKeysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeysViewController.swift; sourceTree = "<group>"; };
 		900479FB283D5C30005D7208 /* MyKeysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeysViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EE5BE98284015E10074B27B /* PixCobrar */ = {
+			isa = PBXGroup;
+			children = (
+				0EE5BE99284016170074B27B /* cobrarViewController.swift */,
+			);
+			path = PixCobrar;
+			sourceTree = "<group>";
+		};
 		900479F3283D36A7005D7208 /* HomePix */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +381,7 @@
 		E6832F7D2821814F009BCC19 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				0EE5BE98284015E10074B27B /* PixCobrar */,
 				C9EA70502840033C00AE6393 /* PixCopyAndPast */,
 				900F941B2837C1CF005FF369 /* OldScenes */,
 				900F941A2837C1BF005FF369 /* PixScenes */,
@@ -710,6 +721,7 @@
 				E6B237042821EB45008F206A /* EditDataViewModel.swift in Sources */,
 				E6C7CA1D281A940200D44104 /* IntroViewController.swift in Sources */,
 				901D0D7A28354C810095155D /* AllPix+CoreDataClass.swift in Sources */,
+				0EE5BE9A284016170074B27B /* cobrarViewController.swift in Sources */,
 				C9EA70522840036200AE6393 /* CopyAndPastView.swift in Sources */,
 				9010130F282E89F400C709FA /* Clients+CoreDataClass.swift in Sources */,
 				E68B14DB281AAA6E00A8F50B /* IntroViewModel.swift in Sources */,
