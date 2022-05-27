@@ -56,11 +56,17 @@ class cobrarViewController: UIViewController {
            
        }
        @objc private func continueButtonTapped() {
-           performGoToConfirm()
            
+           if (textField.text == "")  {
+               let alert = UIAlertController(title:"Campo valor não preenchido", message: "Caso não deseja colocar valor, ir no Não especificar valor", preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "Ok", style: .default))
+               self.present(alert, animated: true, completion: nil)
+           }else{
+           performGoToConfirm()
+           }
        }
        @objc private func notValueButtonTapped() {
-           print("not value tapped")
+           textField.text = "0,00"
        }
            
        private func setupView() {

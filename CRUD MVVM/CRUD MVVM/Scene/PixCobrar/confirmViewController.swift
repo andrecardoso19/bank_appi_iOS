@@ -47,7 +47,7 @@ class confirmViewController: UIViewController {
         
     }
     @objc private func continueButtonTapped() {
-        print("continue tapped")
+        performGoToConfirm()
         
     }
     @objc private func notValueButtonTapped() {
@@ -82,10 +82,12 @@ class confirmViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    private func performGoToConfirm() {
+     let HomePixViewController = HomePixViewController()
+     self.navigationController?.pushViewController(HomePixViewController, animated: true)
 }
 
-
+}
  
 
 
