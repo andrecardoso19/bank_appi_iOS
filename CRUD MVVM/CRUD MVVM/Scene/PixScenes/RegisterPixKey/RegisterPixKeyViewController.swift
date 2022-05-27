@@ -11,9 +11,8 @@ import UIKit
 class RegisterPixKeyViewController: UIViewController {
     let viewModel: RegisterPixKeyViewModel?
     
-    let registerpixkeyviewmodel = RegisterPixKeyViewModel()
 
-    private lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone"]
+     lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +79,8 @@ class RegisterPixKeyViewController: UIViewController {
     
     @objc func tapRegisterButton() {
         
-        registerpixkeyviewmodel.registerCpfPixKey()
-        
+        yourKeyTextField.text = viewModel?.verifySelection()
+                
     }
     
     //MARK: - PickerView
@@ -196,6 +195,7 @@ extension RegisterPixKeyViewController: UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let chooseOption: String = pickerOptions[row]
         selectOptionTextField.text = chooseOption
+        viewModel?.optionSelected = chooseOption
     }
 }
 

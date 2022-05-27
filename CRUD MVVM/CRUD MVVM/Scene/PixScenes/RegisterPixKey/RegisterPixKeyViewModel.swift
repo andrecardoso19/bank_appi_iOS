@@ -26,9 +26,11 @@ final class RegisterPixKeyViewModel {
     var selectedOption: String = "Selecionar"
     
     
+    var optionSelected: String = ""
     
     
     func registerCpfPixKey() {
+        
         
         
         
@@ -37,10 +39,9 @@ final class RegisterPixKeyViewModel {
               
         let registerpixkeyviewcontroller = RegisterPixKeyViewController()
         
-        if registerpixkeyviewcontroller.selectOptionTextField.text == "CPF" {
+        if optionSelected == "CPF"{
             
-            registerpixkeyviewcontroller.yourKeyTextField.text = client.cpf
-            print("cadastrou chave")
+                registerpixkeyviewcontroller.yourKeyTextField.text = client.cpf
             
             
         }else{
@@ -50,6 +51,21 @@ final class RegisterPixKeyViewModel {
         }
             
         }
+    
+    func verifySelection() -> String{
+        var selected: String
+        if optionSelected == "CPF"{
+            
+            selected = clients[loginIndex].cpf
+            
+            return selected
+            
+            
+        }
+        
+        return ""
+
+    }
         
         
     }
