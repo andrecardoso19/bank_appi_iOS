@@ -8,28 +8,28 @@
 import UIKit
 
 class confirmViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-
+        
     }
     private lazy var firstLabel: UILabel = {
-           let view = UILabel()
-           view.text = "Esse  é seu pix copia e cola"
-           view.font = UIFont.systemFont(ofSize: 24)
-           view.textColor = .black
-           view.translatesAutoresizingMaskIntoConstraints = false
-           return view
-       }()
+        let view = UILabel()
+        view.text = "Esse  é seu pix copia e cola"
+        view.font = UIFont.systemFont(ofSize: 24)
+        view.textColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     private lazy var confirmLabel: UILabel = {
-           let view = UILabel()
-           view.text = "Codigo copia e cola"
-           view.font = UIFont.systemFont(ofSize: 18)
-           view.textColor = .black
-           view.translatesAutoresizingMaskIntoConstraints = false
-           return view
-       }()
+        let view = UILabel()
+        view.text = "Codigo copia e cola"
+        view.font = UIFont.systemFont(ofSize: 18)
+        view.textColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     private lazy var button: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("CONFIRMAR", for: .normal)
@@ -53,7 +53,7 @@ class confirmViewController: UIViewController {
     @objc private func notValueButtonTapped() {
         print("not value tapped")
     }
-        
+    
     private func setupView() {
         view.addSubview(firstLabel)
         view.addSubview(confirmLabel)
@@ -71,24 +71,24 @@ class confirmViewController: UIViewController {
             self.confirmLabel.topAnchor.constraint(equalTo: self.firstLabel.bottomAnchor, constant: 20),
             self.confirmLabel.leadingAnchor.constraint(equalTo: self.firstLabel.leadingAnchor),
             self.confirmLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                                
+            
             self.button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             self.button.leadingAnchor.constraint(equalTo: self.firstLabel.leadingAnchor),
             self.button.trailingAnchor.constraint(equalTo: self.firstLabel.trailingAnchor),
             
-           
+            
         ])
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     private func performGoToConfirm() {
-     let HomePixViewController = HomePixViewController()
-     self.navigationController?.pushViewController(HomePixViewController, animated: true)
+        let HomePixViewController = HomePixViewController()
+        self.navigationController?.pushViewController(HomePixViewController, animated: true)
+    }
+    
 }
 
-}
- 
 
 
 

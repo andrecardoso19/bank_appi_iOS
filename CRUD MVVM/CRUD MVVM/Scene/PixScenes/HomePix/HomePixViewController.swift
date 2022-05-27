@@ -145,6 +145,7 @@ class HomePixViewController: UIViewController {
        let view = UIButton()
         let image = UIImage(systemName: "doc.text", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
+        view.addTarget(self, action: #selector(performGoToCopyAndPaste), for: .touchUpInside)
         view.layer.cornerRadius = 20
         view.tintColor = .systemPink
         view.backgroundColor = .systemGray5
@@ -360,5 +361,9 @@ class HomePixViewController: UIViewController {
     @objc func performGoToCharge() {
         let cobrarViewController = cobrarViewController()
         self.navigationController?.pushViewController(cobrarViewController, animated: true)
+    }
+    @objc func performGoToCopyAndPaste() {
+        let copyAndPastView = CopyAndPastViewController()
+        self.navigationController?.pushViewController(copyAndPastView, animated: true)
     }
 }

@@ -23,7 +23,8 @@ class CopyAndPastViewController: UIViewController {
     }
     
     private func clickedContinue() {
-        print("clicou continuar")
+        let CopyAndPastConfirm = CopyAndPastConfirm()
+        self.navigationController?.pushViewController(CopyAndPastConfirm, animated: true)
     }
     
     private func clickedDelete() {

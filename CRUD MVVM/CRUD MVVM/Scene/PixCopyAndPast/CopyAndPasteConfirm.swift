@@ -120,7 +120,8 @@ class CopyAndPastConfirm: UIViewController {
     }()
     
     @objc func confirmPix(sender:UIButton){
-        print("Confirmou")
+             let HomePixViewController = HomePixViewController()
+            self.navigationController?.pushViewController(HomePixViewController, animated: true)
     }
     
     override func loadView() {
