@@ -37,21 +37,24 @@ final class RegisterPixKeyViewModel {
               
         let registerpixkeyviewcontroller = RegisterPixKeyViewController()
         
-        if registerpixkeyviewcontroller.selectOptionTextField.text == "CPF" { registerpixkeyviewcontroller.yourKeyTextField.text = client.cpf
+        if registerpixkeyviewcontroller.selectOptionTextField.text == "CPF" {
             
+            registerpixkeyviewcontroller.yourKeyTextField.text = client.cpf
             print("cadastrou chave")
             
-            // CLOSURE FOR CALL HOMELOGGEDVIEWCONTROLLER
-            registerpixkeyviewcontroller.callCpfKeyFunc = { [weak self] in
-                self?.registerCpfPixKey()
-            }
+            
+        }else{
+            
+            print("Erro")
+            
+        }
             
         }
         
         
     }
     
-}
+
 
 extension RegisterPixKeyViewModel: RegisterPixKeyViewModeling {
     

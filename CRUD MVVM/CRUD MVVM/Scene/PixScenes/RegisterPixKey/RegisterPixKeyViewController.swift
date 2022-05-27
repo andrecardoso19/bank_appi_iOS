@@ -7,9 +7,12 @@
 
 import UIKit
 
+
 class RegisterPixKeyViewController: UIViewController {
     let viewModel: RegisterPixKeyViewModel?
     
+    let registerpixkeyviewmodel = RegisterPixKeyViewModel()
+
     private lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone"]
 
     override func viewDidLoad() {
@@ -74,10 +77,11 @@ class RegisterPixKeyViewController: UIViewController {
         return view
     }()
     
-    var callCpfKeyFunc: (() -> Void)?
     
     @objc func tapRegisterButton() {
-        callCpfKeyFunc!()
+        
+        registerpixkeyviewmodel.registerCpfPixKey()
+        
     }
     
     //MARK: - PickerView
