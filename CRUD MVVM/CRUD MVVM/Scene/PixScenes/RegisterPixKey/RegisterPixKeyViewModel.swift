@@ -45,8 +45,6 @@ final class RegisterPixKeyViewModel {
             
             if optionSelected == "Chave Aleatória"{
                 
-                
-                
                 registerpixkeyviewcontroller.yourKeyTextField.text = randomString(length: 8)
                 
             }
@@ -61,8 +59,10 @@ final class RegisterPixKeyViewModel {
         }
     
     func verifySelection() -> String{
+        
         var selectedCpf: String
         var selectedRandomKey: String
+        
         if optionSelected == "CPF"{
             
             selectedCpf = clients[loginIndex].cpf
@@ -72,12 +72,15 @@ final class RegisterPixKeyViewModel {
            
         }else if optionSelected == "Chave Aleatória"{
             
-            allPix[editIndex].randomKey = randomString(length: 8)
-            selectedRandomKey = allPix[editIndex].randomKey
+            allPix[editIndex].randomKey = randomString(length: 32)
+            selectedRandomKey = allPix[editPixIndex].randomKey
             
             return selectedRandomKey
             
+        }else if optionSelected == "Telefone"{
             
+            
+            return ""
             
             
         }

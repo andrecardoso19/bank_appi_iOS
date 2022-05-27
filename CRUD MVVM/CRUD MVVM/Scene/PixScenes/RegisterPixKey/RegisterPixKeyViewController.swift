@@ -49,6 +49,7 @@ class RegisterPixKeyViewController: UIViewController {
     
     private lazy var yourKeyDescriptionLabel: UILabel = {
        let view = UILabel()
+        view.text = "Sua Chave:"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -197,9 +198,21 @@ extension RegisterPixKeyViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 2{
+            
+            yourKeyTextField.isUserInteractionEnabled = true
+            let chooseOption: String = pickerOptions[row]
+            selectOptionTextField.text = chooseOption
+            viewModel?.optionSelected = chooseOption
+            
+        }else{
+            
+        yourKeyTextField.isUserInteractionEnabled = false
         let chooseOption: String = pickerOptions[row]
         selectOptionTextField.text = chooseOption
         viewModel?.optionSelected = chooseOption
+            
+        }
     }
 }
 
