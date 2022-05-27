@@ -47,12 +47,11 @@ class RegisterPixKeyViewController: UIViewController {
     
     private lazy var yourKeyDescriptionLabel: UILabel = {
        let view = UILabel()
-        view.text = "Sua chave:"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    private lazy var yourKeyTextField: UITextField = {
+    //MARK: - Teste
+     lazy var yourKeyTextField: UITextField = {
         let view = UITextField()
         view.text = "Chave Teste"
         view.borderStyle = .roundedRect
