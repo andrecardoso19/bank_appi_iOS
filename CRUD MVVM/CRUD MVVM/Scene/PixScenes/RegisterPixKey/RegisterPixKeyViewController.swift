@@ -79,7 +79,7 @@ class RegisterPixKeyViewController: UIViewController {
     
     @objc func tapRegisterButton() {
         
-        yourKeyTextField.text = viewModel?.verifySelection()
+        
                 
     }
     
@@ -174,7 +174,10 @@ class RegisterPixKeyViewController: UIViewController {
     
     //MARK: - Button Perform
     @objc private func performDone() {
+        
+        yourKeyTextField.text = viewModel?.verifySelection()
         self.selectOptionTextField.endEditing(true)
+        
     }
 }
 

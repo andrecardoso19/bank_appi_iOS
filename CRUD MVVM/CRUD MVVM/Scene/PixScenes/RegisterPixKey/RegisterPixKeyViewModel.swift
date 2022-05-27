@@ -35,13 +35,19 @@ final class RegisterPixKeyViewModel {
         
         
         let client = Client(name: "ADM", cpf: "198.234.930-14", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "1", balance: 999.9, account: 1, verifyDigit: 2)
-
+        let pix = Pix(account: 1, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "")
               
         let registerpixkeyviewcontroller = RegisterPixKeyViewController()
         
         if optionSelected == "CPF"{
             
                 registerpixkeyviewcontroller.yourKeyTextField.text = client.cpf
+            
+            if optionSelected == "Chave Aleatória"{
+                
+                registerpixkeyviewcontroller.yourKeyTextField.text = pix.randomKey
+                
+            }
             
             
         }else{
@@ -60,13 +66,19 @@ final class RegisterPixKeyViewModel {
             
             return selected
             
-            
+           
         }
         
         return ""
 
     }
         
+    func randomString(length: Int) -> String {
+    let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+    return String((0..<length).map{ _ in letters.randomElement()! })
+        
+    }
+    
         
     }
     
