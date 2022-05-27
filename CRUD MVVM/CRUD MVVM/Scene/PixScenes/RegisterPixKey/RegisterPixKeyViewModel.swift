@@ -26,6 +26,31 @@ final class RegisterPixKeyViewModel {
     var selectedOption: String = "Selecionar"
     
     
+    
+    
+    func registerCpfPixKey() {
+        
+        
+        
+        let client = Client(name: "ADM", cpf: "198.234.930-14", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "1", balance: 999.9, account: 1, verifyDigit: 2)
+
+              
+        let registerpixkeyviewcontroller = RegisterPixKeyViewController()
+        
+        if registerpixkeyviewcontroller.selectOptionTextField.text == "CPF" { registerpixkeyviewcontroller.yourKeyTextField.text = client.cpf
+            
+            print("cadastrou chave")
+            
+            // CLOSURE FOR CALL HOMELOGGEDVIEWCONTROLLER
+            registerpixkeyviewcontroller.callCpfKeyFunc = { [weak self] in
+                self?.registerCpfPixKey()
+            }
+            
+        }
+        
+        
+    }
+    
 }
 
 extension RegisterPixKeyViewModel: RegisterPixKeyViewModeling {

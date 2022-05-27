@@ -69,12 +69,19 @@ class RegisterPixKeyViewController: UIViewController {
         view.setTitle("Cadastrar", for: .normal)
         view.setTitleColor(color, for: .normal)
         view.layer.cornerRadius = 5
+        view.addTarget(self, action: #selector(tapRegisterButton), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    var callCpfKeyFunc: (() -> Void)?
+    
+    @objc func tapRegisterButton() {
+        callCpfKeyFunc!()
+    }
+    
     //MARK: - PickerView
-    private lazy var selectOptionTextField: UITextField = {
+     lazy var selectOptionTextField: UITextField = {
         let view = UITextField()
          view.textAlignment = .center
          view.textColor = .systemPink
