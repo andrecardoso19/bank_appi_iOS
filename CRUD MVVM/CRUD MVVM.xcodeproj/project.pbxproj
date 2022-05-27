@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E17111D28410337006E8BFD /* cobrarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17111C28410337006E8BFD /* cobrarViewModel.swift */; };
+		0E17111F28410354006E8BFD /* confirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17111E28410354006E8BFD /* confirmViewController.swift */; };
+		0E1711212841037F006E8BFD /* confirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1711202841037F006E8BFD /* confirmViewModel.swift */; };
 		0EE5BE9A284016170074B27B /* cobrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5BE99284016170074B27B /* cobrarViewController.swift */; };
 		900479F5283D36BE005D7208 /* HomePixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F4283D36BE005D7208 /* HomePixViewController.swift */; };
 		900479FA283D5C21005D7208 /* MyKeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F9283D5C21005D7208 /* MyKeysViewController.swift */; };
@@ -85,6 +88,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E17111C28410337006E8BFD /* cobrarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cobrarViewModel.swift; sourceTree = "<group>"; };
+		0E17111E28410354006E8BFD /* confirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmViewController.swift; sourceTree = "<group>"; };
+		0E1711202841037F006E8BFD /* confirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmViewModel.swift; sourceTree = "<group>"; };
 		0EE5BE99284016170074B27B /* cobrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cobrarViewController.swift; sourceTree = "<group>"; };
 		900479F4283D36BE005D7208 /* HomePixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePixViewController.swift; sourceTree = "<group>"; };
 		900479F9283D5C21005D7208 /* MyKeysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeysViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				0EE5BE99284016170074B27B /* cobrarViewController.swift */,
+				0E17111E28410354006E8BFD /* confirmViewController.swift */,
+				0E17111C28410337006E8BFD /* cobrarViewModel.swift */,
+				0E1711202841037F006E8BFD /* confirmViewModel.swift */,
 			);
 			path = PixCobrar;
 			sourceTree = "<group>";
@@ -711,6 +720,8 @@
 				90047A03283D690D005D7208 /* MyKeysHeaderView.swift in Sources */,
 				D3917D29282C252200988F02 /* HomeHeaderView.swift in Sources */,
 				900F941D2837C1FE005FF369 /* RegisterPixKeyViewController.swift in Sources */,
+				0E1711212841037F006E8BFD /* confirmViewModel.swift in Sources */,
+				0E17111F28410354006E8BFD /* confirmViewController.swift in Sources */,
 				E68B14E3281AAFE900A8F50B /* ShowDataHeaderView.swift in Sources */,
 				E68B14E5281AB7DB00A8F50B /* ShowDataViewModel.swift in Sources */,
 				D3917D20282BE79300988F02 /* LoginViewModel.swift in Sources */,
@@ -737,6 +748,7 @@
 				E68B14D5281AA66800A8F50B /* RegisterTableViewCell.swift in Sources */,
 				900479F5283D36BE005D7208 /* HomePixViewController.swift in Sources */,
 				D326CB492836B2060030AB89 /* PixKeyDetailViewController.swift in Sources */,
+				0E17111D28410337006E8BFD /* cobrarViewModel.swift in Sources */,
 				E6C7CA51281A955700D44104 /* Client.swift in Sources */,
 				D392741F282582870037F3E8 /* EditDataDatePickerTableViewCell.swift in Sources */,
 				E68B14E1281AAFD500A8F50B /* ShowDataTableViewCell.swift in Sources */,
