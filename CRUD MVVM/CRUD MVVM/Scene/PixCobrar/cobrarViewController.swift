@@ -56,7 +56,7 @@ class cobrarViewController: UIViewController {
            
        }
        @objc private func continueButtonTapped() {
-           print("continue tapped")
+           performGoToConfirm()
            
        }
        @objc private func notValueButtonTapped() {
@@ -95,6 +95,10 @@ class cobrarViewController: UIViewController {
        required init?(coder: NSCoder) {
            fatalError("init(coder:) has not been implemented")
        }
+       private func performGoToConfirm() {
+        let confirmViewController = confirmViewController()
+        self.navigationController?.pushViewController(confirmViewController, animated: true)
+    }
 
    }
 
