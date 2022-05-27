@@ -178,6 +178,7 @@ class RegisterPixKeyViewController: UIViewController {
         yourKeyTextField.text = viewModel?.verifySelection()
         self.selectOptionTextField.endEditing(true)
         
+        
     }
 }
 

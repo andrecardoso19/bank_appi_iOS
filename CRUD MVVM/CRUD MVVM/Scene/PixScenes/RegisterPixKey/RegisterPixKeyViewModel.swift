@@ -35,7 +35,7 @@ final class RegisterPixKeyViewModel {
         
         
         let client = Client(name: "ADM", cpf: "198.234.930-14", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "1", balance: 999.9, account: 1, verifyDigit: 2)
-        let pix = Pix(account: 1, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "")
+        //let pix = Pix(account: 1, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "")
               
         let registerpixkeyviewcontroller = RegisterPixKeyViewController()
         
@@ -45,7 +45,9 @@ final class RegisterPixKeyViewModel {
             
             if optionSelected == "Chave Aleatória"{
                 
-                registerpixkeyviewcontroller.yourKeyTextField.text = pix.randomKey
+                
+                
+                registerpixkeyviewcontroller.yourKeyTextField.text = randomString(length: 8)
                 
             }
             
@@ -59,23 +61,37 @@ final class RegisterPixKeyViewModel {
         }
     
     func verifySelection() -> String{
-        var selected: String
+        var selectedCpf: String
+        var selectedRandomKey: String
         if optionSelected == "CPF"{
             
-            selected = clients[loginIndex].cpf
+            selectedCpf = clients[loginIndex].cpf
             
-            return selected
+            return selectedCpf
             
            
+        }else if optionSelected == "Chave Aleatória"{
+            
+            allPix[editIndex].randomKey = randomString(length: 8)
+            selectedRandomKey = allPix[editIndex].randomKey
+            
+            return selectedRandomKey
+            
+            
+            
+            
         }
         
         return ""
 
     }
+    
+    
         
     func randomString(length: Int) -> String {
     let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
     return String((0..<length).map{ _ in letters.randomElement()! })
+        
         
     }
     

@@ -19,4 +19,5 @@ struct Pix {
 var allPix: [Pix] = [Pix(account: 1, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "")]
 //var allPix: [Pix] = []
 
-var editPixIndex = -1
+//editPixIndex = -1
+var editPixIndex = 0
