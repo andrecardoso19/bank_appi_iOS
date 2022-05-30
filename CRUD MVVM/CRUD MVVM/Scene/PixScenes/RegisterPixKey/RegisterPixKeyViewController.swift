@@ -16,7 +16,7 @@ class RegisterPixKeyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         // Present modaly in botton
         if let presentationController = presentationController as? UISheetPresentationController {
@@ -47,7 +47,7 @@ class RegisterPixKeyViewController: UIViewController {
         return view
     }()
     
-    private lazy var yourKeyDescriptionLabel: UILabel = {
+     lazy var yourKeyDescriptionLabel: UILabel = {
        let view = UILabel()
         view.text = "Sua Chave:"
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -80,10 +80,17 @@ class RegisterPixKeyViewController: UIViewController {
     
     @objc func tapRegisterButton() {
         
+        let verify = viewModel?.registerPixKey()
         
-                
+        if verify == true{
+            
+            yourKeyTextField.text = viewModel?.verifySelection()
+            
+            
+        }
+        
     }
-    
+        
     //MARK: - PickerView
      lazy var selectOptionTextField: UITextField = {
         let view = UITextField()
@@ -179,7 +186,6 @@ class RegisterPixKeyViewController: UIViewController {
         yourKeyTextField.text = viewModel?.verifySelection()
         self.selectOptionTextField.endEditing(true)
         
-        
     }
 }
 
@@ -218,5 +224,20 @@ extension RegisterPixKeyViewController: UIPickerViewDelegate, UIPickerViewDataSo
 
 //MARK: - protocol
 extension RegisterPixKeyViewController: RegisterPixKeyViewModelDelegate {
+    func onSuccessDismiss() {
+        
+        self.dismiss(animated: true)
+        
+    }
+    
+    func displayAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
+        
+    }
+    
     
 }
+

@@ -7,7 +7,13 @@
 
 import Foundation
 
+
 protocol RegisterPixKeyViewModelDelegate: AnyObject {
+    
+    func onSuccessDismiss()
+    
+    func displayAlert(title: String, message: String)
+    
 }
 
 protocol RegisterPixKeyViewModeling {
@@ -29,55 +35,32 @@ final class RegisterPixKeyViewModel {
     var optionSelected: String = ""
     
     
-    func registerCpfPixKey() {
-        
-        
-        
-        
-        let client = Client(name: "ADM", cpf: "198.234.930-14", birthDate: "", email: "", monthlyIncome: "", netWorth: "", password: "1", balance: 999.9, account: 1, verifyDigit: 2)
-        //let pix = Pix(account: 1, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "")
-              
-        let registerpixkeyviewcontroller = RegisterPixKeyViewController()
-        
-        if optionSelected == "CPF"{
-            
-                registerpixkeyviewcontroller.yourKeyTextField.text = client.cpf
-            
-            if optionSelected == "Chave Aleatória"{
-                
-                registerpixkeyviewcontroller.yourKeyTextField.text = randomString(length: 8)
-                
-            }
-            
-            
-        }else{
-            
-            print("Erro")
-            
-        }
-            
-        }
     
     func verifySelection() -> String{
         
         var selectedCpf: String
         var selectedRandomKey: String
         
+        
+        
         if optionSelected == "CPF"{
             
             selectedCpf = clients[loginIndex].cpf
+            
             
             return selectedCpf
             
            
         }else if optionSelected == "Chave Aleatória"{
             
-            allPix[editIndex].randomKey = randomString(length: 32)
+            
             selectedRandomKey = allPix[editPixIndex].randomKey
+            
             
             return selectedRandomKey
             
         }else if optionSelected == "Telefone"{
+            
             
             
             return ""
@@ -88,6 +71,63 @@ final class RegisterPixKeyViewModel {
         return ""
 
     }
+    
+    
+    func registerPixKey() -> Bool{
+        
+        let select = optionSelected
+        
+        if select == "CPF"{
+            
+            allPix[editIndex].cpfKey = clients[loginIndex].cpf
+            
+            reloadDelegate?.updateAllKeys()
+            dismissView()
+            
+            return true
+            
+        }
+        
+        if select == "Chave Aleatória"{
+            
+            allPix[editIndex].randomKey = randomString(length: 32)
+            
+            reloadDelegate?.updateAllKeys()
+            dismissView()
+            
+            return true
+            
+        }
+        
+        // if select == "Telefone"{
+            
+            
+            
+            
+        //}
+        
+        return false
+            
+        
+    }
+    
+    
+    func verifyBlankTextField(text: String) -> Bool{
+        
+        if text == "" || text == "Chave Teste"{
+            
+            displayAlert(title: "Erro", message: "Por favor verifique todos os campos")
+            
+            return false
+            
+        
+        }
+        
+        return true
+        
+    }
+    
+    
     
     
         
@@ -105,5 +145,16 @@ final class RegisterPixKeyViewModel {
 
 extension RegisterPixKeyViewModel: RegisterPixKeyViewModeling {
     
+    func displayAlert(title: String, message: String) {
+        self.delegate?.displayAlert(title: title, message: message)
+    }
+    
+    func dismissView() {
+        self.delegate?.onSuccessDismiss()
+    }
+    
+    func reloadUpdateAllPixKeys() {
+        self.reloadDelegate?.updateAllKeys()
+    }
     
 }
