@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 
 class RegisterPixKeyViewController: UIViewController {
@@ -56,7 +57,7 @@ class RegisterPixKeyViewController: UIViewController {
     //MARK: - Teste
      lazy var yourKeyTextField: UITextField = {
         let view = UITextField()
-        view.text = "Chave Teste"
+        view.text = ""
         view.borderStyle = .roundedRect
         view.isUserInteractionEnabled = false
         view.textColor = .systemPink
@@ -84,6 +85,11 @@ class RegisterPixKeyViewController: UIViewController {
         
         if verify == true{
             
+            let alert = UIAlertController(title: "Chave cadastrada", message: "",preferredStyle: .alert)
+            let registerAlert = UIAlertAction(title: "Ok", style: .default){ (action)in  self.dismiss(animated: true)}
+            alert.addAction(registerAlert)
+            self.present(alert,animated: true)
+        
             yourKeyTextField.text = viewModel?.verifySelection()
             
             
@@ -226,7 +232,7 @@ extension RegisterPixKeyViewController: UIPickerViewDelegate, UIPickerViewDataSo
 extension RegisterPixKeyViewController: RegisterPixKeyViewModelDelegate {
     func onSuccessDismiss() {
         
-        self.dismiss(animated: true)
+       
         
     }
     

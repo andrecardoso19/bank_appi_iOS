@@ -35,12 +35,14 @@ final class RegisterPixKeyViewModel {
     var optionSelected: String = ""
     
     
+    var randomStringKey: String = ""
+    var cellPhonePixKey: String = ""
     
     func verifySelection() -> String{
         
         var selectedCpf: String
         var selectedRandomKey: String
-        
+        var selectedPhoneKey: String
         
         
         if optionSelected == "CPF"{
@@ -53,20 +55,24 @@ final class RegisterPixKeyViewModel {
            
         }else if optionSelected == "Chave Aleatória"{
             
+            randomStringKey = randomString(length: 32)
             
-            selectedRandomKey = allPix[editPixIndex].randomKey
+            selectedRandomKey = randomStringKey
             
             
             return selectedRandomKey
             
+            
         }else if optionSelected == "Telefone"{
             
+            selectedPhoneKey = cellPhonePixKey
+                
+                
+            return selectedPhoneKey
+                
+            }
             
             
-            return ""
-            
-            
-        }
         
         return ""
 
@@ -75,6 +81,7 @@ final class RegisterPixKeyViewModel {
     
     func registerPixKey() -> Bool{
         
+    
         let select = optionSelected
         
         if select == "CPF"{
@@ -90,7 +97,8 @@ final class RegisterPixKeyViewModel {
         
         if select == "Chave Aleatória"{
             
-            allPix[editIndex].randomKey = randomString(length: 32)
+            allPix[editIndex].randomKey = randomStringKey
+            
             
             reloadDelegate?.updateAllKeys()
             dismissView()
@@ -99,12 +107,18 @@ final class RegisterPixKeyViewModel {
             
         }
         
-        // if select == "Telefone"{
+         if select == "Telefone"{
+          
+             allPix[editIndex].phoneKey = cellPhonePixKey
+             
+             reloadDelegate?.updateAllKeys()
+             dismissView()
+             
+             return true
             
             
             
-            
-        //}
+        }
         
         return false
             
