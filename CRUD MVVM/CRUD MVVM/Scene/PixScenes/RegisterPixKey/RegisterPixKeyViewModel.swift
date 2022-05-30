@@ -44,6 +44,7 @@ final class RegisterPixKeyViewModel {
         var selectedRandomKey: String
         var selectedPhoneKey: String
         
+        let registerPixController = RegisterPixKeyViewController()
         
         if optionSelected == "CPF"{
             
@@ -64,9 +65,10 @@ final class RegisterPixKeyViewModel {
             
             
         }else if optionSelected == "Telefone"{
-            
+        
             selectedPhoneKey = cellPhonePixKey
-                
+            registerPixController.yourKeyDescriptionLabel.text = "Digite seu número:"
+            
                 
             return selectedPhoneKey
                 
@@ -83,6 +85,7 @@ final class RegisterPixKeyViewModel {
         
     
         let select = optionSelected
+        let registerpix = RegisterPixKeyViewController()
         
         if select == "CPF"{
             
@@ -108,11 +111,20 @@ final class RegisterPixKeyViewModel {
         }
         
          if select == "Telefone"{
-          
+             
+             
              allPix[editIndex].phoneKey = cellPhonePixKey
              
              reloadDelegate?.updateAllKeys()
              dismissView()
+             
+             if let cellNumber = registerpix.yourKeyTextField.text {
+                 
+                 print(cellNumber)
+                 
+                 
+             }
+             
              
              return true
             

@@ -81,7 +81,7 @@ class RegisterPixKeyViewController: UIViewController {
     
     @objc func tapRegisterButton() {
         
-        let verify = viewModel?.registerPixKey()
+        let verify = viewModel?.verifyBlankTextField(text: yourKeyTextField.text  ?? "")
         
         if verify == true{
             
@@ -91,6 +91,7 @@ class RegisterPixKeyViewController: UIViewController {
             self.present(alert,animated: true)
         
             yourKeyTextField.text = viewModel?.verifySelection()
+            viewModel?.registerPixKey()
             
             
         }
