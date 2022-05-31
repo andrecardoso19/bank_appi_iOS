@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16B05AC02846838B00633FB7 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B05ABF2846838B00633FB7 /* CustomUITextField.swift */; };
 		900479F5283D36BE005D7208 /* HomePixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F4283D36BE005D7208 /* HomePixViewController.swift */; };
 		900479FA283D5C21005D7208 /* MyKeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F9283D5C21005D7208 /* MyKeysViewController.swift */; };
 		900479FC283D5C30005D7208 /* MyKeysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479FB283D5C30005D7208 /* MyKeysViewModel.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16B05ABF2846838B00633FB7 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		900479F4283D36BE005D7208 /* HomePixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePixViewController.swift; sourceTree = "<group>"; };
 		900479F9283D5C21005D7208 /* MyKeysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeysViewController.swift; sourceTree = "<group>"; };
 		900479FB283D5C30005D7208 /* MyKeysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeysViewModel.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				900F941C2837C1FE005FF369 /* RegisterPixKeyViewController.swift */,
 				900F941E2837C212005FF369 /* RegisterPixKeyViewModel.swift */,
+				16B05ABF2846838B00633FB7 /* CustomUITextField.swift */,
 			);
 			path = RegisterPixKey;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E68B14CE281AA51B00A8F50B /* RegisterViewController.swift in Sources */,
+				16B05AC02846838B00633FB7 /* CustomUITextField.swift in Sources */,
 				900F941F2837C212005FF369 /* RegisterPixKeyViewModel.swift in Sources */,
 				E61FDA4B2822D15100252EB7 /* EditDataHeaderView.swift in Sources */,
 				D3927419282554200037F3E8 /* RegisterPickerTableViewCell.swift in Sources */,

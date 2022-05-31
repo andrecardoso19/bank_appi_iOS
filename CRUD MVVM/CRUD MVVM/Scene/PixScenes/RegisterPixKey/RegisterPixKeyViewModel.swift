@@ -41,8 +41,6 @@ final class RegisterPixKeyViewModel {
         var selectedRandomKey: String
         var selectedPhoneKey: String
         
-        let registerPixController = RegisterPixKeyViewController()
-        
         if optionSelected == "CPF"{
             
             selectedCpf = clients[loginIndex].cpf
@@ -64,7 +62,6 @@ final class RegisterPixKeyViewModel {
         }else if optionSelected == "Telefone"{
         
             selectedPhoneKey = cellPhonePixKey
-            registerPixController.yourKeyDescriptionLabel.text = "Digite seu número:"
             
                 
             return selectedPhoneKey
@@ -73,6 +70,25 @@ final class RegisterPixKeyViewModel {
             
             return ""
 
+        
+    }
+    
+    func phoneOptionSelected() -> String{
+        
+        let registerpixcontroller = RegisterPixKeyViewController()
+        var changedLabel: String
+        
+        let select = optionSelected
+        
+        if select == "Telefone"{
+            
+            registerpixcontroller.yourKeyDescriptionLabel.text = "Insira seu celular:"
+            changedLabel = registerpixcontroller.yourKeyDescriptionLabel.text!
+            
+            return changedLabel
+        }
+        
+        return ""
         
     }
     
@@ -108,8 +124,6 @@ final class RegisterPixKeyViewModel {
         
          if select == "Telefone"{
              
-             
-             
              allPix[editIndex].phoneKey = cellPhonePixKey
              
              print(cellPhonePixKey)
@@ -117,8 +131,6 @@ final class RegisterPixKeyViewModel {
              reloadDelegate?.updateAllKeys()
              dismissView()
              
-             
-            
              return true
             
         }

@@ -56,8 +56,9 @@ class RegisterPixKeyViewController: UIViewController {
     }()
     //MARK: - Teste
      lazy var yourKeyTextField: UITextField = {
-        let view = UITextField()
+        let view = CustomUITextField()
         view.text = ""
+        view.keyboardType = .numberPad
         view.borderStyle = .roundedRect
         view.isUserInteractionEnabled = false
         view.textColor = .systemPink
@@ -191,6 +192,7 @@ class RegisterPixKeyViewController: UIViewController {
     //MARK: - Button Perform
     @objc private func performDone() {
         
+        yourKeyDescriptionLabel.text = viewModel?.phoneOptionSelected()
         yourKeyTextField.text = viewModel?.verifySelection()
         self.selectOptionTextField.endEditing(true)
         
