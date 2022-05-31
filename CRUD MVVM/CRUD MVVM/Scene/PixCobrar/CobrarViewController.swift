@@ -9,6 +9,9 @@ import UIKit
 
 class cobrarViewController: UIViewController {
     
+    let cobrarViewModel: PixCobrarViewModel = PixCobrarViewModel()
+    let confirmViewController = ConfirmViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -62,6 +65,9 @@ class cobrarViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             self.present(alert, animated: true, completion: nil)
         }else{
+            cobrarViewModel.verifyValuesFromCopyPastePix(copyPastePix: cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf))
+            PixCobrarViewModel.copyPasteKey = cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
+            confirmViewController.configLabel(text: PixCobrarViewModel.copyPasteKey)
             performGoToConfirm()
         }
     }
@@ -102,9 +108,11 @@ class cobrarViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     private func performGoToConfirm() {
-        let confirmViewController = confirmViewController()
+        let confirmViewController = ConfirmViewController()
         self.navigationController?.pushViewController(confirmViewController, animated: true)
     }
+    
+    
     
 }
 
