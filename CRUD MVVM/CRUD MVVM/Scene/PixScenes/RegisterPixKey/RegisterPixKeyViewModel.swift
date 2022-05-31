@@ -73,7 +73,8 @@ final class RegisterPixKeyViewModel {
         
     }
     
-    func phoneOptionSelected() -> String{
+    
+    func phoneOptionSelectedLabelName() -> String{
         
         let registerpixcontroller = RegisterPixKeyViewController()
         var changedLabel: String
@@ -85,6 +86,24 @@ final class RegisterPixKeyViewModel {
             registerpixcontroller.yourKeyDescriptionLabel.text = "Insira seu celular:"
             changedLabel = registerpixcontroller.yourKeyDescriptionLabel.text!
             
+            return changedLabel
+        }
+        
+        return ""
+        
+    }
+    
+    func phoneOptionSelectedPlaceholder() -> String{
+        
+        let registerpixcontroller = RegisterPixKeyViewController()
+        var changedLabel: String
+        
+        let select = optionSelected
+        
+        if select == "Telefone"{
+            
+            registerpixcontroller.yourKeyTextField.placeholder = "(99)99999-9999"
+            changedLabel = registerpixcontroller.yourKeyTextField.placeholder!
             return changedLabel
         }
         

@@ -192,7 +192,8 @@ class RegisterPixKeyViewController: UIViewController {
     //MARK: - Button Perform
     @objc private func performDone() {
         
-        yourKeyDescriptionLabel.text = viewModel?.phoneOptionSelected()
+        yourKeyDescriptionLabel.text = viewModel?.phoneOptionSelectedLabelName()
+        yourKeyTextField.placeholder = viewModel?.phoneOptionSelectedPlaceholder()
         yourKeyTextField.text = viewModel?.verifySelection()
         self.selectOptionTextField.endEditing(true)
         
