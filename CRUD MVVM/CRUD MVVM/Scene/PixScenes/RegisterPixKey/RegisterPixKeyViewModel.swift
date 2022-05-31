@@ -31,10 +31,7 @@ final class RegisterPixKeyViewModel {
     
     var selectedOption: String = "Selecionar"
     
-    
     var optionSelected: String = ""
-    
-    
     var randomStringKey: String = ""
     var cellPhonePixKey: String = ""
     
@@ -74,10 +71,9 @@ final class RegisterPixKeyViewModel {
                 
             }
             
-            
-        
-        return ""
+            return ""
 
+        
     }
     
     
@@ -85,7 +81,7 @@ final class RegisterPixKeyViewModel {
         
     
         let select = optionSelected
-        let registerpix = RegisterPixKeyViewController()
+        
         
         if select == "CPF"{
             
@@ -113,27 +109,40 @@ final class RegisterPixKeyViewModel {
          if select == "Telefone"{
              
              
+             
              allPix[editIndex].phoneKey = cellPhonePixKey
+             
+             print(cellPhonePixKey)
              
              reloadDelegate?.updateAllKeys()
              dismissView()
              
-             if let cellNumber = registerpix.yourKeyTextField.text {
-                 
-                 print(cellNumber)
-                 
-                 
-             }
              
-             
+            
              return true
-            
-            
             
         }
         
         return false
+        
+        }
+    
+    func verifyCellPhone(text: String) -> Bool{
+        
+        let select = optionSelected
+        
+        if select == "Telefone"{
             
+            if text.count != 11{
+            
+                displayAlert(title: "Erro", message: "Número de telefone inválido")
+                return false
+                
+            }
+        }
+        
+        return true
+       
         
     }
     

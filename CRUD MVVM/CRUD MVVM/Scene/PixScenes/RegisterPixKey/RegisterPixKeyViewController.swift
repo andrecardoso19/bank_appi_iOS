@@ -82,15 +82,16 @@ class RegisterPixKeyViewController: UIViewController {
     @objc func tapRegisterButton() {
         
         let verify = viewModel?.verifyBlankTextField(text: yourKeyTextField.text  ?? "")
+        let verifyNumber = viewModel?.verifyCellPhone(text: yourKeyTextField.text ?? "")
         
-        if verify == true{
+        if verify == true && verifyNumber == true{
             
             let alert = UIAlertController(title: "Chave cadastrada", message: "",preferredStyle: .alert)
             let registerAlert = UIAlertAction(title: "Ok", style: .default){ (action)in  self.dismiss(animated: true)}
             alert.addAction(registerAlert)
             self.present(alert,animated: true)
-        
-            yourKeyTextField.text = viewModel?.verifySelection()
+            
+            viewModel?.cellPhonePixKey = yourKeyTextField.text ?? ""
             viewModel?.registerPixKey()
             
             
