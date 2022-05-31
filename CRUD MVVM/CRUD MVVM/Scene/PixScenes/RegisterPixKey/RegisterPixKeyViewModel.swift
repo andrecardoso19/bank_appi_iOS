@@ -164,7 +164,7 @@ final class RegisterPixKeyViewModel {
         
         if select == "Telefone"{
             
-            if text.count != 11{
+            if text.count != 14{
             
                 displayAlert(title: "Erro", message: "Número de telefone inválido")
                 return false

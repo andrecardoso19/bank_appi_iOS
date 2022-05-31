@@ -58,6 +58,8 @@ class RegisterPixKeyViewController: UIViewController {
      lazy var yourKeyTextField: UITextField = {
         let view = CustomUITextField()
         view.text = ""
+        view.tag = 1
+        view.delegate = self
         view.keyboardType = .numberPad
         view.borderStyle = .roundedRect
         view.isUserInteractionEnabled = false
@@ -249,6 +251,23 @@ extension RegisterPixKeyViewController: RegisterPixKeyViewModelDelegate {
         
     }
     
+    
+}
+
+extension RegisterPixKeyViewController: UITextFieldDelegate{
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        additionalCellTextFieldSetup(textField)
+    }
+    
+    func additionalCellTextFieldSetup(_ textField: UITextField?) {
+        switch textField?.tag{
+        case 1:
+            textField?.text = textField?.text?.formatMask(mask: "(##)#####-####)")
+        default:
+            break
+        }
+    }
     
 }
 
