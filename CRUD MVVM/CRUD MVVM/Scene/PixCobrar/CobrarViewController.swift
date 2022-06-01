@@ -7,9 +7,9 @@
 
 import UIKit
 
-class cobrarViewController: UIViewController {
+class ChargeViewController: UIViewController {
     
-    let cobrarViewModel: PixCobrarViewModel = PixCobrarViewModel()
+    let cobrarViewModel: PixChargeViewModel = PixChargeViewModel()
     let confirmViewController = ConfirmViewController()
     
     override func viewDidLoad() {
@@ -68,8 +68,8 @@ class cobrarViewController: UIViewController {
         }else{
             cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
             //cobrarViewModel.verifyValuesFromCopyPastePix(copyPastePix: cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf))
-            PixCobrarViewModel.copyPasteKey = cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
-            confirmViewController.configLabel(text: PixCobrarViewModel.copyPasteKey)
+            PixChargeViewModel.copyPasteKey = cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
+            confirmViewController.configLabel(text: PixChargeViewModel.copyPasteKey)
             performGoToConfirm()
         }
     }

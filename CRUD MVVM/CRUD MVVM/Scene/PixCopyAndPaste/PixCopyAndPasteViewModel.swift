@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class PixCopyAndPastViewModel {
+final class PixCopyAndPasteViewModel {
     
     //MARK: - verify value and cpf from copypastePix
     static var copyPasteKey = "bankapp.com//43340068833//1653653554564//9999_99"
@@ -45,17 +45,17 @@ final class PixCopyAndPastViewModel {
     }
     
     public func verifyCpf() -> Bool {
-        for i in 0...clients.count-1 {
-            if clients[i].cpf == clients[loginIndex].cpf {
-                return false
-            }
+        if clients[loginIndex].cpf == cpfFromCopyPasteKey {
+            return false
         }
+        
         return true
     }
     
     public func transferValue() {
         let verifyCpf = self.verifyCpf()
         let verifyBalvance = self.verifyBalance(value: valueFromCopyPasteKey)
+        
         if verifyCpf == true && verifyBalvance == true {
             let valueToTransfer = Double(valueFromCopyPasteKey)
             clients[editIndex].balance = clients[editIndex].balance - (valueToTransfer ?? 0.0)

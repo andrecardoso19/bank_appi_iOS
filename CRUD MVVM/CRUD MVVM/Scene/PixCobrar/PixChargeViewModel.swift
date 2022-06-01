@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PixCobrarViewModel {
+class PixChargeViewModel {
   
     public func generateCopyPaste(value: String, clientCPF: String) -> String{
         let valueChanged = value.replacingOccurrences(of: ",", with: "_")

@@ -359,7 +359,7 @@ class HomePixViewController: UIViewController {
         self.navigationController?.pushViewController(myKeysViewController, animated: true)
     }
     @objc func performGoToCharge() {
-        let cobrarViewController = cobrarViewController()
+        let cobrarViewController = ChargeViewController()
         self.navigationController?.pushViewController(cobrarViewController, animated: true)
     }
     @objc func performGoToCopyAndPaste() {

@@ -25,7 +25,7 @@ class ConfirmViewController: UIViewController {
     
     private lazy var confirmLabel: UILabel = {
         let view = UILabel()
-        view.text = PixCobrarViewModel.copyPasteKey
+        view.text = PixChargeViewModel.copyPasteKey
         view.font = UIFont.systemFont(ofSize: 18)
         view.textColor = .black
         view.numberOfLines = 0
@@ -100,8 +100,10 @@ class ConfirmViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     private func performGoToConfirm() {
-        let homePixViewController = HomePixViewController()
-        self.navigationController?.pushViewController(homePixViewController, animated: true)
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
+//        let homePixViewController = HomePixViewController()
+//        self.navigationController?.pushViewController(homePixViewController, animated: true)
     }
     
     public func configLabel(text: String) {

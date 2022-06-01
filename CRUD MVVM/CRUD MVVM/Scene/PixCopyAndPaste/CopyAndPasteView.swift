@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CopyAndPastView: UIView {
+class CopyAndPasteView: UIView {
     
     var continueAction: (() -> Void)?
     var deleteAction: (() -> Void)?

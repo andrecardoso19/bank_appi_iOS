@@ -9,8 +9,8 @@ import UIKit
 
 class CopyAndPastViewController: UIViewController {
     
-    let copyAndPastView = CopyAndPastView()
-    let pixCopyAndPastViewModel = PixCopyAndPastViewModel()
+    let copyAndPastView = CopyAndPasteView()
+    let pixCopyAndPastViewModel = PixCopyAndPasteViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class CopyAndPastViewController: UIViewController {
     }
     
     private func clickedContinue() {
-        let CopyAndPastConfirm = CopyAndPastConfirm()
+        let CopyAndPastConfirm = CopyAndPasteConfirmViewController()
         pixCopyAndPastViewModel.verifyValuesFromCopyPastePix(copyPastePix: copyAndPastView.getText())
 
         self.navigationController?.pushViewController(CopyAndPastConfirm, animated: true)

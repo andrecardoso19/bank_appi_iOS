@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class CopyAndPastConfirm: UIViewController {
+class CopyAndPasteConfirmViewController: UIViewController {
     
-    let pixCopyAndPastViewModel = PixCopyAndPastViewModel()
+    let pixCopyAndPastViewModel = PixCopyAndPasteViewModel()
     
     lazy var pixKeyLabel: UILabel = {
         let lb = UILabel()
@@ -113,9 +113,11 @@ class CopyAndPastConfirm: UIViewController {
     }()
     
     @objc func confirmPix(sender:UIButton){
-        let HomePixViewController = HomePixViewController()
         pixCopyAndPastViewModel.transferValue()
-        self.navigationController?.pushViewController(HomePixViewController, animated: true)
+//        let HomePixViewController = HomePixViewController()
+//        self.navigationController?.pushViewController(HomePixViewController, animated: true)
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
     }
     
     override func loadView() {
