@@ -74,14 +74,14 @@ class CopyAndPastView: UIView {
             
             self.textField.topAnchor.constraint(equalTo: self.label.bottomAnchor, constant: 20),
             self.textField.leadingAnchor.constraint(equalTo: self.label.leadingAnchor),
-            self.textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            self.textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
             
             self.button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
             self.button.leadingAnchor.constraint(equalTo: self.label.leadingAnchor),
             self.button.trailingAnchor.constraint(equalTo: self.label.trailingAnchor),
             
             self.deleteTextButton.centerYAnchor.constraint(equalTo: self.textField.centerYAnchor),
-            self.deleteTextButton.trailingAnchor.constraint(equalTo: self.textField.trailingAnchor, constant: -8),
+            self.deleteTextButton.leadingAnchor.constraint(equalTo: self.textField.trailingAnchor, constant: 8),
             self.deleteTextButton.widthAnchor.constraint(equalToConstant: 37),
             self.deleteTextButton.heightAnchor.constraint(equalToConstant: 37)
         ])
@@ -101,5 +101,10 @@ class CopyAndPastView: UIView {
 
     public func configureTextField(text: String) {
         self.textField.text = text
+    }
+    
+    public func getText() -> String {
+        
+        return textField.text ?? ""
     }
 }

@@ -20,6 +20,7 @@ class cobrarViewController: UIViewController {
     private lazy var label: UILabel = {
         let view = UILabel()
         view.text = "Qual valor você quer receber"
+        view.numberOfLines = 0
         view.font = UIFont.systemFont(ofSize: 24)
         view.textColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +66,8 @@ class cobrarViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             self.present(alert, animated: true, completion: nil)
         }else{
-            cobrarViewModel.verifyValuesFromCopyPastePix(copyPastePix: cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf))
+            cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
+            //cobrarViewModel.verifyValuesFromCopyPastePix(copyPastePix: cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf))
             PixCobrarViewModel.copyPasteKey = cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
             confirmViewController.configLabel(text: PixCobrarViewModel.copyPasteKey)
             performGoToConfirm()

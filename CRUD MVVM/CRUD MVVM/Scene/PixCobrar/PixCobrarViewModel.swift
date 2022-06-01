@@ -18,15 +18,13 @@ class PixCobrarViewModel {
         
         let copyPasteKey = "bankapp.com//\(clientCPF)//\(timeStampText)//\(valueChanged)"
         
-        self.valueFromCopyPasteKey = value
-        self.cpfFromCopyPasteKey = clientCPF
+        valueFromCopyPasteKey = value
+        cpfFromCopyPasteKey = clientCPF
         
         return copyPasteKey
     }
     
     //MARK: - verify value and cpf from copypastePix
-    var valueFromCopyPasteKey = ""
-    var cpfFromCopyPasteKey = ""
     static var copyPasteKey = "bankapp.com//43340068833//1653653554564//9999_99"
     
     public func verifyValuesFromCopyPastePix(copyPastePix: String) {
@@ -36,7 +34,7 @@ class PixCobrarViewModel {
         let isValidCopyPaste = isValidCopyPastePix(copyPasteArray: copyPasteArray)
         
         if isValidCopyPaste == true {
-            valueFromCopyPasteKey = copyPasteArray[3].replacingOccurrences(of: "_", with: ",")
+           valueFromCopyPasteKey = copyPasteArray[3].replacingOccurrences(of: "_", with: ",")
             cpfFromCopyPasteKey = copyPasteArray[1]
         }
         else {

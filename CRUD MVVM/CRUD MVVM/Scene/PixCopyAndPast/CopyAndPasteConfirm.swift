@@ -10,6 +10,8 @@ import UIKit
 
 class CopyAndPastConfirm: UIViewController {
     
+    let pixCopyAndPastViewModel = PixCopyAndPastViewModel()
+    
     lazy var pixKeyLabel: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
@@ -17,8 +19,7 @@ class CopyAndPastConfirm: UIViewController {
         lb.text = "Chave Pix"
         lb.font = UIFont.boldSystemFont(ofSize: 17)
         lb.textColor = .black
-        lb.textAlignment = .left
-        
+        lb.textAlignment = .left        
         return lb
     }()
     
@@ -30,7 +31,6 @@ class CopyAndPastConfirm: UIViewController {
         lb.font = UIFont.systemFont(ofSize: 17)
         lb.textColor = .darkGray
         lb.textAlignment = .right
-        
         return lb
     }()
     
@@ -42,7 +42,6 @@ class CopyAndPastConfirm: UIViewController {
         lb.font = UIFont.boldSystemFont(ofSize: 17)
         lb.textColor = .black
         lb.textAlignment = .left
-        
         return lb
     }()
     
@@ -54,7 +53,6 @@ class CopyAndPastConfirm: UIViewController {
         lb.font = UIFont.systemFont(ofSize: 17)
         lb.textColor = .darkGray
         lb.textAlignment = .right
-        
         return lb
     }()
     
@@ -66,7 +64,6 @@ class CopyAndPastConfirm: UIViewController {
         lb.font = UIFont.boldSystemFont(ofSize: 17)
         lb.textColor = .black
         lb.textAlignment = .left
-        
         return lb
     }()
     
@@ -78,7 +75,6 @@ class CopyAndPastConfirm: UIViewController {
         lb.font = UIFont.systemFont(ofSize: 17)
         lb.textColor = .darkGray
         lb.textAlignment = .right
-        
         return lb
     }()
     
@@ -90,7 +86,6 @@ class CopyAndPastConfirm: UIViewController {
         lb.font = UIFont.boldSystemFont(ofSize: 25)
         lb.textColor = .systemPink
         lb.textAlignment = .center
-        
         return lb
     }()
     
@@ -102,7 +97,6 @@ class CopyAndPastConfirm: UIViewController {
         lb.font = UIFont.systemFont(ofSize: 17)
         lb.textColor = .black
         lb.textAlignment = .center
-        
         return lb
     }()
     
@@ -115,20 +109,24 @@ class CopyAndPastConfirm: UIViewController {
         button.backgroundColor = UIColor.systemPink
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(self.confirmPix), for: .touchUpInside)
-       
         return button
     }()
     
     @objc func confirmPix(sender:UIButton){
-             let HomePixViewController = HomePixViewController()
-            self.navigationController?.pushViewController(HomePixViewController, animated: true)
+        let HomePixViewController = HomePixViewController()
+        pixCopyAndPastViewModel.transferValue()
+        self.navigationController?.pushViewController(HomePixViewController, animated: true)
     }
     
     override func loadView() {
         super.loadView()
         addSubviews()
         configConstraints()
+        cpfLabel.text = cpfFromCopyPasteKey
+        valueLabel.text = valueFromCopyPasteKey
+        nameLabel.text = pixCopyAndPastViewModel.verifyName()
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
