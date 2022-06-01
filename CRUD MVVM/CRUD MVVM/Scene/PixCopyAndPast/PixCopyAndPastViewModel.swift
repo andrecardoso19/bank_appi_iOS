@@ -57,9 +57,18 @@ final class PixCopyAndPastViewModel {
         let verifyCpf = self.verifyCpf()
         let verifyBalvance = self.verifyBalance(value: valueFromCopyPasteKey)
         if verifyCpf == true && verifyBalvance == true {
-            print("realizar transferencia")
+            let valueToTransfer = Double(valueFromCopyPasteKey)
+            clients[editIndex].balance = clients[editIndex].balance - (valueToTransfer ?? 0.0)
+            print(clients[editIndex].balance)
+            for i in 0...clients.count-1 {
+                if clients[i].cpf == cpfFromCopyPasteKey {
+                    clients[i].balance = clients[i].balance + (valueToTransfer ?? 0.0)
+                    print(clients[i].balance)
+                }
+            }
+            
         } else {
-            print("alerta de erro")
+            print("colocar alerta")
         }
     }
     
@@ -70,5 +79,5 @@ final class PixCopyAndPastViewModel {
             return false
         }
         return true
-    }    
+    }
 }
