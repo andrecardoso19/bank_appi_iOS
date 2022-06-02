@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import CloudKit
+
 
 class RegisterPixKeyViewController: UIViewController {
     let viewModel: RegisterPixKeyViewModel?
     
-    private lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone"]
+
+     lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         // Present modaly in botton
         if let presentationController = presentationController as? UISheetPresentationController {
@@ -45,16 +48,19 @@ class RegisterPixKeyViewController: UIViewController {
         return view
     }()
     
-    private lazy var yourKeyDescriptionLabel: UILabel = {
+     lazy var yourKeyDescriptionLabel: UILabel = {
        let view = UILabel()
-        view.text = "Sua chave:"
+        view.text = "Sua Chave:"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    private lazy var yourKeyTextField: UITextField = {
-        let view = UITextField()
-        view.text = "Chave Teste"
+    //MARK: - Teste
+     lazy var yourKeyTextField: UITextField = {
+        let view = CustomUITextField()
+        view.text = ""
+        view.tag = 1
+        view.delegate = self
+        view.keyboardType = .numberPad
         view.borderStyle = .roundedRect
         view.isUserInteractionEnabled = false
         view.textColor = .systemPink
@@ -70,12 +76,34 @@ class RegisterPixKeyViewController: UIViewController {
         view.setTitle("Cadastrar", for: .normal)
         view.setTitleColor(color, for: .normal)
         view.layer.cornerRadius = 5
+        view.addTarget(self, action: #selector(tapRegisterButton), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    
+    @objc func tapRegisterButton() {
+        
+        let verify = viewModel?.verifyBlankTextField(text: yourKeyTextField.text  ?? "")
+        let verifyNumber = viewModel?.verifyCellPhone(text: yourKeyTextField.text ?? "")
+        
+        if verify == true && verifyNumber == true{
+            
+            let alert = UIAlertController(title: "Chave cadastrada", message: "",preferredStyle: .alert)
+            let registerAlert = UIAlertAction(title: "Ok", style: .default){ (action)in  self.dismiss(animated: true)}
+            alert.addAction(registerAlert)
+            self.present(alert,animated: true)
+            
+            viewModel?.cellPhonePixKey = yourKeyTextField.text ?? ""
+            viewModel?.registerPixKey()
+            
+            
+        }
+        
+    }
+        
     //MARK: - PickerView
-    private lazy var selectOptionTextField: UITextField = {
+     lazy var selectOptionTextField: UITextField = {
         let view = UITextField()
          view.textAlignment = .center
          view.textColor = .systemPink
@@ -165,7 +193,12 @@ class RegisterPixKeyViewController: UIViewController {
     
     //MARK: - Button Perform
     @objc private func performDone() {
+        
+        yourKeyDescriptionLabel.text = viewModel?.phoneOptionSelectedLabelName()
+        yourKeyTextField.placeholder = viewModel?.phoneOptionSelectedPlaceholder()
+        yourKeyTextField.text = viewModel?.verifySelection()
         self.selectOptionTextField.endEditing(true)
+        
     }
 }
 
@@ -184,12 +217,57 @@ extension RegisterPixKeyViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 2{
+            
+            yourKeyTextField.isUserInteractionEnabled = true
+            let chooseOption: String = pickerOptions[row]
+            selectOptionTextField.text = chooseOption
+            viewModel?.optionSelected = chooseOption
+            
+        }else{
+            
+        yourKeyTextField.isUserInteractionEnabled = false
         let chooseOption: String = pickerOptions[row]
         selectOptionTextField.text = chooseOption
+        viewModel?.optionSelected = chooseOption
+            
+        }
     }
 }
 
 //MARK: - protocol
 extension RegisterPixKeyViewController: RegisterPixKeyViewModelDelegate {
+    func onSuccessDismiss() {
+        
+       
+        
+    }
+    
+    func displayAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
+        
+    }
+    
     
 }
+
+extension RegisterPixKeyViewController: UITextFieldDelegate{
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        additionalCellTextFieldSetup(textField)
+    }
+    
+    func additionalCellTextFieldSetup(_ textField: UITextField?) {
+        switch textField?.tag{
+        case 1:
+            textField?.text = textField?.text?.formatMask(mask: "(##)#####-####)")
+        default:
+            break
+        }
+    }
+    
+}
+
