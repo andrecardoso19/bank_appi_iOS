@@ -13,7 +13,7 @@ class RegisterPixKeyViewController: UIViewController {
     let viewModel: RegisterPixKeyViewModel?
     
 
-     lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone"]
+     lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone", "E-mail"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +85,7 @@ class RegisterPixKeyViewController: UIViewController {
     @objc func tapRegisterButton() {
         
         let verify = viewModel?.verifyBlankTextField(text: yourKeyTextField.text  ?? "")
-        let verifyNumber = viewModel?.verifyCellPhone(text: yourKeyTextField.text ?? "")
+        let verifyNumber = viewModel?.verifyCellPhoneAndEmail(text: yourKeyTextField.text ?? "")
         
         if verify == true && verifyNumber == true{
             
@@ -95,8 +95,8 @@ class RegisterPixKeyViewController: UIViewController {
             self.present(alert,animated: true)
             
             viewModel?.cellPhonePixKey = yourKeyTextField.text ?? ""
+            viewModel?.emailPixKey = yourKeyTextField.text ?? ""
             viewModel?.registerPixKey()
-            
             
         }
         
@@ -195,6 +195,13 @@ class RegisterPixKeyViewController: UIViewController {
     @objc private func performDone() {
         
         yourKeyDescriptionLabel.text = viewModel?.phoneOptionSelectedLabelName()
+        
+        if yourKeyDescriptionLabel.text == "Insira seu email:" {
+            yourKeyTextField.tag = 2
+        }
+        else {
+            yourKeyTextField.tag = 1
+        }
         yourKeyTextField.placeholder = viewModel?.phoneOptionSelectedPlaceholder()
         yourKeyTextField.text = viewModel?.verifySelection()
         self.selectOptionTextField.endEditing(true)
@@ -217,14 +224,15 @@ extension RegisterPixKeyViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if row == 2{
+        if row == 2 || row == 3{
             
             yourKeyTextField.isUserInteractionEnabled = true
             let chooseOption: String = pickerOptions[row]
             selectOptionTextField.text = chooseOption
             viewModel?.optionSelected = chooseOption
             
-        }else{
+        }
+        else{
             
         yourKeyTextField.isUserInteractionEnabled = false
         let chooseOption: String = pickerOptions[row]

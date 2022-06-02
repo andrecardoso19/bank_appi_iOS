@@ -34,12 +34,14 @@ final class RegisterPixKeyViewModel {
     var optionSelected: String = ""
     var randomStringKey: String = ""
     var cellPhonePixKey: String = ""
+    var emailPixKey: String = ""
     
     func verifySelection() -> String{
         
         var selectedCpf: String
         var selectedRandomKey: String
         var selectedPhoneKey: String
+        var selectedEmailKey: String
         
         if optionSelected == "CPF"{
             
@@ -66,6 +68,13 @@ final class RegisterPixKeyViewModel {
                 
             return selectedPhoneKey
                 
+        }else if optionSelected == "E-mail"{
+            
+            selectedEmailKey = emailPixKey
+            
+                
+            return selectedEmailKey
+                
             }
             
             return ""
@@ -89,6 +98,14 @@ final class RegisterPixKeyViewModel {
             return changedLabel
         }
         
+        if select == "E-mail"{
+            
+            registerpixcontroller.yourKeyDescriptionLabel.text = "Insira seu email:"
+            changedLabel = registerpixcontroller.yourKeyDescriptionLabel.text!
+            
+            return changedLabel
+        }
+        
         return ""
         
     }
@@ -103,6 +120,12 @@ final class RegisterPixKeyViewModel {
         if select == "Telefone"{
             
             registerpixcontroller.yourKeyTextField.placeholder = "(99)99999-9999"
+            changedLabel = registerpixcontroller.yourKeyTextField.placeholder!
+            return changedLabel
+        }
+        if select == "E-mail"{
+            
+            registerpixcontroller.yourKeyTextField.placeholder = "email@gmail.com"
             changedLabel = registerpixcontroller.yourKeyTextField.placeholder!
             return changedLabel
         }
@@ -154,11 +177,24 @@ final class RegisterPixKeyViewModel {
             
         }
         
+        if select == "E-mail"{
+            
+            allPix[editIndex].emailKey = emailPixKey
+            
+            print(emailPixKey)
+            
+            reloadDelegate?.updateAllKeys()
+            dismissView()
+            
+            return true
+           
+       }
+        
         return false
         
         }
     
-    func verifyCellPhone(text: String) -> Bool{
+    func verifyCellPhoneAndEmail(text: String) -> Bool{
         
         let select = optionSelected
         
@@ -171,10 +207,29 @@ final class RegisterPixKeyViewModel {
                 
             }
         }
+        if select == "E-mail"{
+            
+            return verifyEmail(text: text)
+        }
         
         return true
        
         
+    }
+    
+    func verifyEmail(text: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
+        let validate = emailPred.evaluate(with: text)
+        
+        if validate == true {
+            return true
+        } else {
+            self.delegate?.displayAlert(title: "Erro", message: "E-mail Inválido")
+            return false
+        }
     }
     
     

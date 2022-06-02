@@ -51,6 +51,10 @@ final class PixKeyDetailViewModel {
             pixKeyType = "Telefone"
             pixKey = allPix[loginIndex].phoneKey
         }
+        if editPixIndex == 3 {
+            pixKeyType = "E-mail"
+            pixKey = allPix[loginIndex].emailKey
+        }
     }
     //MARK: - delete key
     func deleteKey(){
@@ -80,6 +84,14 @@ final class PixKeyDetailViewModel {
                 reloadUpdateAllPixKeys()
                 dismissView()
             }
+            
+            if pixKeyType == "E-mail"{
+                updatePix.emailKey = "S/ Cadastro"
+                allPix[loginIndex] = updatePix
+                //pixService.updateClientPix(editClientPix: updatePix)
+                reloadUpdateAllPixKeys()
+                dismissView()
+            }
         }
     }
     
@@ -96,6 +108,11 @@ final class PixKeyDetailViewModel {
         
         if editPixIndex == 2 && pixKey == "S/ Cadastro"{
             displayAlert(title: "Erro", message: "Chave telefone não possui cadastro")
+            return false
+        }
+        
+        if editPixIndex == 3 && pixKey == "S/ Cadastro"{
+            displayAlert(title: "Erro", message: "Chave e-mail não possui cadastro")
             return false
         }
         

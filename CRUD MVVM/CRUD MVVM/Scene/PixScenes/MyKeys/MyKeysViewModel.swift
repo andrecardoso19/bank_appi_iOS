@@ -41,7 +41,8 @@ final class MyKeysViewModel {
     var optionKeyInformation: [OptionKeyData] = [
         OptionKeyData(imageTitle: "person.crop.square.filled.and.at.rectangle", keyTitle: "CPF", keyText: "S/ Cadastro"),
         OptionKeyData(imageTitle: "person.badge.key", keyTitle: "Chave Aleatória", keyText: "S/ Cadastro"),
-        OptionKeyData(imageTitle: "iphone", keyTitle: "Telefone", keyText: "S/ Cadastro")
+        OptionKeyData(imageTitle: "iphone", keyTitle: "Telefone", keyText: "S/ Cadastro"),
+        OptionKeyData(imageTitle: "envelope", keyTitle: "E-mail", keyText: "S/ Cadastro")
     ]
     
     
@@ -58,6 +59,10 @@ final class MyKeysViewModel {
         
         if allPix[loginIndex].phoneKey != "" {
             optionKeyInformation[2].keyText = allPix[loginIndex].phoneKey
+        }
+        
+        if allPix[loginIndex].emailKey != "" {
+            optionKeyInformation[3].keyText = allPix[loginIndex].emailKey
         }
     }
     

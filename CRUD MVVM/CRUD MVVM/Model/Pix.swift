@@ -14,9 +14,11 @@ struct Pix {
     var randomKey: String
     var phoneKey: String
     var copyPastePix: String
+    
+    var emailKey: String
 }
 
-var allPix: [Pix] = [Pix(account: 1, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "")]
+var allPix: [Pix] = [Pix(account: 1, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "", emailKey: "S/ Cadastro")]
 //var allPix: [Pix] = []
 
 //editPixIndex = -1
