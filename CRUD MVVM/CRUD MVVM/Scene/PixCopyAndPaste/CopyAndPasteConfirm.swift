@@ -19,7 +19,7 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.text = "Chave Pix"
         lb.font = UIFont.boldSystemFont(ofSize: 17)
         lb.textColor = .black
-        lb.textAlignment = .left        
+        lb.textAlignment = .left
         return lb
     }()
     
@@ -116,8 +116,15 @@ class CopyAndPasteConfirmViewController: UIViewController {
         pixCopyAndPastViewModel.transferValue()
 //        let HomePixViewController = HomePixViewController()
 //        self.navigationController?.pushViewController(HomePixViewController, animated: true)
+        print("teste")
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+    }
+    
+    func teste() {
+        
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
     
     override func loadView() {
@@ -135,6 +142,7 @@ class CopyAndPasteConfirmViewController: UIViewController {
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Confirmação"
+        pixCopyAndPastViewModel.delegate = self
     }
     
     private func addSubviews(){
@@ -173,5 +181,18 @@ class CopyAndPasteConfirmViewController: UIViewController {
             self.confirmButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20)
         ])
     }
+    
+}
+
+extension CopyAndPasteConfirmViewController: PixCopyAndPasteViewModelDelegate {
+
+    
+    func displayAlert(message: String, title: String, handler: UIAlertAction?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .default, handler: {(alert: UIAlertAction) in self.teste() })
+        alert.addAction(actionAlert)
+        self.present(alert, animated: true)
+    }
+    
     
 }

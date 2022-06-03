@@ -6,8 +6,21 @@
 //
 
 import Foundation
+import UIKit
+
+protocol PixCopyAndPasteViewModelDelegate: AnyObject {
+    
+    func displayAlert(message: String, title: String, handler: UIAlertAction?)
+    
+}
+
+protocol PixCopyAndPastViewModeling {
+    var delegate: PixCopyAndPasteViewModelDelegate? { get set }
+    func displayAlert(message: String, title: String, handler: UIAlertAction?)
+}
 
 final class PixCopyAndPasteViewModel {
+    weak var delegate: PixCopyAndPasteViewModelDelegate?
     
     //MARK: - verify value and cpf from copypastePix
     static var copyPasteKey = "bankapp.com//43340068833//1653653554564//9999_99"
@@ -23,7 +36,9 @@ final class PixCopyAndPasteViewModel {
             cpfFromCopyPasteKey = copyPasteArray[1]
         }
         else {
-            print("colocar alerta de copypaste invalido")
+            print("colocar alerta de copypaste invalidooo")
+            
+            displayAlert(message: "Chave inválida", title: "ERRO", handler: nil)
         }
     }
     
@@ -54,9 +69,9 @@ final class PixCopyAndPasteViewModel {
     
     public func transferValue() {
         let verifyCpf = self.verifyCpf()
-        let verifyBalvance = self.verifyBalance(value: valueFromCopyPasteKey)
+        let verifyBalance = self.verifyBalance(value: valueFromCopyPasteKey)
         
-        if verifyCpf == true && verifyBalvance == true {
+        if verifyCpf == true && verifyBalance == true {
             let valueToTransfer = Double(valueFromCopyPasteKey)
             clients[editIndex].balance = clients[editIndex].balance - (valueToTransfer ?? 0.0)
             print(clients[editIndex].balance)
@@ -64,11 +79,12 @@ final class PixCopyAndPasteViewModel {
                 if clients[i].cpf == cpfFromCopyPasteKey {
                     clients[i].balance = clients[i].balance + (valueToTransfer ?? 0.0)
                     print(clients[i].balance)
+                    displayAlert(message: "Transferência concluída", title: "SUCESSO", handler: nil)
                 }
             }
             
         } else {
-            print("colocar alerta")
+            displayAlert(message: "Verifique se seu saldo é suficiente ou se não está tentando fazer a transferência para a mesma conta.", title: "Algo deu errado", handler: nil)
         }
     }
     
@@ -80,4 +96,11 @@ final class PixCopyAndPasteViewModel {
         }
         return true
     }
+}
+
+extension PixCopyAndPasteViewModel: PixCopyAndPastViewModeling {
+    func displayAlert(message: String, title: String, handler: UIAlertAction?) {
+        delegate?.displayAlert(message: message, title: title, handler: handler)
+    }
+    
 }
