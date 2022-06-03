@@ -101,7 +101,7 @@ class ConfirmViewController: UIViewController {
     }
     private func performGoToConfirm() {
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
 //        let homePixViewController = HomePixViewController()
 //        self.navigationController?.pushViewController(homePixViewController, animated: true)
     }
