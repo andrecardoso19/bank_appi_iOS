@@ -66,7 +66,7 @@ class ChargeViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             self.present(alert, animated: true, completion: nil)
         }else{
-            cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
+            //cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
             //cobrarViewModel.verifyValuesFromCopyPastePix(copyPastePix: cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf))
             PixChargeViewModel.copyPasteKey = cobrarViewModel.generateCopyPaste(value: self.textField.text ?? "", clientCPF: clients[loginIndex].cpf)
             confirmViewController.configLabel(text: PixChargeViewModel.copyPasteKey)
