@@ -12,12 +12,14 @@ class ConfirmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        title = "Código de cobrança"
     }
     
     private lazy var firstLabel: UILabel = {
         let view = UILabel()
         view.text = "Esse é seu pix copia e cola"
-        view.font = UIFont.systemFont(ofSize: 24)
+        view.font = .boldSystemFont(ofSize: 24)
         view.textColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -29,6 +31,17 @@ class ConfirmViewController: UIViewController {
         view.font = UIFont.systemFont(ofSize: 18)
         view.textColor = .black
         view.numberOfLines = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var qrCodeImageView: UIImageView = {
+        let view = UIImageView()
+        view.backgroundColor = .systemPink
+        view.layer.cornerRadius = 20
+        view.tintColor = .white
+        let image = UIImage(systemName: "qrcode")
+        view.image = image
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -76,6 +89,7 @@ class ConfirmViewController: UIViewController {
         view.addSubview(confirmLabel)
         view.addSubview(button)
         view.addSubview(copyButton)
+        view.addSubview(qrCodeImageView)
     }
     
     private func setupConstraints() {
@@ -83,6 +97,11 @@ class ConfirmViewController: UIViewController {
             self.firstLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             self.firstLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             self.firstLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            qrCodeImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            qrCodeImageView.topAnchor.constraint(equalTo: confirmLabel.bottomAnchor, constant: 20),
+            qrCodeImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
+            qrCodeImageView.heightAnchor.constraint(equalTo: qrCodeImageView.widthAnchor),
             
             self.confirmLabel.topAnchor.constraint(equalTo: self.firstLabel.bottomAnchor, constant: 20),
             self.confirmLabel.leadingAnchor.constraint(equalTo: self.firstLabel.leadingAnchor),

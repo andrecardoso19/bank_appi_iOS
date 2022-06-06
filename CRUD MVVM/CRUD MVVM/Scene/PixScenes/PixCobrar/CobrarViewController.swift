@@ -16,6 +16,8 @@ class ChargeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
+        title = "Cobrar"
+        
     }
     private lazy var label: UILabel = {
         let view = UILabel()
