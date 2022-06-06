@@ -135,7 +135,7 @@ final class RegisterPixKeyViewModel {
     }
     
     
-    func registerPixKey() -> Bool{
+    func registerPixKey(){
         
     
         let select = optionSelected
@@ -148,7 +148,7 @@ final class RegisterPixKeyViewModel {
             reloadDelegate?.updateAllKeys()
             dismissView()
             
-            return true
+            //return true
             
         }
         
@@ -160,7 +160,7 @@ final class RegisterPixKeyViewModel {
             reloadDelegate?.updateAllKeys()
             dismissView()
             
-            return true
+            //return true
             
         }
         
@@ -173,7 +173,7 @@ final class RegisterPixKeyViewModel {
              reloadDelegate?.updateAllKeys()
              dismissView()
              
-             return true
+             //return true
             
         }
         
@@ -186,11 +186,11 @@ final class RegisterPixKeyViewModel {
             reloadDelegate?.updateAllKeys()
             dismissView()
             
-            return true
+            //return true
            
        }
         
-        return false
+        //return false
         
         }
     
