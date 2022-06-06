@@ -145,6 +145,7 @@ class HomePixViewController: UIViewController {
        let view = UIButton()
         let image = UIImage(systemName: "doc.text", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
+        view.addTarget(self, action: #selector(performGoToCopyAndPaste), for: .touchUpInside)
         view.layer.cornerRadius = 20
         view.tintColor = .systemPink
         view.backgroundColor = .systemGray5
@@ -194,6 +195,7 @@ class HomePixViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.tintColor = .systemPink
         view.backgroundColor = .systemGray5
+        view.addTarget(self, action: #selector(performGoToCharge), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -355,5 +357,13 @@ class HomePixViewController: UIViewController {
     @objc func performGoToMyKeys() {
         let myKeysViewController = MyKeysViewController()
         self.navigationController?.pushViewController(myKeysViewController, animated: true)
+    }
+    @objc func performGoToCharge() {
+        let cobrarViewController = ChargeViewController()
+        self.navigationController?.pushViewController(cobrarViewController, animated: true)
+    }
+    @objc func performGoToCopyAndPaste() {
+        let copyAndPastView = CopyAndPastViewController()
+        self.navigationController?.pushViewController(copyAndPastView, animated: true)
     }
 }

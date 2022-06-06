@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // define root view controller
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene:  windowScene)
-            // introviewcontroller
-        let rootViewController = HomeViewController()
+        
+        let rootViewController = LoginViewController()
         
         let navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true

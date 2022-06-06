@@ -1,0 +1,30 @@
+//
+//  cobrarViewModel.swift
+//  CRUD MVVM
+//
+//  Created by user220270 on 5/27/22.
+//
+
+import Foundation
+
+class PixChargeViewModel {
+  
+    public func generateCopyPaste(value: String, clientCPF: String) -> String{
+        let valueChanged = value.replacingOccurrences(of: ",", with: "_")
+        
+        var timeStampText: String {
+            return "\(NSDate().timeIntervalSince1970 * 1000)"
+        }
+        
+        let copyPasteKey = "bankapp.com//\(clientCPF)//\(timeStampText)//\(valueChanged)"
+        
+        valueFromCopyPasteKey = value
+        cpfFromCopyPasteKey = clientCPF
+        
+        return copyPasteKey
+    }
+    
+    //MARK: - verify value and cpf from copypastePix
+    static var copyPasteKey = "bankapp.com//43340068833//1653653554564//9999_99"
+    
+}
