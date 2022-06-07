@@ -34,7 +34,7 @@ final class HomeViewModel {
         .init(imageTile: "creditcard", optionTitle: "Meus Cartões"),
         .init(imageTile: "dollarsign.circle", optionTitle: "Empréstimos"),
         .init(imageTile: "iphone", optionTitle: "Recarga de celular"),
-        .init(imageTile: "bag", optionTitle: "FourShopping"),
+        .init(imageTile: "bag", optionTitle: "BankShopping"),
         .init(imageTile: "heart.text.square", optionTitle: "Seguro"),
         .init(imageTile: "square.and.pencil", optionTitle: "Editar dados"),
         .init(imageTile: "rectangle.portrait.and.arrow.right", optionTitle: "Sair")

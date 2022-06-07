@@ -209,7 +209,7 @@ extension String {
     
 }
 
-//MARK: = Delegate: Alert/FetchSuccess
+//MARK: = Delegate protocol
 extension RegisterViewController: RegisterViewModelDelegate {
     func onSuccessPushView() {
         let homeViewController = HomeViewController()

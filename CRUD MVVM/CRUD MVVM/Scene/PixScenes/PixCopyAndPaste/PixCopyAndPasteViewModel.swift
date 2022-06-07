@@ -71,10 +71,10 @@ final class PixCopyAndPasteViewModel {
         let verifyCpf = self.verifyCpf()
         let verifyBalance = self.verifyBalance(value: valueFromCopyPasteKey)
         
-        if verifyCpf == true && verifyBalance == true {
+        if verifyCpf == true && verifyBalance == true{
             let valueToTransfer = Double(valueFromCopyPasteKey)
-            clients[editIndex].balance = clients[editIndex].balance - (valueToTransfer ?? 0.0)
-            print(clients[editIndex].balance)
+            clients[loginIndex].balance = clients[loginIndex].balance - (valueToTransfer ?? 0.0)
+            print(clients[loginIndex].balance)
             for i in 0...clients.count-1 {
                 if clients[i].cpf == cpfFromCopyPasteKey {
                     clients[i].balance = clients[i].balance + (valueToTransfer ?? 0.0)
