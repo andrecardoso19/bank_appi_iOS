@@ -48,6 +48,8 @@ final class MyKeysViewModel {
     
     //MARK: - verifyPix
     func verifyPix(){
+        print(allPix)
+        print(allPix[loginIndex])
         //verify each pix key
         if allPix[loginIndex].cpfKey != "" {
             optionKeyInformation[0].keyText = allPix[loginIndex].cpfKey

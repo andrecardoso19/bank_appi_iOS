@@ -74,15 +74,14 @@ final class RegisterViewModel {
         let newClient = Client(name: newClientName, cpf: newClientCpf, birthDate: newClientBirthDate, email: newClientEmail, monthlyIncome: newClientMonthlyIncome, netWorth: newClientNetWorth, password: newClientPassword, balance: newClientBalance, account: newClientAccount, verifyDigit: newClientVerifyDigit)
         let newClientPix = Pix(account: newClientAccount, agency: "1-9", cpfKey: "S/ Cadastro", randomKey: "S/ Cadastro", phoneKey: "S/ Cadastro", copyPastePix: "", emailKey: "S/ Cadastro")
         
-        //let verify = verifyTf()
+        let verify = verifyTf()
+        let verifyEmail = verifyEmail(email: newClient.email)
         let verifyPassword = verifyPassword(password: newClientPassword, confirmPassword: newClientCOnfirmPassword)
-        //let verifyEmail = verifyEmail(email: newClient.email)
-        //let verifyCpf = verifyCpf(cpf: newClientCpf)
+        let verifyCpf = verifyCpf(cpf: newClientCpf)
         
         // for tests below
-        let verify = true
-        let verifyEmail = true
-        let verifyCpf = true
+        //let verify = true
+        //let verifyEmail = true
         
         if verify == true && verifyEmail == true && verifyCpf == true && verifyPassword == true{
             clients.append(newClient)

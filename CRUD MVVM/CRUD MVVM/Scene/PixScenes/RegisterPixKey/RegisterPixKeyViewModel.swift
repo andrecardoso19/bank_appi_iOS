@@ -143,7 +143,7 @@ final class RegisterPixKeyViewModel {
         
         if select == "CPF"{
             
-            allPix[editIndex].cpfKey = clients[loginIndex].cpf
+            allPix[loginIndex].cpfKey = clients[loginIndex].cpf
             
             reloadDelegate?.updateAllKeys()
             dismissView()
@@ -154,7 +154,7 @@ final class RegisterPixKeyViewModel {
         
         if select == "Chave Aleatória"{
             
-            allPix[editIndex].randomKey = randomStringKey
+            allPix[loginIndex].randomKey = randomStringKey
             
             
             reloadDelegate?.updateAllKeys()
@@ -166,7 +166,7 @@ final class RegisterPixKeyViewModel {
         
          if select == "Telefone"{
              
-             allPix[editIndex].phoneKey = cellPhonePixKey
+             allPix[loginIndex].phoneKey = cellPhonePixKey
              
              print(cellPhonePixKey)
              
@@ -179,7 +179,7 @@ final class RegisterPixKeyViewModel {
         
         if select == "E-mail"{
             
-            allPix[editIndex].emailKey = emailPixKey
+            allPix[loginIndex].emailKey = emailPixKey
             
             print(emailPixKey)
             
