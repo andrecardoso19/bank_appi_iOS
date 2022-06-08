@@ -18,7 +18,7 @@ class PixChargeViewModel {
         
         let copyPasteKey = "bankapp.com//\(clientCPF)//\(timeStampText)//\(valueChanged)"
         
-        valueFromCopyPasteKey = value
+        valueFromCopyPasteKey = Double(value) ?? 0.0
         cpfFromCopyPasteKey = clientCPF
         
         return copyPasteKey

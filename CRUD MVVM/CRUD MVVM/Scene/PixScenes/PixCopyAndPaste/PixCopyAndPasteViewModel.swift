@@ -32,7 +32,7 @@ final class PixCopyAndPasteViewModel {
         let isValidCopyPaste = isValidCopyPastePix(copyPasteArray: copyPasteArray)
         
         if isValidCopyPaste == true {
-            valueFromCopyPasteKey = copyPasteArray[3].replacingOccurrences(of: "_", with: ",")
+            valueFromCopyPasteKey = Double(copyPasteArray[3].replacingOccurrences(of: "_", with: ",")) ?? 0.0
             cpfFromCopyPasteKey = copyPasteArray[1]
         }
         else {
@@ -69,16 +69,16 @@ final class PixCopyAndPasteViewModel {
     
     public func transferValue() {
         let verifyCpf = self.verifyCpf()
-        let verifyBalance = self.verifyBalance(value: valueFromCopyPasteKey)
+        let verifyBalance = self.verifyBalance(value: String(valueFromCopyPasteKey))
         let verifyDestination = self.verifyDestination()
         
         if verifyCpf == true && verifyBalance == true && verifyDestination == true{
             let valueToTransfer = Double(valueFromCopyPasteKey)
-            clients[loginIndex].balance = clients[loginIndex].balance - (valueToTransfer ?? 0.0)
+            clients[loginIndex].balance = clients[loginIndex].balance - (valueToTransfer)
             print(clients[loginIndex].balance)
             for i in 0...clients.count-1 {
                 if clients[i].cpf == cpfFromCopyPasteKey {
-                    clients[i].balance = clients[i].balance + (valueToTransfer ?? 0.0)
+                    clients[i].balance = clients[i].balance + (valueToTransfer)
                     print(clients[i].balance)
                     displayAlert(message: "Transferência concluída", title: "SUCESSO", handler: nil)
                 }

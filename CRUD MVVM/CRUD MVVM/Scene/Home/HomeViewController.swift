@@ -68,7 +68,7 @@ extension HomeViewController{
         header.viewModel = viewModel
         
         let greetingsText = "Olá, \(clients[loginIndex].name)"
-        let balanceText = "R$\(String(format: "%.2f", clients[loginIndex].balance))"
+        let balanceText = "R$\(String(format: "%.2f", clients[loginIndex].balance).replacingOccurrences(of: ".", with: ","))"
         let accountText = "Conta: \(String(clients[loginIndex].account))-\(String(clients[loginIndex].verifyDigit))"
         
         header.setupView(greetingsText: greetingsText, balanceText: balanceText, accountText: accountText)

@@ -31,7 +31,7 @@ struct OptionData{
 final class HomeViewModel {
     // MARK: - init
     var optionInformation: [OptionData] = [
-        .init(imageTile: "creditcard", optionTitle: "Meus Cartões"),
+        .init(imageTile: "creditcard", optionTitle: "Meus cartões"),
         .init(imageTile: "dollarsign.circle", optionTitle: "Empréstimos"),
         .init(imageTile: "iphone", optionTitle: "Recarga de celular"),
         .init(imageTile: "bag", optionTitle: "BankShopping"),

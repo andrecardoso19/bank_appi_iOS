@@ -23,5 +23,5 @@ var allPix: [Pix] = [Pix(account: 1, agency: "1-9", cpfKey: "S/ Cadastro", rando
 
 var editPixIndex = -1
 
-var valueFromCopyPasteKey = ""
+var valueFromCopyPasteKey = 0.0
 var cpfFromCopyPasteKey = ""

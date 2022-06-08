@@ -132,7 +132,7 @@ class CopyAndPasteConfirmViewController: UIViewController {
         addSubviews()
         configConstraints()
         cpfLabel.text = cpfFromCopyPasteKey
-        valueLabel.text = valueFromCopyPasteKey
+        valueLabel.text = "R$\(String(format: "%.2f", valueFromCopyPasteKey).replacingOccurrences(of: ".", with: ","))"
         nameLabel.text = pixCopyAndPastViewModel.verifyName()
     }
     
