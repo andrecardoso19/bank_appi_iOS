@@ -14,7 +14,7 @@ class ChargeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .MyTheme.backgroundColor
         
         title = "Cobrar"
         
@@ -23,8 +23,8 @@ class ChargeViewController: UIViewController {
         let view = UILabel()
         view.text = "Qual valor você quer receber"
         view.numberOfLines = 0
-        view.font = UIFont.systemFont(ofSize: 24)
-        view.textColor = .black
+        view.font = .MyTheme.boldTitleText
+        view.textColor = .MyTheme.defaultTextColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -38,8 +38,8 @@ class ChargeViewController: UIViewController {
     private lazy var notValuebutton: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("Não especificar valor", for: .normal)
-        view.backgroundColor = .systemBackground
-        view.setTitleColor(UIColor.systemPink, for: .normal)
+        view.backgroundColor = .MyTheme.backgroundColor
+        view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
         view.layer.cornerRadius = 9
         view.addTarget(self, action: #selector(notValueButtonTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -48,8 +48,8 @@ class ChargeViewController: UIViewController {
     private lazy var button: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("CONFIRMAR", for: .normal)
-        view.backgroundColor = .systemPink
-        view.setTitleColor(UIColor.white, for: .normal)
+        view.backgroundColor = .MyTheme.backgroundColor
+        view.setTitleColor(UIColor.MyTheme.whiteTextColor, for: .normal)
         view.layer.cornerRadius = 9
         view.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false

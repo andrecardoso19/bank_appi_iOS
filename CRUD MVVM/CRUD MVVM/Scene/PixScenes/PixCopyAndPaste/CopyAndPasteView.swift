@@ -15,8 +15,8 @@ class CopyAndPasteView: UIView {
     private lazy var label: UILabel = {
         let view = UILabel()
         view.text = "Insira o Pix Copia e Cola"
-        view.font = UIFont.systemFont(ofSize: 24)
-        view.textColor = .black
+        view.font = .MyTheme.boldTitleText
+        view.textColor = .MyTheme.defaultTextColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -31,8 +31,8 @@ class CopyAndPasteView: UIView {
     private lazy var button: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("CONTINUAR", for: .normal)
-        view.backgroundColor = .systemPink
-        view.setTitleColor(UIColor.white, for: .normal)
+        view.backgroundColor = .MyTheme.mainPinkColor
+        view.setTitleColor(UIColor.MyTheme.whiteTextColor, for: .normal)
         view.layer.cornerRadius = 9
         view.addTarget(self, action: #selector(performConfirm), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +41,7 @@ class CopyAndPasteView: UIView {
     
     private lazy var deleteTextButton: UIButton = {
         let view = UIButton(frame: .zero)
-        view.tintColor = .systemPink
+        view.tintColor = .MyTheme.mainPinkColor
         view.setImage(UIImage.init(systemName: "xmark.circle.fill"), for: .normal)
         view.addTarget(self, action: #selector(performDelete), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false

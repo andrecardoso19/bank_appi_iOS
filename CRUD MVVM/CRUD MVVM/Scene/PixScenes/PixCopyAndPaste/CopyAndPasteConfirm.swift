@@ -17,8 +17,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 1
         lb.text = "Chave Pix"
-        lb.font = UIFont.boldSystemFont(ofSize: 17)
-        lb.textColor = .black
+        lb.font = .MyTheme.boldTitleText
+        lb.textColor = .MyTheme.defaultTextColor
         lb.textAlignment = .left
         return lb
     }()
@@ -28,8 +28,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 1
         lb.text = "Chave Aleatória"
-        lb.font = UIFont.systemFont(ofSize: 17)
-        lb.textColor = .darkGray
+        lb.font = UIFont.MyTheme.defaultText
+        lb.textColor = .MyTheme.defaultTextColor
         lb.textAlignment = .right
         return lb
     }()
@@ -39,8 +39,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 1
         lb.text = "Nome"
-        lb.font = UIFont.boldSystemFont(ofSize: 17)
-        lb.textColor = .black
+        lb.font = UIFont.MyTheme.defaultText
+        lb.textColor = .MyTheme.defaultTextColor
         lb.textAlignment = .left
         return lb
     }()
@@ -50,8 +50,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 1
         lb.text = "João Da Silva"
-        lb.font = UIFont.systemFont(ofSize: 17)
-        lb.textColor = .darkGray
+        lb.font = UIFont.MyTheme.defaultText
+        lb.textColor = .MyTheme.defaultTextColor
         lb.textAlignment = .right
         return lb
     }()
@@ -61,8 +61,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 1
         lb.text = "CPF"
-        lb.font = UIFont.boldSystemFont(ofSize: 17)
-        lb.textColor = .black
+        lb.font = UIFont.MyTheme.defaultText
+        lb.textColor = .MyTheme.defaultTextColor
         lb.textAlignment = .left
         return lb
     }()
@@ -72,8 +72,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 1
         lb.text = "000.000.000-00"
-        lb.font = UIFont.systemFont(ofSize: 17)
-        lb.textColor = .darkGray
+        lb.font = UIFont.MyTheme.defaultText
+        lb.textColor = .MyTheme.defaultTextColor
         lb.textAlignment = .right
         return lb
     }()
@@ -83,8 +83,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 1
         lb.text = "R$ 0,00"
-        lb.font = UIFont.boldSystemFont(ofSize: 25)
-        lb.textColor = .systemPink
+        lb.font = UIFont.MyTheme.boldTitleText
+        lb.textColor = .MyTheme.mainPinkColor
         lb.textAlignment = .center
         return lb
     }()
@@ -94,8 +94,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 2
         lb.text = "Confirme os dados de quem ira receber o pix:"
-        lb.font = UIFont.systemFont(ofSize: 17)
-        lb.textColor = .black
+        lb.font = UIFont.MyTheme.defaultText
+        lb.textColor = .MyTheme.defaultTextColor
         lb.textAlignment = .center
         return lb
     }()
@@ -104,9 +104,9 @@ class CopyAndPasteConfirmViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("CONFIRMAR PIX", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.systemPink
+        button.titleLabel?.font = UIFont.MyTheme.defaultText
+        button.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        button.backgroundColor = UIColor.MyTheme.mainPinkColor
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(self.confirmPix), for: .touchUpInside)
         return button

@@ -16,7 +16,8 @@ class MyKeysFooterView: UIView {
     //MARK: - UIElements
     private lazy var registerKeyButton: UIButton = {
        let view = UIButton()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .MyTheme.mainPinkColor
+        view.titleLabel?.font = .MyTheme.defaultText
         view.setTitle("Cadastrar nova chave", for: .normal)
         view.layer.cornerRadius = 5
         view.addTarget(self, action: #selector(performGoToRegister), for: .touchUpInside)
