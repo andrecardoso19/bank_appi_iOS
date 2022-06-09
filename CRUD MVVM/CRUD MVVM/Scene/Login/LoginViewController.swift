@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     private lazy var agencyLabel: UILabel = {
        let view = UILabel()
         view.textColor = .MyTheme.whiteTextColor
+        view.font = .MyTheme.defaultText
         view.text = "Agência com dígito"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -35,6 +36,7 @@ class LoginViewController: UIViewController {
        let view = UILabel()
         view.textColor = .MyTheme.whiteTextColor
         view.text = "Conta com dígito"
+        view.font = .MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -68,6 +70,7 @@ class LoginViewController: UIViewController {
     private lazy var passwordLabel: UILabel = {
        let view = UILabel()
         view.textColor = .MyTheme.whiteTextColor
+        view.font = .MyTheme.defaultText
         view.text = "Senha(6 Dígitos)"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -77,6 +80,7 @@ class LoginViewController: UIViewController {
        let view = UITextField()
         view.placeholder = "******"
         view.borderStyle = .roundedRect
+        view.backgroundColor = .MyTheme.whiteTextColor
         view.textColor = .MyTheme.mainPinkColor
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isSecureTextEntry = true
@@ -86,7 +90,7 @@ class LoginViewController: UIViewController {
     // MARK: -button
     private lazy var loginButton: UIButton = {
        let view = UIButton()
-        view.backgroundColor = .MyTheme.backgroundColor
+        view.backgroundColor = .MyTheme.whiteTextColor
         view.tintColor = .MyTheme.mainPinkColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Entrar", for: .normal)

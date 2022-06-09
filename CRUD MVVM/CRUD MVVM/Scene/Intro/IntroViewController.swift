@@ -40,7 +40,7 @@ class IntroViewController: UIViewController {
     
     private lazy var loginButton: UIButton = {
         let view = UIButton()
-        view.backgroundColor = UIColor.MyTheme.backgroundColor
+        view.backgroundColor = UIColor.MyTheme.whiteTextColor
         view.tintColor = UIColor.MyTheme.mainPinkColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Entre na sua conta", for: .normal)
@@ -54,7 +54,7 @@ class IntroViewController: UIViewController {
     private lazy var signInButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = nil
-        view.tintColor = UIColor.MyTheme.backgroundColor
+        view.tintColor = UIColor.MyTheme.whiteTextColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Criar uma conta", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText

@@ -17,7 +17,7 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.numberOfLines = 1
         lb.text = "Chave Pix"
-        lb.font = .MyTheme.boldTitleText
+        lb.font = .MyTheme.defaultText
         lb.textColor = .MyTheme.defaultTextColor
         lb.textAlignment = .left
         return lb
@@ -105,7 +105,7 @@ class CopyAndPasteConfirmViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("CONFIRMAR PIX", for: .normal)
         button.titleLabel?.font = UIFont.MyTheme.defaultText
-        button.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        button.setTitleColor(UIColor.MyTheme.whiteTextColor, for: .normal)
         button.backgroundColor = UIColor.MyTheme.mainPinkColor
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(self.confirmPix), for: .touchUpInside)

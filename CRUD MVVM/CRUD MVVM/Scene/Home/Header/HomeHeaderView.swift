@@ -24,7 +24,7 @@ class HomeHeaderView: UIView {
     
     private lazy var iconImageView: UIImageView = {
        let view = UIImageView()
-        view.tintColor = .systemPink
+        view.tintColor = .MyTheme.mainPinkColor
         view.image = UIImage(systemName: "person.circle.fill")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -43,7 +43,7 @@ class HomeHeaderView: UIView {
        let view = UILabel()
         view.text = "Saldo:"
         view.font = UIFont.MyTheme.homeHeaderText
-        view.textColor = UIColor.MyTheme.backgroundColor
+        view.textColor = UIColor.MyTheme.whiteTextColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -52,7 +52,7 @@ class HomeHeaderView: UIView {
          let view = UILabel()
          view.text = "R$999,99"
         view.font = UIFont.MyTheme.homeHeaderText
-         view.textColor = .systemBackground
+         view.textColor = UIColor.MyTheme.whiteTextColor
          view.translatesAutoresizingMaskIntoConstraints = false
          return view
     }()
@@ -60,7 +60,7 @@ class HomeHeaderView: UIView {
     private lazy var hideBalanceButton: UIButton = {
        let view = UIButton()
         let image = UIImage(systemName: "eye.fill")
-        view.tintColor = UIColor.MyTheme.backgroundColor
+        view.tintColor = UIColor.MyTheme.whiteTextColor
         view.setImage(image, for: .normal)
         view.addTarget(self, action: #selector(performHideBalance), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -113,7 +113,7 @@ class HomeHeaderView: UIView {
     private lazy var agencyLabel: UILabel = {
         let view = UILabel()
         view.text = "Agência: 1-9"
-        view.textColor = UIColor.MyTheme.backgroundColor
+        view.textColor = UIColor.MyTheme.whiteTextColor
         view.font = UIFont.MyTheme.homeHeaderText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -122,7 +122,7 @@ class HomeHeaderView: UIView {
     private lazy var accountLabel: UILabel = {
         let view = UILabel()
         view.text = "Conta: 00000-0"
-        view.textColor = UIColor.MyTheme.backgroundColor
+        view.textColor = UIColor.MyTheme.whiteTextColor
         view.font = UIFont.MyTheme.homeHeaderText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

@@ -76,6 +76,7 @@ class RegisterPixKeyViewController: UIViewController {
         view.backgroundColor = .MyTheme.mainPinkColor
         view.setTitle("Cadastrar", for: .normal)
         view.setTitleColor(UIColor.MyTheme.backgroundColor, for: .normal)
+        view.titleLabel?.font = .MyTheme.defaultText
         view.layer.cornerRadius = 5
         view.addTarget(self, action: #selector(tapRegisterButton), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -107,9 +108,9 @@ class RegisterPixKeyViewController: UIViewController {
      lazy var selectOptionTextField: UITextField = {
         let view = UITextField()
          view.textAlignment = .center
-         view.textColor = .systemPink
+         view.textColor = .MyTheme.mainPinkColor
          view.text = "Selecionar"
-         view.backgroundColor = .systemGray5
+         view.backgroundColor = .MyTheme.mainGrayButtonColor
          view.inputView = Picker
          view.inputAccessoryView = toolBar
          view.layer.cornerRadius = 5

@@ -48,7 +48,7 @@ class ChargeViewController: UIViewController {
     private lazy var button: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("CONFIRMAR", for: .normal)
-        view.backgroundColor = .MyTheme.backgroundColor
+        view.backgroundColor = .MyTheme.mainPinkColor
         view.setTitleColor(UIColor.MyTheme.whiteTextColor, for: .normal)
         view.layer.cornerRadius = 9
         view.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)

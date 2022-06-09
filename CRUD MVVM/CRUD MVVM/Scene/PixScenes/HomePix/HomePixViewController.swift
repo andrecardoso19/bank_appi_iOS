@@ -22,6 +22,7 @@ class HomePixViewController: UIViewController {
     private lazy var descriptionLabel: UILabel = {
        let view = UILabel()
         view.text = "Abaixo, selecione uma funcionalidade:"
+        view.font = .MyTheme.defaultText
         view.numberOfLines = -1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -33,8 +34,8 @@ class HomePixViewController: UIViewController {
         let image = UIImage(systemName: "iphone", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .systemPink
-        view.backgroundColor = .systemGray5
+        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -42,7 +43,7 @@ class HomePixViewController: UIViewController {
     private lazy var phoneLabel: UILabel = {
        let view = UILabel()
         //view.textColor = .systemGray5
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.text = "Celular"
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -55,8 +56,8 @@ class HomePixViewController: UIViewController {
         let image = UIImage(systemName: "qrcode", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .systemPink
-        view.backgroundColor = .systemGray5
+        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -64,7 +65,7 @@ class HomePixViewController: UIViewController {
     private lazy var qrCodeLabel: UILabel = {
        let view = UILabel()
         //view.textColor = .systemGray5
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.text = "QR Code"
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -77,8 +78,8 @@ class HomePixViewController: UIViewController {
         let image = UIImage(systemName: "envelope", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .systemPink
-        view.backgroundColor = .systemGray5
+        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -86,7 +87,7 @@ class HomePixViewController: UIViewController {
     private lazy var emailLabel: UILabel = {
        let view = UILabel()
         //view.textColor = .systemGray5
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.text = "E-mail"
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -100,8 +101,8 @@ class HomePixViewController: UIViewController {
         view.setImage(image, for: .normal)
         //view.setBackgroundImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .systemPink
-        view.backgroundColor = .systemGray5
+        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -109,7 +110,7 @@ class HomePixViewController: UIViewController {
     private lazy var cpfLabel: UILabel = {
        let view = UILabel()
         //view.textColor = .systemGray5
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.text = "CPF/CNPJ"
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -123,8 +124,8 @@ class HomePixViewController: UIViewController {
         let image = UIImage(systemName: "key", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .systemPink
-        view.backgroundColor = .systemGray5
+        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -132,7 +133,7 @@ class HomePixViewController: UIViewController {
     private lazy var randomKeyLabel: UILabel = {
        let view = UILabel()
         //view.textColor = .systemGray5
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.text = "Chave aleatória"
         view.numberOfLines = -1
         view.textAlignment = .center
@@ -147,8 +148,8 @@ class HomePixViewController: UIViewController {
         view.setImage(image, for: .normal)
         view.addTarget(self, action: #selector(performGoToCopyAndPaste), for: .touchUpInside)
         view.layer.cornerRadius = 20
-        view.tintColor = .systemPink
-        view.backgroundColor = .systemGray5
+        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -156,7 +157,7 @@ class HomePixViewController: UIViewController {
     private lazy var copyPasteLabel: UILabel = {
        let view = UILabel()
         //view.textColor = .systemGray5
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.text = "Pix copia e cola"
         view.numberOfLines = -1
         view.textAlignment = .center
@@ -170,8 +171,8 @@ class HomePixViewController: UIViewController {
         let image = UIImage(systemName: "arrow.up.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .systemPink
-        view.backgroundColor = .systemGray5
+        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -179,7 +180,7 @@ class HomePixViewController: UIViewController {
     private lazy var transferLabel: UILabel = {
        let view = UILabel()
         //view.textColor = .systemGray5
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.text = "Transferir"
         view.numberOfLines = -1
         view.textAlignment = .center
@@ -193,8 +194,8 @@ class HomePixViewController: UIViewController {
         let image = UIImage(systemName: "arrow.down.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .systemPink
-        view.backgroundColor = .systemGray5
+        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.addTarget(self, action: #selector(performGoToCharge), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -203,7 +204,7 @@ class HomePixViewController: UIViewController {
     private lazy var chargeLabel: UILabel = {
        let view = UILabel()
         //view.textColor = .systemGray5
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.text = "Receber"
         view.numberOfLines = -1
         view.textAlignment = .center
@@ -214,8 +215,9 @@ class HomePixViewController: UIViewController {
     //MARK: - MyKeys button
     private lazy var myKeysButton: UIButton = {
        let view = UIButton()
-        view.tintColor = .systemPink
+        view.tintColor = .MyTheme.mainPinkColor
         view.setTitle("Minhas chaves PIX", for: .normal)
+        view.titleLabel?.font = .MyTheme.defaultText
         view.backgroundColor = .tintColor
         view.layer.cornerRadius = 5
         view.addTarget(self, action: #selector(performGoToMyKeys), for: .touchUpInside)
@@ -225,7 +227,7 @@ class HomePixViewController: UIViewController {
     
     private lazy var myKeysImageView: UIImageView = {
         let view = UIImageView()
-        view.tintColor = .systemBackground
+        view.tintColor = .MyTheme.whiteTextColor
         view.image = UIImage(systemName: "key.fill")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

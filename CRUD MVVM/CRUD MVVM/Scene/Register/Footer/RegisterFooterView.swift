@@ -21,6 +21,7 @@ class RegisterFooterView: UIView {
     private lazy var registerButton: UIButton = {
        let view = UIButton()
         view.backgroundColor = UIColor.MyTheme.mainPinkColor
+        view.titleLabel?.font = .MyTheme.defaultText
         view.tintColor = UIColor.MyTheme.backgroundColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Cadastrar", for: .normal)

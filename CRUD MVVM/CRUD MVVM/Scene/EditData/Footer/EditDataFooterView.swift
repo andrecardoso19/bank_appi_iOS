@@ -18,6 +18,7 @@ class EditDataFooterView: UIView {
         view.setTitle("Confirmar edição", for: .normal)
         view.backgroundColor = .MyTheme.mainPinkColor
         view.tintColor = .MyTheme.backgroundColor
+        view.titleLabel?.font = .MyTheme.defaultText
         view.addTarget(self, action: #selector(performEdit), for: .touchUpInside)
         view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false
