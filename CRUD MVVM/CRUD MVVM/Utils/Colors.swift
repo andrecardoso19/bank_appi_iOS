@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
-enum Colors{
-    
+extension UIColor {
+      struct MyTheme {
+          static var mainPinkColor: UIColor = .systemPink
+          static var mainGrayButtonColor: UIColor = .systemGray5
+          static var backgroundColor: UIColor = .systemBackground
+          static var secondaryBackgroundColor: UIColor = .secondarySystemBackground
+      }
 }

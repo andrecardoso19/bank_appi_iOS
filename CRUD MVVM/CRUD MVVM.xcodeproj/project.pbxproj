@@ -26,6 +26,7 @@
 		901D0D7A28354C810095155D /* AllPix+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D0D7828354C810095155D /* AllPix+CoreDataClass.swift */; };
 		901D0D7B28354C810095155D /* AllPix+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D0D7928354C810095155D /* AllPix+CoreDataProperties.swift */; };
 		901D0D7D28354DB20095155D /* CoreDataPixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D0D7C28354DB20095155D /* CoreDataPixService.swift */; };
+		9097C397285218FB00701562 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097C396285218FB00701562 /* Fonts.swift */; };
 		C9CE78682847A91A0001AD09 /* PixCopyAndPasteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */; };
 		C9EA70522840036200AE6393 /* CopyAndPasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70512840036200AE6393 /* CopyAndPasteView.swift */; };
 		C9EA70542840037600AE6393 /* CopyAndPasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */; };
@@ -109,6 +110,7 @@
 		901D0D7828354C810095155D /* AllPix+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllPix+CoreDataClass.swift"; sourceTree = "<group>"; };
 		901D0D7928354C810095155D /* AllPix+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllPix+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		901D0D7C28354DB20095155D /* CoreDataPixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPixService.swift; sourceTree = "<group>"; };
+		9097C396285218FB00701562 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixCopyAndPasteViewModel.swift; sourceTree = "<group>"; };
 		C9EA70512840036200AE6393 /* CopyAndPasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteView.swift; sourceTree = "<group>"; };
 		C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteViewController.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				E68B14CB281AA30E00A8F50B /* Colors.swift */,
+				9097C396285218FB00701562 /* Fonts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				E68B14E5281AB7DB00A8F50B /* ShowDataViewModel.swift in Sources */,
 				D3917D20282BE79300988F02 /* LoginViewModel.swift in Sources */,
 				E61FDA482822CA0800252EB7 /* EditDataFooterView.swift in Sources */,
+				9097C397285218FB00701562 /* Fonts.swift in Sources */,
 				30A55E772841310C00C86045 /* CopyAndPasteConfirm.swift in Sources */,
 				D326CB4428368F7F0030AB89 /* PixHomeTableViewCell.swift in Sources */,
 				900479FC283D5C30005D7208 /* MyKeysViewModel.swift in Sources */,

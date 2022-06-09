@@ -17,7 +17,7 @@ class HomeHeaderView: UIView {
     private lazy var greetingsLabel: UILabel = {
        let view = UILabel()
         view.text = "Olá TESTE"
-        view.font = UIFont.boldSystemFont(ofSize: 28)
+        view.font = UIFont.boldSystemFont(ofSize: 24)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
