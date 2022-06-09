@@ -17,7 +17,7 @@ final class HomeTableViewCell: UITableViewCell {
     //logo image
     private lazy var logoImageView: UIImageView = {
         let view = UIImageView()
-        view.tintColor = .systemPink
+        view.tintColor = UIColor.MyTheme.mainPinkColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -26,6 +26,7 @@ final class HomeTableViewCell: UITableViewCell {
     private lazy var optionLabel: UILabel = {
        let view = UILabel()
         view.numberOfLines = 1
+        view.font = UIFont.MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -33,8 +34,9 @@ final class HomeTableViewCell: UITableViewCell {
     //arrow label
     private lazy var arrowLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .systemPink
+        view.textColor = UIColor.MyTheme.mainPinkColor
         view.text = ">"
+        view.font = UIFont.MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

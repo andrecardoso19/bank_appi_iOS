@@ -19,6 +19,7 @@ final class EditDataPickerTableViewCell: UITableViewCell {
     //MARK: - UIElements
     private lazy var titleLable: UILabel = {
         let view = UILabel()
+        view.font = .MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -27,9 +28,9 @@ final class EditDataPickerTableViewCell: UITableViewCell {
         let view = UITextField()
         view.borderStyle = .roundedRect
         view.textAlignment = .center
-        view.textColor = .systemPink
+        view.textColor = .MyTheme.mainPinkColor
         view.text = "Selecionar"
-        view.backgroundColor = .systemGray5
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.inputView = Picker
         view.inputAccessoryView = toolBar
         view.layer.cornerRadius = 5

@@ -15,7 +15,7 @@ class EditDataHeaderView: UIView {
     private lazy var titleLabel: UILabel = {
        let view = UILabel()
         view.text = "Editar"
-        view.font = UIFont.boldSystemFont(ofSize: 24)
+        view.font = .MyTheme.boldTitleText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -23,7 +23,8 @@ class EditDataHeaderView: UIView {
     private lazy var deleteButton: UIButton = {
         let view = UIButton(type: .custom)
         view.setTitle("Excluir", for: .normal)
-        let color: UIColor = .systemRed
+        view.titleLabel?.font = UIFont.MyTheme.defaultText
+        let color: UIColor = .MyTheme.deleteTextColor
         view.setTitleColor(color, for: .normal)
         view.addTarget(self, action: #selector(performDelete), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -14,5 +14,7 @@ extension UIColor {
           static var mainGrayButtonColor: UIColor = .systemGray5
           static var backgroundColor: UIColor = .systemBackground
           static var secondaryBackgroundColor: UIColor = .secondarySystemBackground
+          static var loginTextColor: UIColor = .white
+          static var deleteTextColor: UIColor = .systemRed
       }
 }

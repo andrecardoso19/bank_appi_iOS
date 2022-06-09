@@ -16,8 +16,8 @@ class EditDataFooterView: UIView {
     private lazy var confirmEditButton: UIButton = {
        let view = UIButton()
         view.setTitle("Confirmar edição", for: .normal)
-        view.backgroundColor = .systemPink
-        view.tintColor = .white
+        view.backgroundColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.backgroundColor
         view.addTarget(self, action: #selector(performEdit), for: .touchUpInside)
         view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false

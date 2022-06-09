@@ -20,8 +20,8 @@ class RegisterFooterView: UIView {
     //MARK: - UIElements
     private lazy var registerButton: UIButton = {
        let view = UIButton()
-        view.backgroundColor = .systemPink
-        view.tintColor = .white
+        view.backgroundColor = UIColor.MyTheme.mainPinkColor
+        view.tintColor = UIColor.MyTheme.backgroundColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Cadastrar", for: .normal)
         view.addTarget(self, action: #selector(performRegister), for: .touchUpInside)

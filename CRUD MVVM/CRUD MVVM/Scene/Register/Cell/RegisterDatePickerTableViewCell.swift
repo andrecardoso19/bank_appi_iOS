@@ -17,7 +17,7 @@ final class RegisterDatePickerTableViewCell: UITableViewCell {
     //titlelabel
     private lazy var titleLabel: UILabel = {
        let view = UILabel()
-        view.font = UIFont(name: "Nunito-Bold", size: 16)
+        view.font = UIFont.MyTheme.defaultText
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -26,9 +26,10 @@ final class RegisterDatePickerTableViewCell: UITableViewCell {
     lazy var registerTextField: UITextField = {
        let view = UITextField()
         view.textAlignment = .center
-        view.textColor = .systemPink
+        view.textColor = UIColor.MyTheme.mainPinkColor
         view.text = "Selecionar"
-        view.backgroundColor = .systemGray5
+        view.font = UIFont.MyTheme.defaultText
+        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
         view.inputView = datePicker
         view.inputAccessoryView = toolBar
         view.layer.cornerRadius = 5
@@ -48,7 +49,7 @@ final class RegisterDatePickerTableViewCell: UITableViewCell {
         let view = UIDatePicker()
         view.backgroundColor = .clear
         view.datePickerMode = .date
-        view.tintColor = .systemPink
+        view.tintColor = UIColor.MyTheme.mainPinkColor
         view.preferredDatePickerStyle = .wheels
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

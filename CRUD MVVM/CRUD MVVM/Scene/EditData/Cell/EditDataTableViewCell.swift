@@ -15,6 +15,7 @@ final class EditDataTableViewCell: UITableViewCell {
     //MARK: - UIElements
     private lazy var titleLable: UILabel = {
         let view = UILabel()
+        view.font = UIFont.MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

@@ -16,6 +16,7 @@ final class EditDataDatePickerTableViewCell: UITableViewCell {
     //MARK: - UIElements
     private lazy var titleLable: UILabel = {
         let view = UILabel()
+        view.font = .MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -24,9 +25,9 @@ final class EditDataDatePickerTableViewCell: UITableViewCell {
         let view = UITextField()
         view.textAlignment = .left
         view.borderStyle = .roundedRect
-        view.textColor = .systemPink
+        view.textColor = .MyTheme.mainPinkColor
         view.text = "Selecionar"
-        view.backgroundColor = .systemGray5
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.inputView = datePicker
         view.inputAccessoryView = toolBar
         view.layer.cornerRadius = 5
@@ -46,7 +47,7 @@ final class EditDataDatePickerTableViewCell: UITableViewCell {
         let view = UIDatePicker()
         view.backgroundColor = .clear
         view.datePickerMode = .date
-        view.tintColor = .systemPink
+        view.tintColor = .MyTheme.mainPinkColor
         view.preferredDatePickerStyle = .wheels
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
