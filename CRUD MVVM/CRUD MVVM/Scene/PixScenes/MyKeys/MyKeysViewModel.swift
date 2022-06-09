@@ -39,10 +39,10 @@ final class MyKeysViewModel {
     weak var delegate: MyKeysViewModelDelegate?
     
     var optionKeyInformation: [OptionKeyData] = [
-        OptionKeyData(imageTitle: "person.crop.square.filled.and.at.rectangle", keyTitle: "CPF", keyText: "S/ Cadastro"),
-        OptionKeyData(imageTitle: "person.badge.key", keyTitle: "Chave Aleatória", keyText: "S/ Cadastro"),
-        OptionKeyData(imageTitle: "iphone", keyTitle: "Telefone", keyText: "S/ Cadastro"),
-        OptionKeyData(imageTitle: "envelope", keyTitle: "E-mail", keyText: "S/ Cadastro")
+        OptionKeyData(imageTitle: "person.crop.square.filled.and.at.rectangle", keyTitle: "CPF", keyText: "Cadastrar Nova Chave"),
+        OptionKeyData(imageTitle: "person.badge.key", keyTitle: "Chave Aleatória", keyText: "Cadastrar Nova Chave"),
+        OptionKeyData(imageTitle: "iphone", keyTitle: "Telefone", keyText: "Cadastrar Nova Chave"),
+        OptionKeyData(imageTitle: "envelope", keyTitle: "E-mail", keyText: "Cadastrar Nova Chave")
     ]
     
     
