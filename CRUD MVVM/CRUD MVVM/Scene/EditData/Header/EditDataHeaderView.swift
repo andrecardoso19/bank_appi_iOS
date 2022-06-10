@@ -14,7 +14,7 @@ class EditDataHeaderView: UIView {
     
     private lazy var titleLabel: UILabel = {
        let view = UILabel()
-        view.text = "Editar"
+        view.text = "Edite seus dados cadastrados"
         view.font = .MyTheme.boldTitleText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -35,6 +35,8 @@ class EditDataHeaderView: UIView {
         super.init(frame: .zero)
         setupView()
         setupLayoutConstraints()
+        
+        self.backgroundColor = .MyTheme.backgroundColor
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +45,7 @@ class EditDataHeaderView: UIView {
     
     func setupView() {
         self.addSubview(titleLabel)
-        self.addSubview(deleteButton)
+        //self.addSubview(deleteButton)
     }
     
     func setupLayoutConstraints() {
@@ -51,9 +53,9 @@ class EditDataHeaderView: UIView {
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             
-            deleteButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            deleteButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            deleteButton.widthAnchor.constraint(equalToConstant:90)
+//            deleteButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+//            deleteButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+//            deleteButton.widthAnchor.constraint(equalToConstant:90)
         ])
     }
     

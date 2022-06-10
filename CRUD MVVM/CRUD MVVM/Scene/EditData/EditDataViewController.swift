@@ -82,10 +82,10 @@ extension EditDataViewController {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = EditDataHeaderView()
         header.viewModel = viewModel
-        
+
         return header
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         EditDataHeaderView.height
     }
@@ -201,15 +201,7 @@ extension EditDataViewController {
 
 extension EditDataViewController: EditDataViewModelDelegate {
     func pushToIntro() {
-        //let introViewController = IntroViewController()
-        
-        let navigationController = self.presentingViewController as? UINavigationController
-            
-            self.dismiss(animated: true) {
-              let _ = navigationController?.popToRootViewController(animated: true)
-            }
-        
-        displayAlert(title: "Sucesso", message: "Cadastro deletado")
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func displayAlert(title: String, message: String) {
