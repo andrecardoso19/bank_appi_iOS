@@ -35,6 +35,9 @@ struct OptionKeyData {
     var keyText: String
 }
 
+
+    let optionSelected: String = ""
+
 final class MyKeysViewModel {
     weak var delegate: MyKeysViewModelDelegate?
     
@@ -44,6 +47,30 @@ final class MyKeysViewModel {
         OptionKeyData(imageTitle: "iphone", keyTitle: "Telefone", keyText: "Cadastrar Nova Chave"),
         OptionKeyData(imageTitle: "envelope", keyTitle: "E-mail", keyText: "Cadastrar Nova Chave")
     ]
+    
+    
+    func verifyPixKey() -> String{
+        
+        let registerpix = RegisterPixKeyViewModel()
+        let registerpixController = RegisterPixKeyViewController()
+        let select = registerpix.optionSelected
+        let changedPicker: String
+        
+        if allPix[loginIndex].cpfKey == "Cadastrar Nova Chave"{
+            
+            
+            pushToRegisterPix()
+            registerpixController.selectOptionTextField.text = "CPF"
+            changedPicker = registerpixController.selectOptionTextField.text!
+            
+            return changedPicker
+            
+            
+        }
+        
+        return ""
+        
+    }
     
     
     //MARK: - verifyPix
