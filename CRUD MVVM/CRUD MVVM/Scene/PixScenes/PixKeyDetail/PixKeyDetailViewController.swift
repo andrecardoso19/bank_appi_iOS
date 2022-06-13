@@ -32,7 +32,7 @@ class PixKeyDetailViewController: UIViewController {
     private lazy var descriptionLabel: UILabel = {
        let view = UILabel()
         view.text = "Visualizar sua chave PIX"
-        view.font = .boldSystemFont(ofSize: 24)
+        view.font = .MyTheme.boldTitleText
         view.numberOfLines = -1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -42,6 +42,7 @@ class PixKeyDetailViewController: UIViewController {
     private lazy var keyTypeDescriptionLabel: UILabel = {
        let view = UILabel()
         view.text = "Tipo de chave:"
+        view.font = .MyTheme.defaultBoldText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -49,6 +50,7 @@ class PixKeyDetailViewController: UIViewController {
     private lazy var keyTypeLabel: UILabel = {
        let view = UILabel()
         view.text = "Chave Aleatória(teste)"
+        view.font = .MyTheme.defaultBoldText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -57,6 +59,7 @@ class PixKeyDetailViewController: UIViewController {
     private lazy var yourKeyDescriptionLabel: UILabel = {
        let view = UILabel()
         view.text = "Sua chave:"
+        view.font = .MyTheme.defaultBoldText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -64,6 +67,7 @@ class PixKeyDetailViewController: UIViewController {
     private lazy var yourKeyLabel: UILabel = {
        let view = UILabel()
         view.text = "chave chave"
+        view.font = .MyTheme.defaultBoldText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -71,9 +75,8 @@ class PixKeyDetailViewController: UIViewController {
     //MARK: - deleteKey button
     private lazy var deleteKeyButton: UIButton = {
        let view = UIButton()
-        view.backgroundColor = .systemPink
-        let color: UIColor = .systemBackground
-        view.setTitleColor(color, for: .normal)
+        view.backgroundColor = .MyTheme.mainPinkColor
+        view.setTitleColor(UIColor.MyTheme.backgroundColor, for: .normal)
         view.setTitle("Excluir chave", for: .normal)
         view.layer.cornerRadius = 5
         view.addTarget(self, action: #selector(performDelete), for: .touchUpInside)

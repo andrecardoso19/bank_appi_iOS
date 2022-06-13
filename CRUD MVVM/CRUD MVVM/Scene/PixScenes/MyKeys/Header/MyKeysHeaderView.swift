@@ -17,6 +17,7 @@ class MyKeysHeaderView: UIView {
     private lazy var descriptionLabel: UILabel = {
        let view = UILabel()
         view.text = "Visualize, adicione ou exclua chaves Pix:"
+        view.font = .MyTheme.defaultBoldText
         view.numberOfLines = -1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -25,7 +26,7 @@ class MyKeysHeaderView: UIView {
     //MARK: - init
     init(){
         super.init(frame: .zero)
-        self.backgroundColor = .systemBackground
+        self.backgroundColor = .MyTheme.backgroundColor
         setupView()
         setupLayoutConstraints()
     }

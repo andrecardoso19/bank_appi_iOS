@@ -19,8 +19,8 @@ class ConfirmViewController: UIViewController {
     private lazy var firstLabel: UILabel = {
         let view = UILabel()
         view.text = "Esse é seu pix copia e cola"
-        view.font = .boldSystemFont(ofSize: 24)
-        view.textColor = .black
+        view.font = .MyTheme.boldTitleText
+        view.textColor = .MyTheme.defaultTextColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -28,8 +28,8 @@ class ConfirmViewController: UIViewController {
     private lazy var confirmLabel: UILabel = {
         let view = UILabel()
         view.text = PixChargeViewModel.copyPasteKey
-        view.font = UIFont.systemFont(ofSize: 18)
-        view.textColor = .black
+        view.font = .MyTheme.defaultText
+        view.textColor = .MyTheme.defaultTextColor
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -37,9 +37,9 @@ class ConfirmViewController: UIViewController {
     
     private lazy var qrCodeImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .MyTheme.mainPinkColor
         view.layer.cornerRadius = 20
-        view.tintColor = .white
+        view.tintColor = .MyTheme.whiteTextColor
         let image = UIImage(systemName: "qrcode")
         view.image = image
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -49,8 +49,8 @@ class ConfirmViewController: UIViewController {
     private lazy var button: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("CONFIRMAR", for: .normal)
-        view.backgroundColor = .systemPink
-        view.setTitleColor(UIColor.white, for: .normal)
+        view.backgroundColor = .MyTheme.mainPinkColor
+        view.setTitleColor(UIColor.MyTheme.whiteTextColor, for: .normal)
         view.layer.cornerRadius = 9
         view.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +60,7 @@ class ConfirmViewController: UIViewController {
     private lazy var copyButton: UIButton = {
         let view = UIButton(frame: .zero)
         view.setImage(UIImage.init(systemName: "doc.on.doc.fill"), for: .normal)
-        view.tintColor = .systemPink
+        view.tintColor = .MyTheme.mainPinkColor
         view.addTarget(self, action: #selector(copyValue), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
