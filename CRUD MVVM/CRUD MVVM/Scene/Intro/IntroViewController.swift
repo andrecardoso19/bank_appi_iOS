@@ -40,10 +40,11 @@ class IntroViewController: UIViewController {
     
     private lazy var loginButton: UIButton = {
         let view = UIButton()
-        view.backgroundColor = .white
-        view.tintColor = .systemPink
+        view.backgroundColor = UIColor.MyTheme.whiteTextColor
+        view.tintColor = UIColor.MyTheme.mainPinkColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Entre na sua conta", for: .normal)
+        view.titleLabel?.font = UIFont.MyTheme.defaultText
         view.addTarget(self, action: #selector(self.performLogin), for: .touchUpInside)
         view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -53,9 +54,10 @@ class IntroViewController: UIViewController {
     private lazy var signInButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = nil
-        view.tintColor = .white
+        view.tintColor = UIColor.MyTheme.whiteTextColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Criar uma conta", for: .normal)
+        view.titleLabel?.font = UIFont.MyTheme.defaultText
         view.addTarget(self, action: #selector(self.performRegister), for: .touchUpInside)
         view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false

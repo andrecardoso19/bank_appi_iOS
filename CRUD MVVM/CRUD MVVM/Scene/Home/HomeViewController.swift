@@ -105,11 +105,11 @@ extension HomeViewController{
         switch (indexPath.row){
         case 5:
             //edit data
-            print("edit")
             editIndex = loginIndex
             let editDataViewModel = EditDataViewModel(reloadDelegate: self)
             let editDataViewController = EditDataViewController(viewModel: editDataViewModel)
-            self.present(editDataViewController, animated: true)
+            self.navigationController?.pushViewController(editDataViewController, animated: true)
+            //self.present(editDataViewController, animated: true)
             
         case 6:
             viewModel.popToRoot()

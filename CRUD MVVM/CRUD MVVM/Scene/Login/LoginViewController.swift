@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = UIColor.MyTheme.mainPinkColor
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -25,7 +25,8 @@ class LoginViewController: UIViewController {
     //Label
     private lazy var agencyLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .white
+        view.textColor = .MyTheme.whiteTextColor
+        view.font = .MyTheme.defaultText
         view.text = "Agência com dígito"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -33,8 +34,9 @@ class LoginViewController: UIViewController {
     
     private lazy var accountLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .white
+        view.textColor = .MyTheme.whiteTextColor
         view.text = "Conta com dígito"
+        view.font = .MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -43,8 +45,8 @@ class LoginViewController: UIViewController {
     private lazy var agencyTextField: UITextField = {
        let view = UITextField()
         view.borderStyle = .roundedRect
-        view.backgroundColor = .white
-        view.textColor = .systemPink
+        view.backgroundColor = .MyTheme.whiteTextColor
+        view.textColor = .MyTheme.mainPinkColor
         view.placeholder = "0000-0"
         view.translatesAutoresizingMaskIntoConstraints = false
         //view.keyboardType = .decimalPad
@@ -55,8 +57,8 @@ class LoginViewController: UIViewController {
     private lazy var accountTextField: UITextField = {
        let view = UITextField()
         view.borderStyle = .roundedRect
-        view.backgroundColor = .white
-        view.textColor = .systemPink
+        view.backgroundColor = .MyTheme.whiteTextColor
+        view.textColor = .MyTheme.mainPinkColor
         view.placeholder = "00000000-0"
         view.translatesAutoresizingMaskIntoConstraints = false
         //view.keyboardType = .decimalPad
@@ -67,7 +69,8 @@ class LoginViewController: UIViewController {
     // MARK: - password label and textfield
     private lazy var passwordLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .white
+        view.textColor = .MyTheme.whiteTextColor
+        view.font = .MyTheme.defaultText
         view.text = "Senha(6 Dígitos)"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -77,7 +80,8 @@ class LoginViewController: UIViewController {
        let view = UITextField()
         view.placeholder = "******"
         view.borderStyle = .roundedRect
-        view.textColor = .systemPink
+        view.backgroundColor = .MyTheme.whiteTextColor
+        view.textColor = .MyTheme.mainPinkColor
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isSecureTextEntry = true
         return view
@@ -86,10 +90,11 @@ class LoginViewController: UIViewController {
     // MARK: -button
     private lazy var loginButton: UIButton = {
        let view = UIButton()
-        view.backgroundColor = .white
-        view.tintColor = .systemPink
+        view.backgroundColor = .MyTheme.whiteTextColor
+        view.tintColor = .MyTheme.mainPinkColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Entrar", for: .normal)
+        view.titleLabel?.font = .MyTheme.defaultText
         view.layer.cornerRadius = 5
         view.addTarget(self, action: #selector(performLogin), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -99,7 +104,7 @@ class LoginViewController: UIViewController {
     //MARK: - logo
     private lazy var logoImageView: UIImageView = {
         let view = UIImageView()
-        view.tintColor = .systemBackground
+        view.tintColor = .MyTheme.whiteTextColor
         view.image = UIImage(systemName: "banknote.fill")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -108,8 +113,8 @@ class LoginViewController: UIViewController {
     private lazy var logoLabel: UILabel = {
         let view = UILabel()
         view.text = "BankApp"
-        view.font = .boldSystemFont(ofSize: 24)
-        view.textColor = .systemBackground
+        view.font = .MyTheme.boldTitleText
+        view.textColor = .MyTheme.whiteTextColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

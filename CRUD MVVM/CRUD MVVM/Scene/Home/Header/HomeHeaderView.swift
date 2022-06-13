@@ -17,14 +17,14 @@ class HomeHeaderView: UIView {
     private lazy var greetingsLabel: UILabel = {
        let view = UILabel()
         view.text = "Olá TESTE"
-        view.font = UIFont.boldSystemFont(ofSize: 28)
+        view.font = UIFont.MyTheme.boldTitleText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var iconImageView: UIImageView = {
        let view = UIImageView()
-        view.tintColor = .systemPink
+        view.tintColor = .MyTheme.mainPinkColor
         view.image = UIImage(systemName: "person.circle.fill")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -33,7 +33,7 @@ class HomeHeaderView: UIView {
     //MARK: - Card
     private lazy var cardImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = UIColor.MyTheme.mainPinkColor
         view.layer.cornerRadius = 7
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -42,8 +42,8 @@ class HomeHeaderView: UIView {
     private lazy var balanceTitleLabel: UILabel = {
        let view = UILabel()
         view.text = "Saldo:"
-        view.font = UIFont.systemFont(ofSize: 21)
-        view.textColor = .systemBackground
+        view.font = UIFont.MyTheme.homeHeaderText
+        view.textColor = UIColor.MyTheme.whiteTextColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -51,8 +51,8 @@ class HomeHeaderView: UIView {
     private lazy var balanceAmountLabel: UILabel = {
          let view = UILabel()
          view.text = "R$999,99"
-         view.font = UIFont.systemFont(ofSize: 21)
-         view.textColor = .systemBackground
+        view.font = UIFont.MyTheme.homeHeaderText
+         view.textColor = UIColor.MyTheme.whiteTextColor
          view.translatesAutoresizingMaskIntoConstraints = false
          return view
     }()
@@ -60,7 +60,7 @@ class HomeHeaderView: UIView {
     private lazy var hideBalanceButton: UIButton = {
        let view = UIButton()
         let image = UIImage(systemName: "eye.fill")
-        view.tintColor = .systemBackground
+        view.tintColor = UIColor.MyTheme.whiteTextColor
         view.setImage(image, for: .normal)
         view.addTarget(self, action: #selector(performHideBalance), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -73,9 +73,10 @@ class HomeHeaderView: UIView {
          view.layer.cornerRadius = 5
          view.setImage(UIImage(systemName: "barcode"), for: .normal)
          view.setTitle("Pagar", for: .normal)
-         view.backgroundColor = .systemGray5
-        view.tintColor = .systemPink
-        view.setTitleColor(.systemPink, for: .normal)
+        view.titleLabel?.font = UIFont.MyTheme.defaultText
+        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.tintColor = UIColor.MyTheme.mainPinkColor
+        view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
          view.translatesAutoresizingMaskIntoConstraints = false
          return view
     }()
@@ -85,9 +86,10 @@ class HomeHeaderView: UIView {
          view.layer.cornerRadius = 5
          view.setImage(UIImage(systemName: "dpad.fill"), for: .normal)
          view.setTitle("Pix", for: .normal)
-         view.backgroundColor = .systemGray5
-        view.tintColor = .systemPink
-        view.setTitleColor(.systemPink, for: .normal)
+        view.titleLabel?.font = UIFont.MyTheme.defaultText
+        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.tintColor = UIColor.MyTheme.mainPinkColor
+        view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
         view.addTarget(self, action: #selector(performPix), for: .touchUpInside)
          view.translatesAutoresizingMaskIntoConstraints = false
          return view
@@ -98,9 +100,10 @@ class HomeHeaderView: UIView {
          view.layer.cornerRadius = 5
          view.setImage(UIImage(systemName: "dollarsign.circle.fill"), for: .normal)
          view.setTitle("Transferir", for: .normal)
-         view.backgroundColor = .systemGray5
-        view.tintColor = .systemPink
-        view.setTitleColor(.systemPink, for: .normal)
+        view.titleLabel?.font = UIFont.MyTheme.defaultText
+        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.tintColor = UIColor.MyTheme.mainPinkColor
+        view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
          view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(performLogOut), for: .touchUpInside)
          return view
@@ -110,7 +113,8 @@ class HomeHeaderView: UIView {
     private lazy var agencyLabel: UILabel = {
         let view = UILabel()
         view.text = "Agência: 1-9"
-        view.textColor = .systemBackground
+        view.textColor = UIColor.MyTheme.whiteTextColor
+        view.font = UIFont.MyTheme.homeHeaderText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -118,7 +122,8 @@ class HomeHeaderView: UIView {
     private lazy var accountLabel: UILabel = {
         let view = UILabel()
         view.text = "Conta: 00000-0"
-        view.textColor = .systemBackground
+        view.textColor = UIColor.MyTheme.whiteTextColor
+        view.font = UIFont.MyTheme.homeHeaderText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -139,6 +144,7 @@ class HomeHeaderView: UIView {
         greetingsLabel.text = greetingsText
         balanceAmountLabel.text = balanceText
         accountLabel.text = accountText
+        self.backgroundColor = .MyTheme.backgroundColor
     }
     
     func addSubView() {

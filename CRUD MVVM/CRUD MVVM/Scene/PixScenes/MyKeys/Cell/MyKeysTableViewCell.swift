@@ -15,7 +15,7 @@ class MyKeysTableViewCell: UITableViewCell {
     //MARK: - UIElements
     private lazy var keyImageView: UIImageView = {
        let view = UIImageView()
-        view.tintColor = .systemPink
+        view.tintColor = .MyTheme.mainPinkColor
         view.image = UIImage(systemName: "key")
         //view.backgroundColor = .systemGray5
         view.layer.cornerRadius = 10
@@ -27,7 +27,7 @@ class MyKeysTableViewCell: UITableViewCell {
         let view = UILabel()
         view.text = "Chave Aleatoria"
         view.numberOfLines = -1
-        view.font = .systemFont(ofSize: 12)
+        view.font = .MyTheme.myKeysText
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -36,6 +36,7 @@ class MyKeysTableViewCell: UITableViewCell {
     private lazy var keyLabel: UILabel = {
        let view = UILabel()
         view.text = "key teste"
+        view.font = .MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
