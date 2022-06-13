@@ -144,6 +144,7 @@ class HomeHeaderView: UIView {
         greetingsLabel.text = greetingsText
         balanceAmountLabel.text = balanceText
         accountLabel.text = accountText
+        self.backgroundColor = .MyTheme.backgroundColor
     }
     
     func addSubView() {

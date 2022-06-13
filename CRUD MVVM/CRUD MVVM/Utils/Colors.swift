@@ -11,6 +11,7 @@ import UIKit
 extension UIColor {
       struct MyTheme {
           static var mainPinkColor: UIColor = .systemPink
+          //static var mainPinkColor: UIColor = UIColor(red: 203/255, green: 41/255, blue: 41/255, alpha: 1)
           static var mainGrayButtonColor: UIColor = .systemGray5
           static var backgroundColor: UIColor = .systemBackground
           static var secondaryBackgroundColor: UIColor = .secondarySystemBackground

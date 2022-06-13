@@ -47,7 +47,7 @@ final class HomeTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // setupconstraints
         setupConstraints()
-        contentView.backgroundColor = .systemBackground
+        contentView.backgroundColor = .MyTheme.backgroundColor
     }
     
     required init?(coder: NSCoder) {
