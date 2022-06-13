@@ -12,6 +12,7 @@ import CloudKit
 class RegisterPixKeyViewController: UIViewController {
     let viewModel: RegisterPixKeyViewModel?
     
+    
 
      lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone", "E-mail"]
 
@@ -128,6 +129,7 @@ class RegisterPixKeyViewController: UIViewController {
     private lazy var Picker: UIPickerView = {
         let view = UIPickerView()
         view.backgroundColor = .clear
+        view.isUserInteractionEnabled = false
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -139,6 +141,7 @@ class RegisterPixKeyViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         self.viewModel?.delegate = self
+        
         
         setupView()
         setupLayoutConstraints()
@@ -238,6 +241,7 @@ extension RegisterPixKeyViewController: UIPickerViewDelegate, UIPickerViewDataSo
         let chooseOption: String = pickerOptions[row]
         selectOptionTextField.text = chooseOption
         viewModel?.optionSelected = chooseOption
+        
             
         }
     }
