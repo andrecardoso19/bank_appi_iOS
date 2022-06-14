@@ -18,5 +18,6 @@ extension UIColor {
           static var whiteTextColor: UIColor = .white
           static var deleteTextColor: UIColor = .systemRed
           static var defaultTextColor: UIColor = .label
+          static var buttonTextColor: UIColor = .black
       }
 }

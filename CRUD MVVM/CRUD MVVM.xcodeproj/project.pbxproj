@@ -10,6 +10,7 @@
 		0E17111D28410337006E8BFD /* PixChargeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17111C28410337006E8BFD /* PixChargeViewModel.swift */; };
 		0E17111F28410354006E8BFD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17111E28410354006E8BFD /* ConfirmViewController.swift */; };
 		0EE5BE9A284016170074B27B /* CobrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5BE99284016170074B27B /* CobrarViewController.swift */; };
+		28745F2A2858D88C00D0EB66 /* TransactionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28745F292858D88C00D0EB66 /* TransactionSuccessViewController.swift */; };
 		30A55E772841310C00C86045 /* CopyAndPasteConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A55E762841310C00C86045 /* CopyAndPasteConfirm.swift */; };
 		900479F5283D36BE005D7208 /* HomePixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F4283D36BE005D7208 /* HomePixViewController.swift */; };
 		900479FA283D5C21005D7208 /* MyKeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F9283D5C21005D7208 /* MyKeysViewController.swift */; };
@@ -110,6 +111,7 @@
 		0E17111C28410337006E8BFD /* PixChargeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixChargeViewModel.swift; sourceTree = "<group>"; };
 		0E17111E28410354006E8BFD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		0EE5BE99284016170074B27B /* CobrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CobrarViewController.swift; sourceTree = "<group>"; };
+		28745F292858D88C00D0EB66 /* TransactionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSuccessViewController.swift; sourceTree = "<group>"; };
 		30A55E762841310C00C86045 /* CopyAndPasteConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteConfirm.swift; sourceTree = "<group>"; };
 		900479F4283D36BE005D7208 /* HomePixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePixViewController.swift; sourceTree = "<group>"; };
 		900479F9283D5C21005D7208 /* MyKeysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeysViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,14 @@
 				0E17111C28410337006E8BFD /* PixChargeViewModel.swift */,
 			);
 			path = PixCobrar;
+			sourceTree = "<group>";
+		};
+		28745F282858D83E00D0EB66 /* Success */ = {
+			isa = PBXGroup;
+			children = (
+				28745F292858D88C00D0EB66 /* TransactionSuccessViewController.swift */,
+			);
+			path = Success;
 			sourceTree = "<group>";
 		};
 		900479F3283D36A7005D7208 /* HomePix */ = {
@@ -463,6 +473,7 @@
 		E6832F7D2821814F009BCC19 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				28745F282858D83E00D0EB66 /* Success */,
 				900F941B2837C1CF005FF369 /* OldScenes */,
 				900F941A2837C1BF005FF369 /* PixScenes */,
 				E6B237022821EB22008F206A /* EditData */,
@@ -813,6 +824,7 @@
 				0E17111F28410354006E8BFD /* ConfirmViewController.swift in Sources */,
 				E68B14E3281AAFE900A8F50B /* ShowDataHeaderView.swift in Sources */,
 				E68B14E5281AB7DB00A8F50B /* ShowDataViewModel.swift in Sources */,
+				28745F2A2858D88C00D0EB66 /* TransactionSuccessViewController.swift in Sources */,
 				D3917D20282BE79300988F02 /* LoginViewModel.swift in Sources */,
 				E61FDA482822CA0800252EB7 /* EditDataFooterView.swift in Sources */,
 				9097C397285218FB00701562 /* Fonts.swift in Sources */,
