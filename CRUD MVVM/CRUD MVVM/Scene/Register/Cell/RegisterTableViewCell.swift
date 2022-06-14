@@ -27,8 +27,36 @@ final class RegisterTableViewCell: UITableViewCell {
         view.textAlignment = .left
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isSecureTextEntry = false
+        
+        view.rightView = accessoryAlertImageView
+        view.rightViewMode = .always
+        
         return view
     }()
+    
+    // MARK: - alert elements
+    lazy var accessoryAlertImageView: UIImageView = {
+        //added on registertextfield
+        let view = UIImageView()
+        view.tintColor = .MyTheme.deleteTextColor
+        let image = UIImage(named: "registerTextFieldAlertImage")
+        //let image = UIImage(systemName: "key")
+        view.image = image
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
+    lazy var tipLabel: UILabel = {
+        let view = UILabel()
+        view.text = "Aqui está sua dica"
+        view.font = .MyTheme.tipText
+        view.textColor = .MyTheme.deleteTextColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
     
     // MARK: = Cell lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
@@ -55,6 +83,7 @@ final class RegisterTableViewCell: UITableViewCell {
     private func setupConstraints() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(registerTextField)
+        contentView.addSubview(tipLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
@@ -62,10 +91,14 @@ final class RegisterTableViewCell: UITableViewCell {
             titleLabel.widthAnchor.constraint(equalToConstant: 110),
             titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-            registerTextField.topAnchor.constraint(equalTo: self.topAnchor),
             registerTextField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10),
             registerTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            registerTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            registerTextField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            registerTextField.heightAnchor.constraint(equalToConstant: 30),
+            
+            tipLabel.widthAnchor.constraint(equalTo: registerTextField.widthAnchor),
+            tipLabel.centerXAnchor.constraint(equalTo: registerTextField.centerXAnchor),
+            tipLabel.topAnchor.constraint(equalTo: registerTextField.bottomAnchor)
         ])
     }
 }

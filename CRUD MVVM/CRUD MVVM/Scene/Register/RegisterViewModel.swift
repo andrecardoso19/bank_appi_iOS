@@ -129,7 +129,7 @@ final class RegisterViewModel {
         
         for i in 0...clients.count-1{
             if newClientCpf == clients[i].cpf {
-                self.delegate?.displayAlert(title: "Erro", message: "CPF já cadastrado")
+                //self.delegate?.displayAlert(title: "Erro", message: "CPF já cadastrado")
                 return false
             }
         }
@@ -137,7 +137,7 @@ final class RegisterViewModel {
         if cpfVerify == true {
             return true
         } else {
-            self.delegate?.displayAlert(title: "Erro", message: "CPF Inválido")
+            //self.delegate?.displayAlert(title: "Erro", message: "CPF Inválido")
             return false
         }
     }
@@ -152,7 +152,7 @@ final class RegisterViewModel {
         if validate == true {
             return true
         } else {
-            self.delegate?.displayAlert(title: "Erro", message: "E-mail Inválido")
+            //self.delegate?.displayAlert(title: "Erro", message: "E-mail Inválido")
             return false
         }
     }
@@ -198,6 +198,66 @@ final class RegisterViewModel {
         let digitReturn = (totalSum * 10) % 11
         
         return digitReturn
+    }
+    
+    //MARK: - TextFieldVerifications
+    func verifyTextFieldRealTime(index: Int, value: String) -> Bool {
+        switch index {
+        // name
+        case 0:
+            if value == "" {
+                return false
+            }
+            else {
+                return true
+            }
+        //cpf
+        case 1:
+            let verifyCpf = verifyCpf(cpf: value)
+            
+            if verifyCpf == true {
+                return true
+            }
+            else {
+                return false
+            }
+        //email
+        case 3:
+            let verifyEmail = verifyEmail(email: value)
+            
+            if verifyEmail == true {
+                return true
+            }
+            else {
+                return false
+            }
+        //netWorth
+        case 5:
+            if value == "" {
+                return false
+            }
+            else {
+                return true
+            }
+        //password
+        case 6:
+            if value == "" {
+                return false
+            }
+            else {
+                return true
+            }
+        //confirmPassword
+        case 7:
+            if value == "" {
+                return false
+            }
+            else {
+                return true
+            }
+        default:
+            return false
+        }
     }
 }
 

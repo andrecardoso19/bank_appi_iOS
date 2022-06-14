@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // view model's type, declaration on init
     let viewModel: RegisterViewModel
     
@@ -75,7 +75,7 @@ extension RegisterViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        45
+        65
     }
     
     // MARK: - Cell, SetupCell, TextfieldData
@@ -110,11 +110,20 @@ extension RegisterViewController {
             cell.registerTextField.delegate = self
             let info = viewModel.registerInformation[indexPath.row]
             cell.setupView(title: info.title, placeholder: info.placeholder, keyboardType: info.keyboardType, isSecure: info.isSecure)
+            
             return cell
         }
     }
     
-    //textfield did begin editing
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
+
+//MARK: - Textfield delegate
+extension RegisterViewController:  UITextFieldDelegate{
+    //MARK: - textfield DidChangeSelection/did begin editing
     func textFieldDidChangeSelection(_ textField: UITextField) {
         additionalCellTextFieldSetup(textField)
     }
@@ -123,10 +132,110 @@ extension RegisterViewController {
         additionalCellTextFieldSetup(textField)
     }
     
-}
-
-extension RegisterViewController{
-    //MARK: - Textfields
+    //MARK: - TextFieldDidEndEditing verifications
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let indexPath = IndexPath(row: textField.tag, section: 0)
+        let cell = tableView.cellForRow(at: indexPath) as? RegisterTableViewCell
+        
+        switch textField.tag{
+        // name
+        case 0:
+             let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //cpf
+        case 1:
+            if textField.text == "" {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+                break
+            }
+            
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "CPF inválido ou já registrado"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //email
+        case 3:
+            if textField.text == "" {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+                break
+            }
+            
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "E-mail inválido"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //netWorth
+        case 5:
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //password
+        case 6:
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //confirmPassword
+        case 7:
+            if textField.text != viewModel.newClientPassword {
+                cell?.tipLabel.text = "Senhas não correspondem"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+                break
+            }
+            
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        default:
+            print("")
+        }
+    }
+    
     // ENUM
     enum textFieldData: Int{
         case nameTextField
