@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class RegisterSucess: UIViewController {
     //MARK: - Labels Texts
@@ -56,33 +57,35 @@ class RegisterSucess: UIViewController {
     }
    
     
-    //MARK: - init
-    init(){
-        super.init(nibName: nil, bundle: nil)
-        setupView()
-        setupConstraints()
-        view.backgroundColor = .white
-    }
+    //MARK: - viewdidload
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let presentationController = presentationController as? UISheetPresentationController {
+                presentationController.detents = [
+                    .large()
+                ]
+            setupView()
+            setupConstraints()
+            view.backgroundColor = .white
     }
-    
+    }
     //MARK: - SetupView
-    private func setupView(){
+        func setupView(){
         view.addSubview(sucessLabel)
         view.addSubview(infoLabel)
         view.addSubview(infosAccount)
         view.addSubview(pigImageRegisterSucess)
         view.addSubview(sucessButton)
         
+        
     }
     //MARK: - Constraints
-    private func setupConstraints(){
+        func setupConstraints(){
         NSLayoutConstraint.activate([
-            sucessLabel.topAnchor.constraint(equalTo: view.topAnchor,constant: 40),
-            sucessLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16),
-            sucessLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -16),
+            sucessLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 20),
+            sucessLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 16),
+            sucessLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -16),
             infoLabel.topAnchor.constraint(equalTo: sucessLabel.bottomAnchor,constant: 20),
             infoLabel.leadingAnchor.constraint(equalTo: sucessLabel.leadingAnchor),
             infoLabel.trailingAnchor.constraint(equalTo: sucessLabel.trailingAnchor),
