@@ -31,7 +31,7 @@ class HomePixViewController: UIViewController {
     //MARK: phone button
     private lazy var phoneButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(named: "iphone", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "ic_celular")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
@@ -53,7 +53,7 @@ class HomePixViewController: UIViewController {
     //MARK: QRCode button
     private lazy var qrCodeButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "qrcode", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "ic_qrcode")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
@@ -75,7 +75,7 @@ class HomePixViewController: UIViewController {
     //MARK: Email button
     private lazy var emailButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "envelope", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "ic_email")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
@@ -97,7 +97,7 @@ class HomePixViewController: UIViewController {
     //MARK: CPF button
     private lazy var cpfButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "person.crop.square.filled.and.at.rectangle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "ic_cpf")
         view.setImage(image, for: .normal)
         //view.setBackgroundImage(image, for: .normal)
         view.layer.cornerRadius = 20
@@ -121,7 +121,7 @@ class HomePixViewController: UIViewController {
     //MARK: random key button
     private lazy var randomKeyButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "key", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "ic_key")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
@@ -144,7 +144,7 @@ class HomePixViewController: UIViewController {
     //MARK: copy paste button
     private lazy var copyPasteButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "doc.text", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "ic_copiaecola")
         view.setImage(image, for: .normal)
         view.addTarget(self, action: #selector(performGoToCopyAndPaste), for: .touchUpInside)
         view.layer.cornerRadius = 20
@@ -168,7 +168,7 @@ class HomePixViewController: UIViewController {
     //MARK: transfer button
     private lazy var transferButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "arrow.up.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "ic_transferir")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
@@ -191,7 +191,7 @@ class HomePixViewController: UIViewController {
     //MARK: charge button
     private lazy var chargeButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "arrow.down.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "ic_receber")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
@@ -228,7 +228,7 @@ class HomePixViewController: UIViewController {
     private lazy var myKeysImageView: UIImageView = {
         let view = UIImageView()
         view.tintColor = .MyTheme.whiteTextColor
-        view.image = UIImage(systemName: "key.fill")
+        let image = UIImage(named: "ic_key")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
