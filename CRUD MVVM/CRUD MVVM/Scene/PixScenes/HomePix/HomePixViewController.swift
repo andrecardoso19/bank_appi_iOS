@@ -31,7 +31,7 @@ class HomePixViewController: UIViewController {
     //MARK: phone button
     private lazy var phoneButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "iphone", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(named: "iphone", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
