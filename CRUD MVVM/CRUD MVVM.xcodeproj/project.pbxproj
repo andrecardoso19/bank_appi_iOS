@@ -43,6 +43,7 @@
 		9097C3B72852810000701562 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A72852810000701562 /* Nunito-Italic.ttf */; };
 		9097C3B82852810000701562 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A82852810000701562 /* Nunito-LightItalic.ttf */; };
 		9097C3B92852810000701562 /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */; };
+		B8437A9F2858E75400F272D5 /* RegisterSucess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8437A9E2858E75400F272D5 /* RegisterSucess.swift */; };
 		C9CE78682847A91A0001AD09 /* PixCopyAndPasteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */; };
 		C9EA70522840036200AE6393 /* CopyAndPasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70512840036200AE6393 /* CopyAndPasteView.swift */; };
 		C9EA70542840037600AE6393 /* CopyAndPasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */; };
@@ -143,6 +144,7 @@
 		9097C3A72852810000701562 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
 		9097C3A82852810000701562 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B8437A9E2858E75400F272D5 /* RegisterSucess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSucess.swift; sourceTree = "<group>"; };
 		C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixCopyAndPasteViewModel.swift; sourceTree = "<group>"; };
 		C9EA70512840036200AE6393 /* CopyAndPasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteView.swift; sourceTree = "<group>"; };
 		C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 				E6832F83282181DC009BCC19 /* Cell */,
 				E68B14D2281AA5CF00A8F50B /* RegisterViewModel.swift */,
 				E68B14CD281AA51B00A8F50B /* RegisterViewController.swift */,
+				B8437A9E2858E75400F272D5 /* RegisterSucess.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				E6C32C38282430FF00067CE6 /* CoreDataService.swift in Sources */,
 				D326CB4028368F540030AB89 /* PixHomeViewController.swift in Sources */,
 				D3917D25282C24F900988F02 /* HomeViewModel.swift in Sources */,
+				B8437A9F2858E75400F272D5 /* RegisterSucess.swift in Sources */,
 				D3917D2B282C253500988F02 /* HomeTableViewCell.swift in Sources */,
 				E68B14DF281AAEE100A8F50B /* ShowDataViewController.swift in Sources */,
 				90047A05283D691F005D7208 /* MyKeysFooterView.swift in Sources */,
