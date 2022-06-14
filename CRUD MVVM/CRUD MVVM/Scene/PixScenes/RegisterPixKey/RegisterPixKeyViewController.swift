@@ -131,7 +131,6 @@ class RegisterPixKeyViewController: UIViewController {
     private lazy var Picker: UIPickerView = {
         let view = UIPickerView()
         view.backgroundColor = .clear
-        view.isUserInteractionEnabled = false
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -284,4 +283,6 @@ extension RegisterPixKeyViewController: UITextFieldDelegate{
     }
     
 }
+
+
 

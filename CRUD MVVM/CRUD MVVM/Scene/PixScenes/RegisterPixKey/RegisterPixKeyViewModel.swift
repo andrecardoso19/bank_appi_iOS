@@ -90,6 +90,15 @@ final class RegisterPixKeyViewModel {
         
         let select = optionSelected
         
+        if select == "CPF" && select == "Chave Aleatória"{
+            
+            registerpixcontroller.yourKeyDescriptionLabel.text = "Sua Chave:"
+            changedLabel = registerpixcontroller.yourKeyDescriptionLabel.text!
+            
+            return changedLabel
+            
+        }
+        
         if select == "Telefone"{
             
             registerpixcontroller.yourKeyDescriptionLabel.text = "Insira seu celular:"

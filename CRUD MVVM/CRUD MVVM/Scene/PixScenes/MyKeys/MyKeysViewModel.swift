@@ -51,9 +51,8 @@ final class MyKeysViewModel {
     
     func verifyPixKey() -> String{
         
-        let registerpix = RegisterPixKeyViewModel()
+        
         let registerpixController = RegisterPixKeyViewController()
-        let select = registerpix.optionSelected
         let changedPicker: String
         
         if allPix[loginIndex].cpfKey == "Cadastrar Nova Chave"{
