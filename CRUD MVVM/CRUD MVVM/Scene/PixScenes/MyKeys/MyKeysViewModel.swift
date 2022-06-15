@@ -49,27 +49,8 @@ final class MyKeysViewModel {
     ]
     
     
-    func verifyPixKey() -> String{
-        
-        
-        let registerpixController = RegisterPixKeyViewController()
-        let changedPicker: String
-        
-        if allPix[loginIndex].cpfKey == "Cadastrar Nova Chave"{
-            
-            
-            pushToRegisterPix()
-            registerpixController.selectOptionTextField.text = "CPF"
-            changedPicker = registerpixController.selectOptionTextField.text!
-            
-            return changedPicker
-            
-            
-        }
-        
-        return ""
-        
-    }
+    
+   
     
     
     //MARK: - verifyPix
@@ -93,6 +74,21 @@ final class MyKeysViewModel {
             optionKeyInformation[3].keyText = allPix[loginIndex].emailKey
         }
     }
+    
+    func verifyPixKeys(){
+        
+        if optionKeyInformation[editPixIndex].keyText == "Cadastrar Nova Chave"{
+            
+            pushToRegisterPix()
+            
+        }else{
+            
+            pushToPixDetail()
+            
+        }
+        
+    }
+    
     
     //MARK: - Navigation functions
     func goToPixDetail(){

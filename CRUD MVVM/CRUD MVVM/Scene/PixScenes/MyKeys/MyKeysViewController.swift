@@ -79,7 +79,7 @@ extension MyKeysViewController: UITableViewDelegate, UITableViewDataSource {
         
         editPixIndex = indexPath.row
         
-        viewModel.verifyPixKey()
+        viewModel.verifyPixKeys()
         viewModel.goToPixDetail()
     }
     
@@ -94,6 +94,9 @@ extension MyKeysViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         MyKeysHeaderView.Height
     }
+    
+   
+    
     
 //    //MARK: - Footer
 //    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

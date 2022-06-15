@@ -15,9 +15,55 @@ class RegisterPixKeyViewController: UIViewController {
     
 
      lazy var pickerOptions: [String] = ["CPF", "Chave Aleatória", "Telefone", "E-mail"]
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if editPixIndex == 0{
+            selectOptionTextField.text = "CPF"
+            viewModel?.optionSelected = "CPF"
+            yourKeyTextField.text = viewModel?.verifySelection()
+            
+        }
+        
+        if editPixIndex == 1{
+            selectOptionTextField.text = "Chave Aleatória"
+            viewModel?.optionSelected = "Chave Aleatória"
+            yourKeyTextField.text = viewModel?.verifySelection()
+            
+        }
+        
+        if editPixIndex == 2{
+            selectOptionTextField.text = "Telefone"
+            viewModel?.optionSelected = "Telefone"
+            yourKeyTextField.text = viewModel?.verifySelection()
+            
+            yourKeyDescriptionLabel.text = viewModel?.phoneOptionSelectedLabelName()
+            
+           
+            yourKeyTextField.tag = 1
+            
+            yourKeyTextField.placeholder = viewModel?.phoneOptionSelectedPlaceholder()
+            yourKeyTextField.isUserInteractionEnabled = true
+            
+        }
+        
+        if editPixIndex == 3{
+            selectOptionTextField.text = "E-mail"
+            viewModel?.optionSelected = "E-mail"
+            yourKeyTextField.text = viewModel?.verifySelection()
+            
+            yourKeyDescriptionLabel.text = viewModel?.phoneOptionSelectedLabelName()
+            
+            yourKeyTextField.tag = 2
+            
+            yourKeyTextField.placeholder = viewModel?.phoneOptionSelectedPlaceholder()
+            yourKeyTextField.isUserInteractionEnabled = true
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         // Do any additional setup after loading the view.
         // Present modaly in botton
@@ -142,6 +188,8 @@ class RegisterPixKeyViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         self.viewModel?.delegate = self
+        
+        
         
         
         setupView()
