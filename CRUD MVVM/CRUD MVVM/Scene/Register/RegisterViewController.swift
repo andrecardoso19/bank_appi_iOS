@@ -169,6 +169,20 @@ extension RegisterViewController:  UITextFieldDelegate{
                 cell?.tipLabel.isHidden = true
                 cell?.accessoryAlertImageView.isHidden = true
             }
+        //date
+        case 2:
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: viewModel.newClientBirthDate)
+            
+            if verify == false {
+                let cell = tableView.cellForRow(at: indexPath) as? RegisterDatePickerTableViewCell
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                let cell = tableView.cellForRow(at: indexPath) as? RegisterDatePickerTableViewCell
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
         //email
         case 3:
             if textField.text == "" {
@@ -185,6 +199,20 @@ extension RegisterViewController:  UITextFieldDelegate{
                 cell?.tipLabel.isHidden = false
                 cell?.accessoryAlertImageView.isHidden = false
             } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+            //monthlyIncome
+        case 4:
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: viewModel.newClientMonthlyIncome)
+                
+            if verify == false {
+                let cell = tableView.cellForRow(at: indexPath) as? RegisterPickerTableViewCell
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                let cell = tableView.cellForRow(at: indexPath) as? RegisterPickerTableViewCell
                 cell?.tipLabel.isHidden = true
                 cell?.accessoryAlertImageView.isHidden = true
             }
@@ -236,7 +264,7 @@ extension RegisterViewController:  UITextFieldDelegate{
         }
     }
     
-    // ENUM
+    //MARK: - Enum textfields
     enum textFieldData: Int{
         case nameTextField
         case cpfTextField
@@ -248,7 +276,7 @@ extension RegisterViewController:  UITextFieldDelegate{
         case confirmPasswordTextField
     }
     
-    // Value Changed
+    //MARK: - ValueChanged
     @objc func valueChanged(_ textField: UITextField){
         switch textField.tag{
         case textFieldData.nameTextField.rawValue:

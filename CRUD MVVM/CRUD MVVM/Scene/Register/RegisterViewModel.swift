@@ -221,6 +221,14 @@ final class RegisterViewModel {
             else {
                 return false
             }
+        // date
+        case 2:
+            if value == "" || value == "Selecionar"{
+                return false
+            }
+            else {
+                return true
+            }
         //email
         case 3:
             let verifyEmail = verifyEmail(email: value)
@@ -230,6 +238,14 @@ final class RegisterViewModel {
             }
             else {
                 return false
+            }
+        // monthly income
+        case 4:
+            if value == "" || value == "Selecionar"{
+                return false
+            }
+            else {
+                return true
             }
         //netWorth
         case 5:
