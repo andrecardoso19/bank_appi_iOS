@@ -35,9 +35,9 @@ class LoginViewController: UIViewController {
     private lazy var welcomeLabel: UILabel = {
         let view = UILabel()
         
-        let attrs1 = [NSAttributedString.Key.font : UIFont(name: "Nunito-Regular", size: 27), NSAttributedString.Key.foregroundColor : UIColor.white]
-        let attrs2 = [NSAttributedString.Key.font : UIFont(name: "Nunito-Regular", size: 27), NSAttributedString.Key.foregroundColor : UIColor.black]
-        let attrs3 = [NSAttributedString.Key.font : UIFont(name: "Nunito-Regular", size: 27), NSAttributedString.Key.foregroundColor : UIColor.white]
+        let attrs1 = [NSAttributedString.Key.font : UIFont.MyTheme.boldTitleText, NSAttributedString.Key.foregroundColor : UIColor.white]
+        let attrs2 = [NSAttributedString.Key.font : UIFont.MyTheme.boldTitleText, NSAttributedString.Key.foregroundColor : UIColor.black]
+        let attrs3 = [NSAttributedString.Key.font : UIFont.MyTheme.boldTitleText, NSAttributedString.Key.foregroundColor : UIColor.white]
         
         let atritutedString1 = NSMutableAttributedString(string: "Seja bem-vindo ao ", attributes: attrs1 as [NSAttributedString.Key : Any])
         let atritutedString2 = NSMutableAttributedString(string: "OinkBank, ", attributes: attrs2 as [NSAttributedString.Key : Any])
@@ -159,7 +159,8 @@ class LoginViewController: UIViewController {
     
     //MARK: - register tap button
     @objc func registerTapButton(){
-        
+        let registerViewController = RegisterViewController()
+        self.navigationController?.pushViewController(registerViewController, animated: true)
     }
 
     
@@ -207,16 +208,16 @@ class LoginViewController: UIViewController {
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             
-            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            welcomeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            welcomeLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.60),
+            welcomeLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -70),
+            welcomeLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            welcomeLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.70),
             
             rectangleImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             rectangleImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             rectangleImage.widthAnchor.constraint(equalTo: view.widthAnchor),
             rectangleImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.40),
             
-            logoImageView.bottomAnchor.constraint(equalTo: agencyLabel.topAnchor, constant: -50),
+            logoImageView.topAnchor.constraint(equalTo: rectangleImage.bottomAnchor, constant: -50),
             logoImageView.centerXAnchor.constraint(equalTo: self.loginButton.centerXAnchor),
             logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
             logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 0.5),
