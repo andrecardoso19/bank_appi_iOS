@@ -55,8 +55,11 @@ class TransactionSuccessViewController: UIViewController {
     
     //MARK: Função botão
     @objc func tappedButton(){
-        //TODO: Colocar o navigation da maneira que será no app
-        print("Botão apertado")
+//        let homeVC = HomeViewController()
+//        self.navigationController?.popToViewController(homeVC, animated: true)
+        //        self.navigationController?.popViewController(animated: true)
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 5], animated: true)
     }
     
     //MARK: Funções de UI (Add e constraints)
