@@ -44,6 +44,7 @@
 		9097C3B82852810000701562 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A82852810000701562 /* Nunito-LightItalic.ttf */; };
 		9097C3B92852810000701562 /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */; };
 		B8437A9F2858E75400F272D5 /* RegisterSucess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8437A9E2858E75400F272D5 /* RegisterSucess.swift */; };
+		B89E0891285A3B36006D6AA0 /* TransferFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E0890285A3B36006D6AA0 /* TransferFail.swift */; };
 		C9CE78682847A91A0001AD09 /* PixCopyAndPasteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */; };
 		C9EA70522840036200AE6393 /* CopyAndPasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70512840036200AE6393 /* CopyAndPasteView.swift */; };
 		C9EA70542840037600AE6393 /* CopyAndPasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */; };
@@ -145,6 +146,7 @@
 		9097C3A82852810000701562 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
 		B8437A9E2858E75400F272D5 /* RegisterSucess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSucess.swift; sourceTree = "<group>"; };
+		B89E0890285A3B36006D6AA0 /* TransferFail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFail.swift; sourceTree = "<group>"; };
 		C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixCopyAndPasteViewModel.swift; sourceTree = "<group>"; };
 		C9EA70512840036200AE6393 /* CopyAndPasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteView.swift; sourceTree = "<group>"; };
 		C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteViewController.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				E6832F7F28218165009BCC19 /* Register */,
 				D3917D21282C24E100988F02 /* Home */,
 				E6832F7E2821815B009BCC19 /* Intro */,
+				B89E0890285A3B36006D6AA0 /* TransferFail.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				901D0D7B28354C810095155D /* AllPix+CoreDataProperties.swift in Sources */,
 				E68B14CC281AA30E00A8F50B /* Colors.swift in Sources */,
 				900479FF283D5CC7005D7208 /* MyKeysTableViewCell.swift in Sources */,
+				B89E0891285A3B36006D6AA0 /* TransferFail.swift in Sources */,
 				E6B237092821EE9D008F206A /* EditDataTableViewCell.swift in Sources */,
 				D326CB4228368F630030AB89 /* PixHomeViewModel.swift in Sources */,
 				E6C7CA19281A940200D44104 /* AppDelegate.swift in Sources */,

@@ -67,6 +67,7 @@ class RegisterSucess: UIViewController {
                 ]
             setupView()
             setupConstraints()
+            self.navigationController?.isNavigationBarHidden = true
             view.backgroundColor = .white
     }
     }
