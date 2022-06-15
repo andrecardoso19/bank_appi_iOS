@@ -24,6 +24,7 @@
 		9010130F282E89F400C709FA /* Clients+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010130D282E89F400C709FA /* Clients+CoreDataClass.swift */; };
 		90101310282E89F400C709FA /* Clients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010130E282E89F400C709FA /* Clients+CoreDataProperties.swift */; };
 		90101694284E370E001F76AB /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90101693284E370E001F76AB /* CustomUITextField.swift */; };
+		9017574C285A4689006791CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9017574B285A4689006791CA /* Constants.swift */; };
 		901D0D7728353C670095155D /* Pix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D0D7628353C670095155D /* Pix.swift */; };
 		901D0D7A28354C810095155D /* AllPix+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D0D7828354C810095155D /* AllPix+CoreDataClass.swift */; };
 		901D0D7B28354C810095155D /* AllPix+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D0D7928354C810095155D /* AllPix+CoreDataProperties.swift */; };
@@ -126,6 +127,7 @@
 		9010130D282E89F400C709FA /* Clients+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Clients+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9010130E282E89F400C709FA /* Clients+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Clients+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90101693284E370E001F76AB /* CustomUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
+		9017574B285A4689006791CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		901D0D7628353C670095155D /* Pix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pix.swift; sourceTree = "<group>"; };
 		901D0D7828354C810095155D /* AllPix+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllPix+CoreDataClass.swift"; sourceTree = "<group>"; };
 		901D0D7928354C810095155D /* AllPix+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllPix+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 			children = (
 				E68B14CB281AA30E00A8F50B /* Colors.swift */,
 				9097C396285218FB00701562 /* Fonts.swift */,
+				9017574B285A4689006791CA /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				D3917D1E282BE65C00988F02 /* LoginViewController.swift in Sources */,
 				C9CE78682847A91A0001AD09 /* PixCopyAndPasteViewModel.swift in Sources */,
 				C9EA70542840037600AE6393 /* CopyAndPasteViewController.swift in Sources */,
+				9017574C285A4689006791CA /* Constants.swift in Sources */,
 				90047A03283D690D005D7208 /* MyKeysHeaderView.swift in Sources */,
 				D3917D29282C252200988F02 /* HomeHeaderView.swift in Sources */,
 				900F941D2837C1FE005FF369 /* RegisterPixKeyViewController.swift in Sources */,
