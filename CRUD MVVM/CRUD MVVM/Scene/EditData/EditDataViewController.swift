@@ -94,6 +94,10 @@ extension EditDataViewController {
         return viewModel.cellTitle.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        65
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 2:
@@ -152,6 +156,107 @@ extension EditDataViewController {
 
 //MARK: - Textfields
 extension EditDataViewController {
+    //MARK: - TextFieldDidEndEditing verifications
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let indexPath = IndexPath(row: textField.tag, section: 0)
+        let cell = tableView.cellForRow(at: indexPath) as? EditDataTableViewCell
+        
+        switch textField.tag{
+        // name
+        case 0:
+             let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //cpf
+        case 1:
+            if textField.text == "" {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+                break
+            }
+            
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "CPF inválido ou já registrado"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //date
+        case 2:
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: viewModel.editClientBirthDate)
+            
+            if verify == false {
+                let cell = tableView.cellForRow(at: indexPath) as? EditDataDatePickerTableViewCell
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                let cell = tableView.cellForRow(at: indexPath) as? RegisterDatePickerTableViewCell
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //email
+        case 3:
+            if textField.text == "" {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+                break
+            }
+            
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "E-mail inválido"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+            //monthlyIncome
+        case 4:
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: viewModel.editClientMonthlyIncome)
+                
+            if verify == false {
+                let cell = tableView.cellForRow(at: indexPath) as? EditDataPickerTableViewCell
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                let cell = tableView.cellForRow(at: indexPath) as? EditDataPickerTableViewCell
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        //netWorth
+        case 5:
+            let verify = viewModel.verifyTextFieldRealTime(index: textField.tag, value: textField.text ?? "")
+            
+            if verify == false {
+                cell?.tipLabel.text = "Campo obrigatório"
+                cell?.tipLabel.isHidden = false
+                cell?.accessoryAlertImageView.isHidden = false
+            } else {
+                cell?.tipLabel.isHidden = true
+                cell?.accessoryAlertImageView.isHidden = true
+            }
+        default:
+            print("")
+        }
+    }
+    
     // ENUM
     enum textFieldData: Int{
         case nameTextField

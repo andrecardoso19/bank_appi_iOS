@@ -159,6 +159,82 @@ final class EditDataViewModel {
         //dismissView()
         pushToIntro()
     }
+    
+    //MARK: - TextFieldVerifications
+    func verifyTextFieldRealTime(index: Int, value: String) -> Bool {
+        switch index {
+        // name
+        case 0:
+            if value == "" {
+                return false
+            }
+            else {
+                return true
+            }
+        //cpf
+        case 1:
+            let verifyCpf = verifyCpf(cpf: value)
+            
+            if verifyCpf == true {
+                return true
+            }
+            else {
+                return false
+            }
+        // date
+        case 2:
+            if value == "" || value == "Selecionar"{
+                return false
+            }
+            else {
+                return true
+            }
+        //email
+        case 3:
+            let verifyEmail = verifyEmail(email: value)
+            
+            if verifyEmail == true {
+                return true
+            }
+            else {
+                return false
+            }
+        // monthly income
+        case 4:
+            if value == "" || value == "Selecionar"{
+                return false
+            }
+            else {
+                return true
+            }
+        //netWorth
+        case 5:
+            if value == "" {
+                return false
+            }
+            else {
+                return true
+            }
+        //password
+        case 6:
+            if value == "" {
+                return false
+            }
+            else {
+                return true
+            }
+        //confirmPassword
+        case 7:
+            if value == "" {
+                return false
+            }
+            else {
+                return true
+            }
+        default:
+            return false
+        }
+    }
 }
 
 //MARK: - RegisterViewModeling Extension

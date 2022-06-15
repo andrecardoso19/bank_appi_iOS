@@ -14,8 +14,9 @@ final class EditDataDatePickerTableViewCell: UITableViewCell {
     static let reuseId: String = "EditDataDatePickerTableViewCell"
     
     //MARK: - UIElements
-    private lazy var titleLable: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let view = UILabel()
+        view.numberOfLines = -1
         view.font = .MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -32,6 +33,10 @@ final class EditDataDatePickerTableViewCell: UITableViewCell {
         view.inputAccessoryView = toolBar
         view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.rightView = accessoryAlertImageView
+        view.rightViewMode = .always
+        
         return view
     }()
     
@@ -53,6 +58,29 @@ final class EditDataDatePickerTableViewCell: UITableViewCell {
         return view
     }()
     
+    // MARK: - alert elements
+    lazy var accessoryAlertImageView: UIImageView = {
+        //added on registertextfield
+        let view = UIImageView()
+        view.tintColor = .MyTheme.deleteTextColor
+        let image = UIImage(named: "registerTextFieldAlertImage")
+        //let image = UIImage(systemName: "key")
+        view.image = image
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
+    lazy var tipLabel: UILabel = {
+        let view = UILabel()
+        view.text = "Aqui está sua dica"
+        view.font = .MyTheme.tipText
+        view.textColor = .MyTheme.deleteTextColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
     //MARK: = Cell lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -66,24 +94,30 @@ final class EditDataDatePickerTableViewCell: UITableViewCell {
     
     func setupView(viewModel: EditDataViewModel, titleLableText: String, editTextFieldText: String){
         self.viewModel = viewModel
-        titleLable.text = titleLableText
+        titleLabel.text = titleLableText
         editTextField.text = editTextFieldText
     }
     
     func setupConstraints(){
-        contentView.addSubview(titleLable)
+        contentView.addSubview(titleLabel)
         contentView.addSubview(editTextField)
         inputView?.addSubview(toolBar)
+        contentView.addSubview(tipLabel)
         
         NSLayoutConstraint.activate([
-            titleLable.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            titleLabel.widthAnchor.constraint(equalToConstant: 110),
+            titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-            editTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            editTextField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10),
+            editTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             editTextField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            editTextField.leadingAnchor.constraint(equalTo: self.centerXAnchor),
-            editTextField.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4),
-            editTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
+            editTextField.heightAnchor.constraint(equalToConstant: 30),
+            
+            tipLabel.widthAnchor.constraint(equalTo: editTextField.widthAnchor),
+            tipLabel.centerXAnchor.constraint(equalTo: editTextField.centerXAnchor),
+            tipLabel.topAnchor.constraint(equalTo: editTextField.bottomAnchor)
         ])
     }
     
