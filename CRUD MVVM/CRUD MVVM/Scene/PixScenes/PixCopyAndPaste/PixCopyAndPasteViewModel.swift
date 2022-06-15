@@ -67,7 +67,7 @@ final class PixCopyAndPasteViewModel {
         return true
     }
     
-    public func transferValue() {
+    public func transferValue() -> Bool{
         let verifyCpf = self.verifyCpf()
         let verifyBalance = self.verifyBalance(value: String(valueFromCopyPasteKey))
         let verifyDestination = self.verifyDestination()
@@ -83,9 +83,11 @@ final class PixCopyAndPasteViewModel {
                     displayAlert(message: "Transferência concluída", title: "SUCESSO", handler: nil)
                 }
             }
+            return true
             
         } else {
-            displayAlert(message: "Verifique se seu saldo é suficiente ou se não está tentando fazer a transferência para a mesma conta.", title: "Algo deu errado", handler: nil)
+//            displayAlert(message: "Verifique se seu saldo é suficiente ou se não está tentando fazer a transferência para a mesma conta.", title: "Algo deu errado", handler: nil)
+            return false
         }
     }
     
