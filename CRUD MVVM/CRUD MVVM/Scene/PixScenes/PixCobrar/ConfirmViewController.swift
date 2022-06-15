@@ -40,7 +40,7 @@ class ConfirmViewController: UIViewController {
         view.backgroundColor = .MyTheme.mainPinkColor
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.whiteTextColor
-        let image = UIImage(systemName: "qrcode")
+        let image = UIImage(named:  "ic_qrcode")
         view.image = image
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -59,7 +59,7 @@ class ConfirmViewController: UIViewController {
     
     private lazy var copyButton: UIButton = {
         let view = UIButton(frame: .zero)
-        view.setImage(UIImage.init(systemName: "doc.on.doc.fill"), for: .normal)
+        view.setImage(UIImage.init(named: "ic_copiaecola"), for: .normal)
         view.tintColor = .MyTheme.mainPinkColor
         view.addTarget(self, action: #selector(copyValue), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false

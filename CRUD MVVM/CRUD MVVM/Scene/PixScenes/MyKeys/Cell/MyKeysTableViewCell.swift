@@ -55,7 +55,7 @@ class MyKeysTableViewCell: UITableViewCell {
     
     //MARK: - Setup Function
     func setupView(imageName: String, keyType: String, keyText: String) {
-        keyImageView.image = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 10))
+        keyImageView.image = UIImage(named: imageName)
         keyTypeLabel.text = keyType
         keyLabel.text = keyText
     }
