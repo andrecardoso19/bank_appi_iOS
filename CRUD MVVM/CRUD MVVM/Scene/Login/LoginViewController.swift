@@ -12,8 +12,17 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.MyTheme.mainPinkColor
+        view.backgroundColor = .white
+        //UIColor.MyTheme.mainPinkColor
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.agencyTextField.addBottomLineWithColor(color: .black, width: 1.0)
+        self.accountTextField.addBottomLineWithColor(color: .black, width: 1.0)
+        self.passwordTextField.addBottomLineWithColor(color: .black, width: 1.0)
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         agencyTextField.text = ""
@@ -22,19 +31,52 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - UI Elements
+    
+    private lazy var welcomeLabel: UILabel = {
+        let view = UILabel()
+        
+        let attrs1 = [NSAttributedString.Key.font : UIFont.MyTheme.boldTitleText, NSAttributedString.Key.foregroundColor : UIColor.white]
+        let attrs2 = [NSAttributedString.Key.font : UIFont.MyTheme.boldTitleText, NSAttributedString.Key.foregroundColor : UIColor.black]
+        let attrs3 = [NSAttributedString.Key.font : UIFont.MyTheme.boldTitleText, NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        let atritutedString1 = NSMutableAttributedString(string: "Seja bem-vindo ao ", attributes: attrs1 as [NSAttributedString.Key : Any])
+        let atritutedString2 = NSMutableAttributedString(string: "OinkBank, ", attributes: attrs2 as [NSAttributedString.Key : Any])
+        let atritutedString3 = NSMutableAttributedString(string: "seu mais novo banco.", attributes: attrs3 as [NSAttributedString.Key : Any])
+        
+        
+        atritutedString1.append(atritutedString2)
+        atritutedString1.append(atritutedString3)
+        view.numberOfLines = 3
+        view.attributedText = atritutedString1
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    
+    }()
+    
+    private lazy var rectangleImage: UIImageView = {
+        let wallpapper = UIImageView()
+        wallpapper.tintColor = .MyTheme.mainPinkColor
+        wallpapper.translatesAutoresizingMaskIntoConstraints = false
+        wallpapper.image = UIImage(named: "rectangle1")
+        return wallpapper
+    }()
+    
+
     //Label
     private lazy var agencyLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .MyTheme.whiteTextColor
+        view.textColor = .black
+        //.MyTheme.whiteTextColor
         view.font = .MyTheme.defaultText
-        view.text = "Agência com dígito"
+        view.text = "Agência"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var accountLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .MyTheme.whiteTextColor
+        view.textColor = .black
+        //.MyTheme.whiteTextColor
         view.text = "Conta com dígito"
         view.font = .MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -44,10 +86,11 @@ class LoginViewController: UIViewController {
     //TextField
     private lazy var agencyTextField: UITextField = {
        let view = UITextField()
-        view.borderStyle = .roundedRect
+        view.borderStyle = .none
+        view.placeholder = "1-9"
         view.backgroundColor = .MyTheme.whiteTextColor
         view.textColor = .MyTheme.mainPinkColor
-        view.placeholder = "0000-0"
+        
         view.translatesAutoresizingMaskIntoConstraints = false
         //view.keyboardType = .decimalPad
         view.layer.cornerRadius = 5
@@ -56,10 +99,10 @@ class LoginViewController: UIViewController {
     
     private lazy var accountTextField: UITextField = {
        let view = UITextField()
-        view.borderStyle = .roundedRect
+        view.borderStyle = .none
+        view.placeholder = "1-9"
         view.backgroundColor = .MyTheme.whiteTextColor
         view.textColor = .MyTheme.mainPinkColor
-        view.placeholder = "00000000-0"
         view.translatesAutoresizingMaskIntoConstraints = false
         //view.keyboardType = .decimalPad
         view.layer.cornerRadius = 5
@@ -69,9 +112,10 @@ class LoginViewController: UIViewController {
     // MARK: - password label and textfield
     private lazy var passwordLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .MyTheme.whiteTextColor
+        view.textColor = .black
+        //.MyTheme.whiteTextColor
         view.font = .MyTheme.defaultText
-        view.text = "Senha(6 Dígitos)"
+        view.text = "Senha"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -79,7 +123,6 @@ class LoginViewController: UIViewController {
     private lazy var passwordTextField: UITextField = {
        let view = UITextField()
         view.placeholder = "******"
-        view.borderStyle = .roundedRect
         view.backgroundColor = .MyTheme.whiteTextColor
         view.textColor = .MyTheme.mainPinkColor
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -87,11 +130,11 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    // MARK: -button
+    // MARK: - login button
     private lazy var loginButton: UIButton = {
        let view = UIButton()
-        view.backgroundColor = .MyTheme.whiteTextColor
-        view.tintColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.tintColor = .black
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Entrar", for: .normal)
         view.titleLabel?.font = .MyTheme.defaultText
@@ -101,25 +144,38 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    //MARK: - logo
+    //MARK: -register button
+    private lazy var registerButton: UIButton = {
+       let view = UIButton()
+        view.tintColor = .black
+        view.setTitleColor(.tintColor, for: .normal)
+        view.setTitle("Não tem conta? Cadastre-se", for: .normal)
+        view.titleLabel?.font = .MyTheme.defaultText
+        view.layer.cornerRadius = 5
+        view.addTarget(self, action: #selector(registerTapButton), for: .touchUpInside)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    //MARK: - register tap button
+    @objc func registerTapButton(){
+        let registerViewController = RegisterViewController()
+        self.navigationController?.pushViewController(registerViewController, animated: true)
+    }
+
+    
+    
+    //MARK: - logo imageview
     private lazy var logoImageView: UIImageView = {
         let view = UIImageView()
         view.tintColor = .MyTheme.whiteTextColor
-        view.image = UIImage(systemName: "banknote.fill")
+        view.image = UIImage(named: "logo pig")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var logoLabel: UILabel = {
-        let view = UILabel()
-        view.text = "BankApp"
-        view.font = .MyTheme.boldTitleText
-        view.textColor = .MyTheme.whiteTextColor
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
 
-    
+
     //MARK: - init
     init(){
         super.init(nibName: nil, bundle: nil)
@@ -134,6 +190,9 @@ class LoginViewController: UIViewController {
     
     //MARK: - SetupView
     private func setupView(){
+        
+        view.addSubview(rectangleImage)
+        view.addSubview(welcomeLabel)
         view.addSubview(agencyLabel)
         view.addSubview(accountLabel)
         view.addSubview(agencyTextField)
@@ -142,12 +201,27 @@ class LoginViewController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
         view.addSubview(logoImageView)
-        view.addSubview(logoLabel)
+        view.addSubview(registerButton)
     }
     
     //MARK: - Constraints
     private func setupConstraints(){
         NSLayoutConstraint.activate([
+            
+            welcomeLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -70),
+            welcomeLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            welcomeLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.70),
+            
+            rectangleImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            rectangleImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            rectangleImage.widthAnchor.constraint(equalTo: view.widthAnchor),
+            rectangleImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.40),
+            
+            logoImageView.topAnchor.constraint(equalTo: rectangleImage.bottomAnchor, constant: -50),
+            logoImageView.centerXAnchor.constraint(equalTo: self.loginButton.centerXAnchor),
+            logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 0.5),
+            
             agencyLabel.topAnchor.constraint(equalTo: view.centerYAnchor),
             agencyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             
@@ -169,17 +243,14 @@ class LoginViewController: UIViewController {
             passwordTextField.leadingAnchor.constraint(equalTo: passwordLabel.leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: accountTextField.trailingAnchor),
             
-            loginButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+            loginButton.widthAnchor.constraint(equalTo: passwordTextField.widthAnchor),
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
             
-            logoImageView.bottomAnchor.constraint(equalTo: agencyLabel.topAnchor, constant: -80),
-            logoImageView.centerXAnchor.constraint(equalTo: self.loginButton.centerXAnchor),
-            logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4),
-            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 0.6),
+            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
+            registerButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
+            registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            logoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 0),
-            logoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
@@ -206,3 +277,18 @@ extension LoginViewController: LoginViewModelDelegate {
         self.navigationController?.pushViewController(homeViewController, animated: true)
     }
 }
+
+extension UIView {
+    
+    func addBottomLineWithColor(color: UIColor, width: CGFloat) {
+        
+        let bottomBorderLine = CALayer()
+        bottomBorderLine.backgroundColor = color.cgColor
+        bottomBorderLine.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
+        self.layer.addSublayer(bottomBorderLine)
+        
+
+    }
+}
+
+
