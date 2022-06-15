@@ -114,18 +114,19 @@ class CopyAndPasteConfirmViewController: UIViewController {
     
     @objc func confirmPix(sender:UIButton){
         pixCopyAndPastViewModel.transferValue()
-//        let HomePixViewController = HomePixViewController()
+        let succesViewController = TransactionSuccessViewController()
 //        self.navigationController?.pushViewController(HomePixViewController, animated: true)
-        print("teste")
-        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+//        print("teste")
+//        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+//        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+        self.navigationController?.pushViewController(succesViewController, animated: true)
     }
     
-    func teste() {
-        
-        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
-    }
+//    func teste() {
+//
+//        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+//        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+//    }
     
     override func loadView() {
         super.loadView()
@@ -142,7 +143,7 @@ class CopyAndPasteConfirmViewController: UIViewController {
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Confirmação"
-        pixCopyAndPastViewModel.delegate = self
+//        pixCopyAndPastViewModel.delegate = self
     }
     
     private func addSubviews(){
@@ -184,15 +185,15 @@ class CopyAndPasteConfirmViewController: UIViewController {
     
 }
 
-extension CopyAndPasteConfirmViewController: PixCopyAndPasteViewModelDelegate {
-
-    
-    func displayAlert(message: String, title: String, handler: UIAlertAction?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let actionAlert = UIAlertAction(title: "OK", style: .default, handler: {(alert: UIAlertAction) in self.teste() })
-        alert.addAction(actionAlert)
-        self.present(alert, animated: true)
-    }
-    
-    
-}
+//extension CopyAndPasteConfirmViewController: PixCopyAndPasteViewModelDelegate {
+//
+//
+//    func displayAlert(message: String, title: String, handler: UIAlertAction?) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        let actionAlert = UIAlertAction(title: "OK", style: .default, handler: {(alert: UIAlertAction) in self.teste() })
+//        alert.addAction(actionAlert)
+//        self.present(alert, animated: true)
+//    }
+//
+//
+//}

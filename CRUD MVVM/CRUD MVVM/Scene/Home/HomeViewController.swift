@@ -24,6 +24,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         viewModel.fetchPixData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     // MARK: - setup TableView
     let tableView = UITableView(frame: .zero, style: .grouped)
     private func setupTableView(){
