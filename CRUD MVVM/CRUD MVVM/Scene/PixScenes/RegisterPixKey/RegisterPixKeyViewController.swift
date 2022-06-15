@@ -162,6 +162,7 @@ class RegisterPixKeyViewController: UIViewController {
          view.inputAccessoryView = toolBar
          view.layer.cornerRadius = 5
          view.isSecureTextEntry = false
+         view.isUserInteractionEnabled = false
          view.translatesAutoresizingMaskIntoConstraints = false
          return view
     }()
