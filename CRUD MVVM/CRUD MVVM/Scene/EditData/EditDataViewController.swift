@@ -125,12 +125,24 @@ extension EditDataViewController {
                 return UITableViewCell()}
             //textfielddata
             cell.editTextField.tag = indexPath.row
+            
+            if cell.editTextField.tag == 1 {
+                cell.editTextField.isUserInteractionEnabled = false
+            }
+            else {
+                cell.editTextField.isUserInteractionEnabled = true
+            }
+            
             cell.editTextField.delegate = self
             let cellTitle = viewModel.cellTitle[indexPath.row]
             let textFieldText = viewModel.showInfo(row: indexPath.row)
             cell.setupView(titleLableText: cellTitle, editTextFieldText: textFieldText)
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
