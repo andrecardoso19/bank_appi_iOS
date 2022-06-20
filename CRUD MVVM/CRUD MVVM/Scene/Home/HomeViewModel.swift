@@ -37,7 +37,7 @@ final class HomeViewModel {
            .init(imageTile: "ic_fourshopping", optionTitle: "BankShopping"),
            .init(imageTile: "ic_seguro", optionTitle: "Seguro"),
            .init(imageTile: "ic_editar_dados", optionTitle: "Editar dados"),
-           .init(imageTile: "ic_sairt", optionTitle: "Sair")
+           .init(imageTile: "ic_sair", optionTitle: "Sair")
        ]
 
     

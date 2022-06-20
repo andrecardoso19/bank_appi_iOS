@@ -68,12 +68,12 @@ final class HomeTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             logoImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            logoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            logoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             logoImageView.widthAnchor.constraint(equalToConstant: 30),
              logoImageView.heightAnchor.constraint(equalToConstant: 32),
             
             optionLabel.centerYAnchor.constraint(equalTo: logoImageView.centerYAnchor),
-            optionLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 30),
+            optionLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 40),
             
             arrowLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             arrowLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)

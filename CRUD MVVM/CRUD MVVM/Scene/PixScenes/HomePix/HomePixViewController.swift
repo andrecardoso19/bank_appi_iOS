@@ -35,6 +35,7 @@ class HomePixViewController: UIViewController {
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
+        view.imageView?.layer.transform = CATransform3DMakeScale(0.6, 0.6, 0.6)
         view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -58,6 +59,7 @@ class HomePixViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
         view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -80,6 +82,7 @@ class HomePixViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
         view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -103,6 +106,7 @@ class HomePixViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
         view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -126,6 +130,7 @@ class HomePixViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
         view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -150,6 +155,7 @@ class HomePixViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
         view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -173,6 +179,7 @@ class HomePixViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.tintColor = .MyTheme.mainPinkColor
         view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -197,6 +204,7 @@ class HomePixViewController: UIViewController {
         view.tintColor = .MyTheme.mainPinkColor
         view.backgroundColor = .MyTheme.mainGrayButtonColor
         view.addTarget(self, action: #selector(performGoToCharge), for: .touchUpInside)
+        view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
