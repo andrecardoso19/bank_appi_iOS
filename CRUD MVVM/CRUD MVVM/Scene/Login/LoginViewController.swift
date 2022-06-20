@@ -132,15 +132,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - login button
     private lazy var loginButton: UIButton = {
-       let view = UIButton()
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
-        view.tintColor = .black
-        view.setTitleColor(.tintColor, for: .normal)
-        view.setTitle("Entrar", for: .normal)
-        view.titleLabel?.font = .MyTheme.defaultText
-        view.layer.cornerRadius = 5
-        view.addTarget(self, action: #selector(performLogin), for: .touchUpInside)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        let view = UIButton.defaultButton(title: "Entrar", target: self, selector: #selector(performLogin))
         return view
     }()
     
