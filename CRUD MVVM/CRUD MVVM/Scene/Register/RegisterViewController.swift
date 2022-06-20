@@ -353,7 +353,7 @@ extension RegisterViewController: RegisterViewModelDelegate {
         self.navigationController?.pushViewController(homeViewController, animated: true)
     }
     func performSucess(){
-        let registerSucess = RegisterSucess()
+        let registerSucess = RegisterSucessViewController()
         self.navigationController?.pushViewController(registerSucess, animated: true)
     }
     

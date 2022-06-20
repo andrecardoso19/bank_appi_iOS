@@ -45,8 +45,9 @@
 		9097C3B72852810000701562 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A72852810000701562 /* Nunito-Italic.ttf */; };
 		9097C3B82852810000701562 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A82852810000701562 /* Nunito-LightItalic.ttf */; };
 		9097C3B92852810000701562 /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */; };
-		B8437A9F2858E75400F272D5 /* RegisterSucess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8437A9E2858E75400F272D5 /* RegisterSucess.swift */; };
-		B89E0891285A3B36006D6AA0 /* TransferFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E0890285A3B36006D6AA0 /* TransferFail.swift */; };
+		90AD79E32860B77600B7150B /* TransactionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AD79E22860B77600B7150B /* TransactionSuccessViewController.swift */; };
+		B8437A9F2858E75400F272D5 /* RegisterSucessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8437A9E2858E75400F272D5 /* RegisterSucessViewController.swift */; };
+		B89E0891285A3B36006D6AA0 /* TransferFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E0890285A3B36006D6AA0 /* TransferFailViewController.swift */; };
 		C9CE78682847A91A0001AD09 /* PixCopyAndPasteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */; };
 		C9EA70522840036200AE6393 /* CopyAndPasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70512840036200AE6393 /* CopyAndPasteView.swift */; };
 		C9EA70542840037600AE6393 /* CopyAndPasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */; };
@@ -149,8 +150,9 @@
 		9097C3A72852810000701562 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
 		9097C3A82852810000701562 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
-		B8437A9E2858E75400F272D5 /* RegisterSucess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSucess.swift; sourceTree = "<group>"; };
-		B89E0890285A3B36006D6AA0 /* TransferFail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFail.swift; sourceTree = "<group>"; };
+		90AD79E22860B77600B7150B /* TransactionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSuccessViewController.swift; sourceTree = "<group>"; };
+		B8437A9E2858E75400F272D5 /* RegisterSucessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSucessViewController.swift; sourceTree = "<group>"; };
+		B89E0890285A3B36006D6AA0 /* TransferFailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFailViewController.swift; sourceTree = "<group>"; };
 		C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixCopyAndPasteViewModel.swift; sourceTree = "<group>"; };
 		C9EA70512840036200AE6393 /* CopyAndPasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteView.swift; sourceTree = "<group>"; };
 		C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		900F941B2837C1CF005FF369 /* OldScenes */ = {
 			isa = PBXGroup;
 			children = (
+				E6832F7E2821815B009BCC19 /* Intro */,
 				D326CB3C28368F210030AB89 /* PixHome */,
 				E6832F802821816E009BCC19 /* ShowData */,
 			);
@@ -349,6 +352,23 @@
 				9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */,
 			);
 			path = "nunito-static";
+			sourceTree = "<group>";
+		};
+		90AD79E42860B81000B7150B /* SuccessScenes */ = {
+			isa = PBXGroup;
+			children = (
+				90AD79E22860B77600B7150B /* TransactionSuccessViewController.swift */,
+				B8437A9E2858E75400F272D5 /* RegisterSucessViewController.swift */,
+			);
+			path = SuccessScenes;
+			sourceTree = "<group>";
+		};
+		90AD79E52860B81F00B7150B /* ErrorScenes */ = {
+			isa = PBXGroup;
+			children = (
+				B89E0890285A3B36006D6AA0 /* TransferFailViewController.swift */,
+			);
+			path = ErrorScenes;
 			sourceTree = "<group>";
 		};
 		90D587F5283FA5C900A22B45 /* OldService */ = {
@@ -479,16 +499,14 @@
 		E6832F7D2821814F009BCC19 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				28745F282858D83E00D0EB66 /* Success */,
+				90AD79E52860B81F00B7150B /* ErrorScenes */,
+				90AD79E42860B81000B7150B /* SuccessScenes */,
 				900F941B2837C1CF005FF369 /* OldScenes */,
 				900F941A2837C1BF005FF369 /* PixScenes */,
 				E6B237022821EB22008F206A /* EditData */,
 				D3917D1C282BE64900988F02 /* Login */,
 				E6832F7F28218165009BCC19 /* Register */,
 				D3917D21282C24E100988F02 /* Home */,
-				E6832F7E2821815B009BCC19 /* Intro */,
-				B89E0890285A3B36006D6AA0 /* TransferFail.swift */,
-				B8437A9E2858E75400F272D5 /* RegisterSucess.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -658,7 +676,6 @@
 			children = (
 				E6C7CA50281A955700D44104 /* Client.swift */,
 				901D0D7628353C670095155D /* Pix.swift */,
-				285E3F98285A2342003C719B /* APIClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -836,7 +853,6 @@
 				0E17111F28410354006E8BFD /* ConfirmViewController.swift in Sources */,
 				E68B14E3281AAFE900A8F50B /* ShowDataHeaderView.swift in Sources */,
 				E68B14E5281AB7DB00A8F50B /* ShowDataViewModel.swift in Sources */,
-				28745F2A2858D88C00D0EB66 /* TransactionSuccessViewController.swift in Sources */,
 				D3917D20282BE79300988F02 /* LoginViewModel.swift in Sources */,
 				E61FDA482822CA0800252EB7 /* EditDataFooterView.swift in Sources */,
 				9097C397285218FB00701562 /* Fonts.swift in Sources */,
@@ -852,13 +868,13 @@
 				9010130F282E89F400C709FA /* Clients+CoreDataClass.swift in Sources */,
 				E68B14DB281AAA6E00A8F50B /* IntroViewModel.swift in Sources */,
 				D3927421282582ED0037F3E8 /* EditDataPickerTableViewCell.swift in Sources */,
+				90AD79E32860B77600B7150B /* TransactionSuccessViewController.swift in Sources */,
 				D3927417282553DE0037F3E8 /* RegisterDatePickerTableViewCell.swift in Sources */,
 				E68B14D9281AA68C00A8F50B /* RegisterFooterView.swift in Sources */,
 				901D0D7B28354C810095155D /* AllPix+CoreDataProperties.swift in Sources */,
-				285E3F99285A2342003C719B /* APIClient.swift in Sources */,
 				E68B14CC281AA30E00A8F50B /* Colors.swift in Sources */,
 				900479FF283D5CC7005D7208 /* MyKeysTableViewCell.swift in Sources */,
-				B89E0891285A3B36006D6AA0 /* TransferFail.swift in Sources */,
+				B89E0891285A3B36006D6AA0 /* TransferFailViewController.swift in Sources */,
 				E6B237092821EE9D008F206A /* EditDataTableViewCell.swift in Sources */,
 				D326CB4228368F630030AB89 /* PixHomeViewModel.swift in Sources */,
 				E6C7CA19281A940200D44104 /* AppDelegate.swift in Sources */,
@@ -878,7 +894,7 @@
 				E6C32C38282430FF00067CE6 /* CoreDataService.swift in Sources */,
 				D326CB4028368F540030AB89 /* PixHomeViewController.swift in Sources */,
 				D3917D25282C24F900988F02 /* HomeViewModel.swift in Sources */,
-				B8437A9F2858E75400F272D5 /* RegisterSucess.swift in Sources */,
+				B8437A9F2858E75400F272D5 /* RegisterSucessViewController.swift in Sources */,
 				D3917D2B282C253500988F02 /* HomeTableViewCell.swift in Sources */,
 				E68B14DF281AAEE100A8F50B /* ShowDataViewController.swift in Sources */,
 				90047A05283D691F005D7208 /* MyKeysFooterView.swift in Sources */,

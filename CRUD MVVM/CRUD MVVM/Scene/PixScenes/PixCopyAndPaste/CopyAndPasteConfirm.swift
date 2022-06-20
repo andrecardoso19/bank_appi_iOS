@@ -120,8 +120,8 @@ class CopyAndPasteConfirmViewController: UIViewController {
             self.navigationController?.pushViewController(succesViewController, animated: true)
         }
         else {
-            //colocar tela de erro
-            print("eerroo")
+            let succesViewController = TransferFailViewController()
+            self.navigationController?.pushViewController(succesViewController, animated: true)
         }
         
 //        self.navigationController?.pushViewController(HomePixViewController, animated: true)

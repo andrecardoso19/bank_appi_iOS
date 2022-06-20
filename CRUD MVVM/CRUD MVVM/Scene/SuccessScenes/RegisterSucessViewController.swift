@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class RegisterSucess: UIViewController {
+class RegisterSucessViewController: UIViewController {
     //MARK: - Labels Texts
     private lazy var sucessLabel:UILabel = {
         let view = UILabel()

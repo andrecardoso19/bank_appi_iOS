@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class TransferFail: UIViewController {
+class TransferFailViewController: UIViewController {
     //MARK: - Labels Texts
     private lazy var errorLabel:UILabel = {
         let view = UILabel()
@@ -47,8 +47,8 @@ class TransferFail: UIViewController {
     
     //MARK: - Button Actions
     @objc func TapBack() {
-        self.navigationController?.popToRootViewController(animated: true)
-
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 5], animated: true)
     }
    
     
