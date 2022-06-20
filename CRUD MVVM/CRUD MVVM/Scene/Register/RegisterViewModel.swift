@@ -17,6 +17,7 @@ protocol RegisterViewModelDelegate: AnyObject {
     func onSuccessPopView()
     
     func onSuccessPushView()
+    func performSucess()
 }
 
 protocol RegisterViewModeling {
@@ -94,8 +95,6 @@ final class RegisterViewModel {
             //popViewController()
             
             autoLogin()
-            displayAlert(title: "Sucesso", message: "Cadastro concluído!")
-            
             print(newClient)
         }
     }
@@ -118,7 +117,7 @@ final class RegisterViewModel {
         for i in 0...clients.count-1 {
             if clients[i].cpf == newClientCpf{
                 loginIndex = i
-                pushToHome()
+                performregisterSucess()
             }
         }
         
@@ -228,9 +227,11 @@ extension RegisterViewModel: RegisterViewModeling {
         self.delegate?.onSuccessPushView()
     }
     
-    
     func popViewController() {
         self.delegate?.onSuccessPopView()
+    }
+    func performregisterSucess(){
+        self.delegate?.performSucess()
     }
     
     
