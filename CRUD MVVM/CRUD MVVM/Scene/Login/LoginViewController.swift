@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .MyTheme.backgroundColor
         //UIColor.MyTheme.mainPinkColor
     }
     
@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
     //Label
     private lazy var agencyLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .black
+        view.textColor = .MyTheme.defaultTextColor
         //.MyTheme.whiteTextColor
         view.font = .MyTheme.defaultText
         view.text = "Agência"
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
     
     private lazy var accountLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .black
+        view.textColor = .MyTheme.defaultTextColor
         //.MyTheme.whiteTextColor
         view.text = "Conta com dígito"
         view.font = .MyTheme.defaultText
@@ -88,7 +88,7 @@ class LoginViewController: UIViewController {
        let view = UITextField()
         view.borderStyle = .none
         view.placeholder = "1-9"
-        view.backgroundColor = .MyTheme.whiteTextColor
+        view.backgroundColor = .clear
         view.textColor = .MyTheme.mainPinkColor
         
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +101,7 @@ class LoginViewController: UIViewController {
        let view = UITextField()
         view.borderStyle = .none
         view.placeholder = "1-9"
-        view.backgroundColor = .MyTheme.whiteTextColor
+        view.backgroundColor = .clear
         view.textColor = .MyTheme.mainPinkColor
         view.translatesAutoresizingMaskIntoConstraints = false
         //view.keyboardType = .decimalPad
@@ -112,7 +112,7 @@ class LoginViewController: UIViewController {
     // MARK: - password label and textfield
     private lazy var passwordLabel: UILabel = {
        let view = UILabel()
-        view.textColor = .black
+        view.textColor = .MyTheme.defaultTextColor
         //.MyTheme.whiteTextColor
         view.font = .MyTheme.defaultText
         view.text = "Senha"
@@ -123,7 +123,7 @@ class LoginViewController: UIViewController {
     private lazy var passwordTextField: UITextField = {
        let view = UITextField()
         view.placeholder = "******"
-        view.backgroundColor = .MyTheme.whiteTextColor
+        view.backgroundColor = .clear
         view.textColor = .MyTheme.mainPinkColor
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isSecureTextEntry = true
@@ -139,7 +139,7 @@ class LoginViewController: UIViewController {
     //MARK: -register button
     private lazy var registerButton: UIButton = {
        let view = UIButton()
-        view.tintColor = .black
+        view.tintColor = .MyTheme.defaultTextColor
         view.setTitleColor(.tintColor, for: .normal)
         view.setTitle("Não tem conta? Cadastre-se", for: .normal)
         view.titleLabel?.font = .MyTheme.defaultText
@@ -275,7 +275,7 @@ extension UIView {
     func addBottomLineWithColor(color: UIColor, width: CGFloat) {
         
         let bottomBorderLine = CALayer()
-        bottomBorderLine.backgroundColor = color.cgColor
+        bottomBorderLine.backgroundColor = UIColor.MyTheme.defaultTextColor.cgColor
         bottomBorderLine.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
         self.layer.addSublayer(bottomBorderLine)
         

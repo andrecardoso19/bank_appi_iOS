@@ -22,6 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene:  windowScene)
         
         let rootViewController = LoginViewController()
+        //let rootViewController = Error404ViewController()
+        //let rootViewController = UnexpectedErrorViewController()
+        //let rootViewController = ReceivedTransferViewController()
         
         let navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
