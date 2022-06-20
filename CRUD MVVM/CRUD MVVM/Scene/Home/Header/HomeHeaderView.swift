@@ -25,7 +25,7 @@ class HomeHeaderView: UIView {
     private lazy var iconImageView: UIImageView = {
        let view = UIImageView()
         view.tintColor = .MyTheme.mainPinkColor
-        view.image = UIImage(systemName: "person.circle.fill")
+        view.image = UIImage(named: "ic_profile")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -59,7 +59,7 @@ class HomeHeaderView: UIView {
     
     private lazy var hideBalanceButton: UIButton = {
        let view = UIButton()
-        let image = UIImage(systemName: "eye.fill")
+        let image = UIImage(named: "ic_eye_visibility")
         view.tintColor = UIColor.MyTheme.whiteTextColor
         view.setImage(image, for: .normal)
         view.addTarget(self, action: #selector(performHideBalance), for: .touchUpInside)
@@ -70,8 +70,9 @@ class HomeHeaderView: UIView {
     //MARK: - Fast Action Buttons
     private lazy var payBillsButton: UIButton = {
         let view = UIButton()
+        let image = UIImage(named: "ic_barcode")
          view.layer.cornerRadius = 5
-         view.setImage(UIImage(systemName: "barcode"), for: .normal)
+        view.setImage(image, for: .normal)
          view.setTitle("Pagar", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
         view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
@@ -83,8 +84,9 @@ class HomeHeaderView: UIView {
     
     private lazy var pixButton: UIButton = {
         let view = UIButton()
+        let image = UIImage(named: "ic_pix")
          view.layer.cornerRadius = 5
-         view.setImage(UIImage(systemName: "dpad.fill"), for: .normal)
+        view.setImage(image, for: .normal)
          view.setTitle("Pix", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
         view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
@@ -97,8 +99,9 @@ class HomeHeaderView: UIView {
     
     private lazy var transferButton: UIButton = {
         let view = UIButton()
+        let image = UIImage(named: "ic_transferir")
          view.layer.cornerRadius = 5
-         view.setImage(UIImage(systemName: "dollarsign.circle.fill"), for: .normal)
+        view.setImage(image, for: .normal)
          view.setTitle("Transferir", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
         view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
@@ -219,7 +222,7 @@ class HomeHeaderView: UIView {
         
         if viewModel?.hide == true {
             balanceAmountLabel.text = "R$-----"
-            let image = UIImage(systemName: "eye.slash.fill")
+            let image = UIImage(named: "ic_eye_visibility_off")
             hideBalanceButton.setImage(image, for: .normal)
         } else {
             viewModel?.reloadData()

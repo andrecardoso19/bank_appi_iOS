@@ -42,7 +42,7 @@ class CopyAndPasteView: UIView {
     private lazy var deleteTextButton: UIButton = {
         let view = UIButton(frame: .zero)
         view.tintColor = .MyTheme.mainPinkColor
-        view.setImage(UIImage.init(systemName: "xmark.circle.fill"), for: .normal)
+        view.setImage(UIImage.init(named:"ic_cancel"), for: .normal)
         view.addTarget(self, action: #selector(performDelete), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

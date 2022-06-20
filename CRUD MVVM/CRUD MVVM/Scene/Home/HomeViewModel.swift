@@ -31,14 +31,15 @@ struct OptionData{
 final class HomeViewModel {
     // MARK: - init
     var optionInformation: [OptionData] = [
-        .init(imageTile: "creditcard", optionTitle: "Meus cartões"),
-        .init(imageTile: "dollarsign.circle", optionTitle: "Empréstimos"),
-        .init(imageTile: "iphone", optionTitle: "Recarga de celular"),
-        .init(imageTile: "bag", optionTitle: "BankShopping"),
-        .init(imageTile: "heart.text.square", optionTitle: "Seguro"),
-        .init(imageTile: "square.and.pencil", optionTitle: "Editar dados"),
-        .init(imageTile: "rectangle.portrait.and.arrow.right", optionTitle: "Sair")
-    ]
+           .init(imageTile: "ic_cartao", optionTitle: "Meus cartões"),
+           .init(imageTile: "ic_emprestimo", optionTitle: "Empréstimos"),
+           .init(imageTile: "ic_celular", optionTitle: "Recarga de celular"),
+           .init(imageTile: "ic_fourshopping", optionTitle: "BankShopping"),
+           .init(imageTile: "ic_seguro", optionTitle: "Seguro"),
+           .init(imageTile: "ic_editar_dados", optionTitle: "Editar dados"),
+           .init(imageTile: "ic_sairt", optionTitle: "Sair")
+       ]
+
     
     weak var delegate: HomeViewModelDelegate?
     //var coreDataService = CoreDataService()
