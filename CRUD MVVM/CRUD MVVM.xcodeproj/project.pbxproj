@@ -10,6 +10,7 @@
 		0E17111D28410337006E8BFD /* PixChargeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17111C28410337006E8BFD /* PixChargeViewModel.swift */; };
 		0E17111F28410354006E8BFD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17111E28410354006E8BFD /* ConfirmViewController.swift */; };
 		0EE5BE9A284016170074B27B /* CobrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5BE99284016170074B27B /* CobrarViewController.swift */; };
+		27441930285A36E80050ADA2 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2744192F285A36E80050ADA2 /* ButtonExtension.swift */; };
 		30A55E772841310C00C86045 /* CopyAndPasteConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A55E762841310C00C86045 /* CopyAndPasteConfirm.swift */; };
 		900479F5283D36BE005D7208 /* HomePixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F4283D36BE005D7208 /* HomePixViewController.swift */; };
 		900479FA283D5C21005D7208 /* MyKeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F9283D5C21005D7208 /* MyKeysViewController.swift */; };
@@ -110,6 +111,7 @@
 		0E17111C28410337006E8BFD /* PixChargeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixChargeViewModel.swift; sourceTree = "<group>"; };
 		0E17111E28410354006E8BFD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		0EE5BE99284016170074B27B /* CobrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CobrarViewController.swift; sourceTree = "<group>"; };
+		2744192F285A36E80050ADA2 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		30A55E762841310C00C86045 /* CopyAndPasteConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteConfirm.swift; sourceTree = "<group>"; };
 		900479F4283D36BE005D7208 /* HomePixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePixViewController.swift; sourceTree = "<group>"; };
 		900479F9283D5C21005D7208 /* MyKeysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeysViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,14 @@
 				0E17111C28410337006E8BFD /* PixChargeViewModel.swift */,
 			);
 			path = PixCobrar;
+			sourceTree = "<group>";
+		};
+		2744192E285A36B70050ADA2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2744192F285A36E80050ADA2 /* ButtonExtension.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		900479F3283D36A7005D7208 /* HomePix */ = {
@@ -599,6 +609,7 @@
 		E6C7CA17281A940200D44104 /* CRUD MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				2744192E285A36B70050ADA2 /* Components */,
 				D349E66A2824715000EACD33 /* Config */,
 				D349E66B2824717F00EACD33 /* Base.lproj */,
 				E6C7CA24281A940200D44104 /* Assets.xcassets */,
@@ -855,6 +866,7 @@
 				D3917D2B282C253500988F02 /* HomeTableViewCell.swift in Sources */,
 				E68B14DF281AAEE100A8F50B /* ShowDataViewController.swift in Sources */,
 				90047A05283D691F005D7208 /* MyKeysFooterView.swift in Sources */,
+				27441930285A36E80050ADA2 /* ButtonExtension.swift in Sources */,
 				901D0D7728353C670095155D /* Pix.swift in Sources */,
 				D326CB4628368FA00030AB89 /* PixHomeHeaderView.swift in Sources */,
 			);
