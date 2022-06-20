@@ -78,7 +78,7 @@ class TransferFail: UIViewController {
     //MARK: - Constraints
         func setupConstraints(){
         NSLayoutConstraint.activate([
-            errorLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: -20),
+            errorLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             errorLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 16),
             errorLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -16),
             infoLabel.topAnchor.constraint(equalTo: errorLabel.bottomAnchor,constant: 20),
