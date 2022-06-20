@@ -485,6 +485,7 @@
 				D3917D21282C24E100988F02 /* Home */,
 				E6832F7E2821815B009BCC19 /* Intro */,
 				B89E0890285A3B36006D6AA0 /* TransferFail.swift */,
+				B8437A9E2858E75400F272D5 /* RegisterSucess.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -505,7 +506,6 @@
 				E6832F83282181DC009BCC19 /* Cell */,
 				E68B14D2281AA5CF00A8F50B /* RegisterViewModel.swift */,
 				E68B14CD281AA51B00A8F50B /* RegisterViewController.swift */,
-				B8437A9E2858E75400F272D5 /* RegisterSucess.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
