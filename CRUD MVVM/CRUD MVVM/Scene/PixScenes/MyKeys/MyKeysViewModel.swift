@@ -35,6 +35,9 @@ struct OptionKeyData {
     var keyText: String
 }
 
+
+    let optionSelected: String = ""
+
 final class MyKeysViewModel {
     weak var delegate: MyKeysViewModelDelegate?
     
@@ -44,6 +47,10 @@ final class MyKeysViewModel {
         OptionKeyData(imageTitle: "ic_celular", keyTitle: "Telefone", keyText: "S/ Cadastro"),
         OptionKeyData(imageTitle: "ic_email", keyTitle: "E-mail", keyText: "S/ Cadastro")
     ]
+    
+    
+    
+   
     
     
     //MARK: - verifyPix
@@ -67,6 +74,21 @@ final class MyKeysViewModel {
             optionKeyInformation[3].keyText = allPix[loginIndex].emailKey
         }
     }
+    
+    func verifyPixKeys(){
+        
+        if optionKeyInformation[editPixIndex].keyText == "Cadastrar Nova Chave"{
+            
+            pushToRegisterPix()
+            
+        }else{
+            
+            pushToPixDetail()
+            
+        }
+        
+    }
+    
     
     //MARK: - Navigation functions
     func goToPixDetail(){

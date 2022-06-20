@@ -352,6 +352,10 @@ extension RegisterViewController: RegisterViewModelDelegate {
         let homeViewController = HomeViewController()
         self.navigationController?.pushViewController(homeViewController, animated: true)
     }
+    func performSucess(){
+        let registerSucess = RegisterSucess()
+        self.navigationController?.pushViewController(registerSucess, animated: true)
+    }
     
     func displayAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

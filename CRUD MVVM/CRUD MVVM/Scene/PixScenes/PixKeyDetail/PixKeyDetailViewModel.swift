@@ -62,7 +62,7 @@ final class PixKeyDetailViewModel {
         
         if verify == true {
             if pixKeyType == "CPF"{
-                updatePix.cpfKey = "S/ Cadastro"
+                updatePix.cpfKey = "Cadastrar Nova Chave"
                 allPix[loginIndex] = updatePix
                 //pixService.updateClientPix(editClientPix: updatePix)
                 reloadUpdateAllPixKeys()
@@ -70,7 +70,7 @@ final class PixKeyDetailViewModel {
             }
             
             if pixKeyType == "Chave aleatória"{
-                updatePix.randomKey = "S/ Cadastro"
+                updatePix.randomKey = "Cadastrar Nova Chave"
                 allPix[loginIndex] = updatePix
                 //pixService.updateClientPix(editClientPix: updatePix)
                 reloadUpdateAllPixKeys()
@@ -78,7 +78,7 @@ final class PixKeyDetailViewModel {
             }
             
             if pixKeyType == "Telefone"{
-                updatePix.phoneKey = "S/ Cadastro"
+                updatePix.phoneKey = "Cadastrar Nova Chave"
                 allPix[loginIndex] = updatePix
                 //pixService.updateClientPix(editClientPix: updatePix)
                 reloadUpdateAllPixKeys()
@@ -86,7 +86,7 @@ final class PixKeyDetailViewModel {
             }
             
             if pixKeyType == "E-mail"{
-                updatePix.emailKey = "S/ Cadastro"
+                updatePix.emailKey = "Cadastrar Nova Chave"
                 allPix[loginIndex] = updatePix
                 //pixService.updateClientPix(editClientPix: updatePix)
                 reloadUpdateAllPixKeys()
@@ -96,22 +96,22 @@ final class PixKeyDetailViewModel {
     }
     
     func verifyRegisterKey() -> Bool{
-        if editPixIndex == 0 && pixKey == "S/ Cadastro"{
+        if editPixIndex == 0 && pixKey == "Cadastrar Nova Chave"{
             displayAlert(title: "Erro", message: "Chave CPF não possui cadastro")
             return false
         }
         
-        if editPixIndex == 1 && pixKey == "S/ Cadastro"{
+        if editPixIndex == 1 && pixKey == "Cadastrar Nova Chave"{
             displayAlert(title: "Erro", message: "Chave aleatória não possui cadastro")
             return false
         }
         
-        if editPixIndex == 2 && pixKey == "S/ Cadastro"{
+        if editPixIndex == 2 && pixKey == "Cadastrar Nova Chave"{
             displayAlert(title: "Erro", message: "Chave telefone não possui cadastro")
             return false
         }
         
-        if editPixIndex == 3 && pixKey == "S/ Cadastro"{
+        if editPixIndex == 3 && pixKey == "Cadastrar Nova Chave"{
             displayAlert(title: "Erro", message: "Chave e-mail não possui cadastro")
             return false
         }

@@ -10,8 +10,7 @@
 		0E17111D28410337006E8BFD /* PixChargeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17111C28410337006E8BFD /* PixChargeViewModel.swift */; };
 		0E17111F28410354006E8BFD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17111E28410354006E8BFD /* ConfirmViewController.swift */; };
 		0EE5BE9A284016170074B27B /* CobrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5BE99284016170074B27B /* CobrarViewController.swift */; };
-		285E3F99285A2342003C719B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E3F98285A2342003C719B /* APIClient.swift */; };
-		28745F2A2858D88C00D0EB66 /* TransactionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28745F292858D88C00D0EB66 /* TransactionSuccessViewController.swift */; };
+		27441930285A36E80050ADA2 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2744192F285A36E80050ADA2 /* ButtonExtension.swift */; };
 		30A55E772841310C00C86045 /* CopyAndPasteConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A55E762841310C00C86045 /* CopyAndPasteConfirm.swift */; };
 		900479F5283D36BE005D7208 /* HomePixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F4283D36BE005D7208 /* HomePixViewController.swift */; };
 		900479FA283D5C21005D7208 /* MyKeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900479F9283D5C21005D7208 /* MyKeysViewController.swift */; };
@@ -46,6 +45,8 @@
 		9097C3B72852810000701562 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A72852810000701562 /* Nunito-Italic.ttf */; };
 		9097C3B82852810000701562 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A82852810000701562 /* Nunito-LightItalic.ttf */; };
 		9097C3B92852810000701562 /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */; };
+		B8437A9F2858E75400F272D5 /* RegisterSucess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8437A9E2858E75400F272D5 /* RegisterSucess.swift */; };
+		B89E0891285A3B36006D6AA0 /* TransferFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E0890285A3B36006D6AA0 /* TransferFail.swift */; };
 		C9CE78682847A91A0001AD09 /* PixCopyAndPasteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */; };
 		C9EA70522840036200AE6393 /* CopyAndPasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70512840036200AE6393 /* CopyAndPasteView.swift */; };
 		C9EA70542840037600AE6393 /* CopyAndPasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */; };
@@ -113,8 +114,7 @@
 		0E17111C28410337006E8BFD /* PixChargeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixChargeViewModel.swift; sourceTree = "<group>"; };
 		0E17111E28410354006E8BFD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		0EE5BE99284016170074B27B /* CobrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CobrarViewController.swift; sourceTree = "<group>"; };
-		285E3F98285A2342003C719B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		28745F292858D88C00D0EB66 /* TransactionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSuccessViewController.swift; sourceTree = "<group>"; };
+		2744192F285A36E80050ADA2 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		30A55E762841310C00C86045 /* CopyAndPasteConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteConfirm.swift; sourceTree = "<group>"; };
 		900479F4283D36BE005D7208 /* HomePixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePixViewController.swift; sourceTree = "<group>"; };
 		900479F9283D5C21005D7208 /* MyKeysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeysViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +149,8 @@
 		9097C3A72852810000701562 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
 		9097C3A82852810000701562 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		9097C3A92852810000701562 /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B8437A9E2858E75400F272D5 /* RegisterSucess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSucess.swift; sourceTree = "<group>"; };
+		B89E0890285A3B36006D6AA0 /* TransferFail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFail.swift; sourceTree = "<group>"; };
 		C9CE78672847A91A0001AD09 /* PixCopyAndPasteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixCopyAndPasteViewModel.swift; sourceTree = "<group>"; };
 		C9EA70512840036200AE6393 /* CopyAndPasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteView.swift; sourceTree = "<group>"; };
 		C9EA70532840037600AE6393 /* CopyAndPasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAndPasteViewController.swift; sourceTree = "<group>"; };
@@ -234,12 +236,12 @@
 			path = PixCobrar;
 			sourceTree = "<group>";
 		};
-		28745F282858D83E00D0EB66 /* Success */ = {
+		2744192E285A36B70050ADA2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				28745F292858D88C00D0EB66 /* TransactionSuccessViewController.swift */,
+				2744192F285A36E80050ADA2 /* ButtonExtension.swift */,
 			);
-			path = Success;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		900479F3283D36A7005D7208 /* HomePix */ = {
@@ -485,6 +487,8 @@
 				E6832F7F28218165009BCC19 /* Register */,
 				D3917D21282C24E100988F02 /* Home */,
 				E6832F7E2821815B009BCC19 /* Intro */,
+				B89E0890285A3B36006D6AA0 /* TransferFail.swift */,
+				B8437A9E2858E75400F272D5 /* RegisterSucess.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -615,6 +619,7 @@
 		E6C7CA17281A940200D44104 /* CRUD MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				2744192E285A36B70050ADA2 /* Components */,
 				D349E66A2824715000EACD33 /* Config */,
 				D349E66B2824717F00EACD33 /* Base.lproj */,
 				E6C7CA24281A940200D44104 /* Assets.xcassets */,
@@ -853,6 +858,7 @@
 				285E3F99285A2342003C719B /* APIClient.swift in Sources */,
 				E68B14CC281AA30E00A8F50B /* Colors.swift in Sources */,
 				900479FF283D5CC7005D7208 /* MyKeysTableViewCell.swift in Sources */,
+				B89E0891285A3B36006D6AA0 /* TransferFail.swift in Sources */,
 				E6B237092821EE9D008F206A /* EditDataTableViewCell.swift in Sources */,
 				D326CB4228368F630030AB89 /* PixHomeViewModel.swift in Sources */,
 				E6C7CA19281A940200D44104 /* AppDelegate.swift in Sources */,
@@ -872,9 +878,11 @@
 				E6C32C38282430FF00067CE6 /* CoreDataService.swift in Sources */,
 				D326CB4028368F540030AB89 /* PixHomeViewController.swift in Sources */,
 				D3917D25282C24F900988F02 /* HomeViewModel.swift in Sources */,
+				B8437A9F2858E75400F272D5 /* RegisterSucess.swift in Sources */,
 				D3917D2B282C253500988F02 /* HomeTableViewCell.swift in Sources */,
 				E68B14DF281AAEE100A8F50B /* ShowDataViewController.swift in Sources */,
 				90047A05283D691F005D7208 /* MyKeysFooterView.swift in Sources */,
+				27441930285A36E80050ADA2 /* ButtonExtension.swift in Sources */,
 				901D0D7728353C670095155D /* Pix.swift in Sources */,
 				D326CB4628368FA00030AB89 /* PixHomeHeaderView.swift in Sources */,
 			);
