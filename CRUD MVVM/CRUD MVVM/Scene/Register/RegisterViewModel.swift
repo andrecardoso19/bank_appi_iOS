@@ -120,7 +120,6 @@ final class RegisterViewModel {
                 performregisterSucess()
             }
         }
-        
     }
     
     func verifyCpf(cpf: String) -> Bool {

@@ -30,6 +30,7 @@ class RegisterSucessViewController: UIViewController {
         let view = UILabel()
         view.numberOfLines = 2
         view.text = "•Conta: 1-2 \n•Agência: 1-9"
+        view.text = "•Conta: \(String(clients[loginIndex].account))-\(String(clients[loginIndex].verifyDigit)) \n•Agência: 1-9"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -52,8 +53,9 @@ class RegisterSucessViewController: UIViewController {
     
     //MARK: - Button Actions
     @objc func sucessEnterButton() {
-        navigationController?.popToRootViewController(animated: true)
-
+        //navigationController?.popToRootViewController(animated: true)
+        let homeViewController = HomeViewController()
+        navigationController?.pushViewController(homeViewController, animated: true)
     }
    
     
