@@ -39,7 +39,7 @@ class TransactionSuccessViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Continuar", for: .normal)
         button.titleLabel?.font = UIFont.MyTheme.defaultBoldText
-        button.setTitleColor(UIColor.MyTheme.buttonTextColor, for: .normal)
+        button.setTitleColor(UIColor.MyTheme.defaultTextColor, for: .normal)
         button.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
         button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         return button
