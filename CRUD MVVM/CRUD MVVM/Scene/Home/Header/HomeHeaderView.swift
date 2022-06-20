@@ -77,8 +77,10 @@ class HomeHeaderView: UIView {
          view.setTitle("Pagar", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
         view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
-        view.tintColor = UIColor.MyTheme.mainPinkColor
-        view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        //view.tintColor = UIColor.MyTheme.mainPinkColor
+        view.tintColor = UIColor.MyTheme.defaultTextColor
+        //view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        view.setTitleColor(UIColor.MyTheme.defaultTextColor, for: .normal)
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
          view.translatesAutoresizingMaskIntoConstraints = false
          return view
@@ -92,8 +94,10 @@ class HomeHeaderView: UIView {
          view.setTitle("Pix", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
         view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
-        view.tintColor = UIColor.MyTheme.mainPinkColor
-        view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        //view.tintColor = UIColor.MyTheme.mainPinkColor
+        view.tintColor = UIColor.MyTheme.defaultTextColor
+        //view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        view.setTitleColor(UIColor.MyTheme.defaultTextColor, for: .normal)
         view.addTarget(self, action: #selector(performPix), for: .touchUpInside)
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
          view.translatesAutoresizingMaskIntoConstraints = false
@@ -108,8 +112,10 @@ class HomeHeaderView: UIView {
          view.setTitle("Transferir", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
         view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
-        view.tintColor = UIColor.MyTheme.mainPinkColor
-        view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        //view.tintColor = UIColor.MyTheme.mainPinkColor
+        view.tintColor = UIColor.MyTheme.defaultTextColor
+        //view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        view.setTitleColor(UIColor.MyTheme.defaultTextColor, for: .normal)
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
          view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(performLogOut), for: .touchUpInside)
