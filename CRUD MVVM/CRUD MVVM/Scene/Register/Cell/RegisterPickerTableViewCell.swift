@@ -28,10 +28,10 @@ final class RegisterPickerTableViewCell: UITableViewCell {
     lazy var registerTextField: UITextField = {
        let view = UITextField()
         view.textAlignment = .center
-        view.textColor = UIColor.MyTheme.mainPinkColor
+        view.textColor = UIColor.MyTheme.mainBlueColor
         view.text = "Selecionar"
         view.font = UIFont.MyTheme.defaultText
-        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         view.inputView = Picker
         view.inputAccessoryView = toolBar
         view.layer.cornerRadius = 5

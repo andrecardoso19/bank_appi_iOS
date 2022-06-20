@@ -24,7 +24,7 @@ class HomeHeaderView: UIView {
     
     private lazy var iconImageView: UIImageView = {
        let view = UIImageView()
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.image = UIImage(named: "ic_profile")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -33,7 +33,7 @@ class HomeHeaderView: UIView {
     //MARK: - Card
     private lazy var cardImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = UIColor.MyTheme.mainPinkColor
+        view.backgroundColor = UIColor.MyTheme.mainBlueColor
         view.layer.cornerRadius = 7
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -76,7 +76,7 @@ class HomeHeaderView: UIView {
         view.setImage(image, for: .normal)
          view.setTitle("Pagar", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
-        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         //view.tintColor = UIColor.MyTheme.mainPinkColor
         view.tintColor = UIColor.MyTheme.defaultTextColor
         //view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
@@ -93,7 +93,7 @@ class HomeHeaderView: UIView {
         view.setImage(image, for: .normal)
          view.setTitle("Pix", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
-        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         //view.tintColor = UIColor.MyTheme.mainPinkColor
         view.tintColor = UIColor.MyTheme.defaultTextColor
         //view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
@@ -111,7 +111,7 @@ class HomeHeaderView: UIView {
         view.setImage(image, for: .normal)
          view.setTitle("Transferir", for: .normal)
         view.titleLabel?.font = UIFont.MyTheme.defaultText
-        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         //view.tintColor = UIColor.MyTheme.mainPinkColor
         view.tintColor = UIColor.MyTheme.defaultTextColor
         //view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)

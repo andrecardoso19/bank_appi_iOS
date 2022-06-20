@@ -17,7 +17,7 @@ final class HomeTableViewCell: UITableViewCell {
     //logo image
     private lazy var logoImageView: UIImageView = {
         let view = UIImageView()
-        view.tintColor = UIColor.MyTheme.mainPinkColor
+        view.tintColor = UIColor.MyTheme.mainBlueColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -34,7 +34,7 @@ final class HomeTableViewCell: UITableViewCell {
     //arrow label
     private lazy var arrowLabel: UILabel = {
        let view = UILabel()
-        view.textColor = UIColor.MyTheme.mainPinkColor
+        view.textColor = UIColor.MyTheme.mainBlueColor
         view.text = ">"
         view.font = UIFont.MyTheme.defaultText
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -68,9 +68,10 @@ final class HomeTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             logoImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            logoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            logoImageView.widthAnchor.constraint(equalToConstant: 30),
-             logoImageView.heightAnchor.constraint(equalToConstant: 32),
+            //logoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            logoImageView.centerXAnchor.constraint(equalTo: self.leadingAnchor, constant: 45),
+            logoImageView.widthAnchor.constraint(equalToConstant: 33),
+             logoImageView.heightAnchor.constraint(equalToConstant: 33),
             
             optionLabel.centerYAnchor.constraint(equalTo: logoImageView.centerYAnchor),
             optionLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 40),

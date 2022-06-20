@@ -40,7 +40,7 @@ class TransactionSuccessViewController: UIViewController {
         button.setTitle("Continuar", for: .normal)
         button.titleLabel?.font = UIFont.MyTheme.defaultBoldText
         button.setTitleColor(UIColor.MyTheme.defaultTextColor, for: .normal)
-        button.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        button.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         return button
     }()

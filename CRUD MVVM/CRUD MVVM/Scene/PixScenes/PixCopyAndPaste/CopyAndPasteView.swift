@@ -31,7 +31,7 @@ class CopyAndPasteView: UIView {
     private lazy var button: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("CONTINUAR", for: .normal)
-        view.backgroundColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainBlueColor
         view.setTitleColor(UIColor.MyTheme.whiteTextColor, for: .normal)
         view.layer.cornerRadius = 9
         view.addTarget(self, action: #selector(performConfirm), for: .touchUpInside)
@@ -41,7 +41,7 @@ class CopyAndPasteView: UIView {
     
     private lazy var deleteTextButton: UIButton = {
         let view = UIButton(frame: .zero)
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.setImage(UIImage.init(named:"ic_cancel"), for: .normal)
         view.addTarget(self, action: #selector(performDelete), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false

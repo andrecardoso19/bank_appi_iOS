@@ -33,13 +33,14 @@ class ChargeViewController: UIViewController {
         let view = UITextField()
         view.placeholder = "R$ 0,00"
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
         return view
     }()
     private lazy var notValuebutton: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("Não especificar valor", for: .normal)
         view.backgroundColor = .MyTheme.backgroundColor
-        view.setTitleColor(UIColor.MyTheme.mainPinkColor, for: .normal)
+        view.setTitleColor(UIColor.MyTheme.mainBlueColor, for: .normal)
         view.layer.cornerRadius = 9
         view.addTarget(self, action: #selector(notValueButtonTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +49,7 @@ class ChargeViewController: UIViewController {
     private lazy var button: UIButton = {
         let view = UIButton(frame: .zero)
         view.setTitle("CONFIRMAR", for: .normal)
-        view.backgroundColor = .MyTheme.mainPinkColor
+        view.backgroundColor = .MyTheme.mainBlueColor
         view.setTitleColor(UIColor.MyTheme.whiteTextColor, for: .normal)
         view.layer.cornerRadius = 9
         view.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
@@ -116,9 +117,44 @@ class ChargeViewController: UIViewController {
         self.navigationController?.pushViewController(confirmViewController, animated: true)
     }
     
-    
-    
+    //MARK: - MoneyMask
+    @objc func myTextFieldDidChange(_ textField: UITextField) {
+
+        if let amountString = textField.text?.currencyInputFormatting() {
+            textField.text = amountString
+        }
+    }
 }
+
+extension String {
+
+        // formatting text for currency textField
+        func currencyInputFormatting() -> String {
+        
+            var number: NSNumber!
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currencyAccounting
+            //formatter.currencySymbol = "$"
+            formatter.maximumFractionDigits = 2
+            formatter.minimumFractionDigits = 2
+        
+            var amountWithPrefix = self
+        
+            // remove from String: "$", ".", ","
+            let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+            amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
+        
+            let double = (amountWithPrefix as NSString).doubleValue
+            number = NSNumber(value: (double / 100))
+        
+            // if first number is 0 or all numbers were deleted
+            guard number != 0 as NSNumber else {
+                return ""
+            }
+        
+            return formatter.string(from: number)!
+        }
+    }
 
 
 

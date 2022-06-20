@@ -45,7 +45,7 @@ class RegisterSucessViewController: UIViewController {
         let view = UIButton()
         view.setTitle("Entrar", for: .normal)
         view.addTarget(self, action: #selector(sucessEnterButton), for: .touchUpInside)
-        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view

@@ -39,7 +39,7 @@ class TransferFailViewController: UIViewController {
         let view = UIButton()
         view.setTitle("Voltar", for: .normal)
         view.addTarget(self, action: #selector(TapBack), for: .touchUpInside)
-        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view

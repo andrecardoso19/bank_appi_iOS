@@ -84,7 +84,7 @@ class CopyAndPasteConfirmViewController: UIViewController {
         lb.numberOfLines = 1
         lb.text = "R$ 0,00"
         lb.font = UIFont.MyTheme.boldTitleText
-        lb.textColor = .MyTheme.mainPinkColor
+        lb.textColor = .MyTheme.mainBlueColor
         lb.textAlignment = .center
         return lb
     }()
@@ -106,7 +106,7 @@ class CopyAndPasteConfirmViewController: UIViewController {
         button.setTitle("CONFIRMAR PIX", for: .normal)
         button.titleLabel?.font = UIFont.MyTheme.defaultText
         button.setTitleColor(UIColor.MyTheme.whiteTextColor, for: .normal)
-        button.backgroundColor = UIColor.MyTheme.mainPinkColor
+        button.backgroundColor = UIColor.MyTheme.mainBlueColor
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(self.confirmPix), for: .touchUpInside)
         return button

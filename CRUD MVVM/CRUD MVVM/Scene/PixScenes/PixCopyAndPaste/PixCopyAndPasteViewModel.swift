@@ -32,7 +32,7 @@ final class PixCopyAndPasteViewModel {
         let isValidCopyPaste = isValidCopyPastePix(copyPasteArray: copyPasteArray)
         
         if isValidCopyPaste == true {
-            valueFromCopyPasteKey = Double(copyPasteArray[3].replacingOccurrences(of: "_", with: ",")) ?? 0.0
+            valueFromCopyPasteKey = Double(copyPasteArray[3].replacingOccurrences(of: "_", with: ".").replacingOccurrences(of: " ", with: "0")) ?? 0.0
             cpfFromCopyPasteKey = copyPasteArray[1]
         }
         else {

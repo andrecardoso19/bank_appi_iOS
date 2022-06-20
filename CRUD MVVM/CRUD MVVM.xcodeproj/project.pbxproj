@@ -615,6 +615,7 @@
 		E68B14CA281AA2FF00A8F50B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2744192E285A36B70050ADA2 /* Components */,
 				E68B14CB281AA30E00A8F50B /* Colors.swift */,
 				9097C396285218FB00701562 /* Fonts.swift */,
 				9017574B285A4689006791CA /* Constants.swift */,
@@ -673,7 +674,6 @@
 		E6C7CA17281A940200D44104 /* CRUD MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				2744192E285A36B70050ADA2 /* Components */,
 				D349E66A2824715000EACD33 /* Config */,
 				D349E66B2824717F00EACD33 /* Base.lproj */,
 				E6C7CA24281A940200D44104 /* Assets.xcassets */,

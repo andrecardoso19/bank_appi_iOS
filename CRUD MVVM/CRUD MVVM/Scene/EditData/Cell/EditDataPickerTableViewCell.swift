@@ -28,9 +28,9 @@ final class EditDataPickerTableViewCell: UITableViewCell {
         let view = UITextField()
         view.borderStyle = .roundedRect
         view.textAlignment = .center
-        view.textColor = .MyTheme.mainPinkColor
+        view.textColor = .MyTheme.mainBlueColor
         view.text = "Selecionar"
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.inputView = Picker
         view.inputAccessoryView = toolBar
         view.layer.cornerRadius = 5

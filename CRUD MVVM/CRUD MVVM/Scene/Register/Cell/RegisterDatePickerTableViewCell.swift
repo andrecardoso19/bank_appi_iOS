@@ -26,10 +26,10 @@ final class RegisterDatePickerTableViewCell: UITableViewCell {
     lazy var registerTextField: UITextField = {
        let view = UITextField()
         view.textAlignment = .center
-        view.textColor = UIColor.MyTheme.mainPinkColor
+        view.textColor = UIColor.MyTheme.mainBlueColor
         view.text = "Selecionar"
         view.font = UIFont.MyTheme.defaultText
-        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         view.inputView = datePicker
         view.inputAccessoryView = toolBar
         view.layer.cornerRadius = 5
@@ -53,7 +53,7 @@ final class RegisterDatePickerTableViewCell: UITableViewCell {
         let view = UIDatePicker()
         view.backgroundColor = .clear
         view.datePickerMode = .date
-        view.tintColor = UIColor.MyTheme.mainPinkColor
+        view.tintColor = UIColor.MyTheme.mainBlueColor
         view.preferredDatePickerStyle = .wheels
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

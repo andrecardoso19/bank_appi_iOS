@@ -34,10 +34,10 @@ class HomePixViewController: UIViewController {
         let image = UIImage(named: "ic_celular")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.tintColor = .MyTheme.defaultTextColor
         view.imageView?.layer.transform = CATransform3DMakeScale(0.6, 0.6, 0.6)
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -58,9 +58,9 @@ class HomePixViewController: UIViewController {
         let image = UIImage(named: "ic_qrcode")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.tintColor = .MyTheme.defaultTextColor
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -82,9 +82,9 @@ class HomePixViewController: UIViewController {
         let image = UIImage(named: "ic_email")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.tintColor = .MyTheme.defaultTextColor
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -107,9 +107,9 @@ class HomePixViewController: UIViewController {
         view.setImage(image, for: .normal)
         //view.setBackgroundImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.tintColor = .MyTheme.defaultTextColor
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -132,9 +132,9 @@ class HomePixViewController: UIViewController {
         let image = UIImage(named: "ic_key")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.tintColor = .MyTheme.defaultTextColor
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -158,9 +158,9 @@ class HomePixViewController: UIViewController {
         view.setImage(image, for: .normal)
         view.addTarget(self, action: #selector(performGoToCopyAndPaste), for: .touchUpInside)
         view.layer.cornerRadius = 20
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.tintColor = .MyTheme.defaultTextColor
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -183,10 +183,10 @@ class HomePixViewController: UIViewController {
         let image = UIImage(named: "ic_transferir")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .MyTheme.mainPinkColor
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.tintColor = .MyTheme.defaultTextColor
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -209,10 +209,10 @@ class HomePixViewController: UIViewController {
         let image = UIImage(named: "ic_receber")
         view.setImage(image, for: .normal)
         view.layer.cornerRadius = 20
-        view.tintColor = .MyTheme.mainPinkColor
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.tintColor = .MyTheme.defaultTextColor
-        view.backgroundColor = .MyTheme.mainGrayButtonColor
+        view.backgroundColor = .MyTheme.mainGreenButtonColor
         view.addTarget(self, action: #selector(performGoToCharge), for: .touchUpInside)
         view.imageView?.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -233,7 +233,7 @@ class HomePixViewController: UIViewController {
     //MARK: - MyKeys button
     private lazy var myKeysButton: UIButton = {
        let view = UIButton()
-        view.tintColor = .MyTheme.mainPinkColor
+        view.tintColor = .MyTheme.mainBlueColor
         view.setTitle("Minhas chaves PIX", for: .normal)
         view.titleLabel?.font = .MyTheme.defaultText
         view.backgroundColor = .tintColor

@@ -13,7 +13,7 @@ extension UIButton {
     static func defaultButton(title: String,font: UIFont = .MyTheme.defaultText, target: Any? = nil, selector: Selector? = nil) -> UIButton {
 
         let view = UIButton()
-        view.backgroundColor = UIColor.MyTheme.mainGrayButtonColor
+        view.backgroundColor = UIColor.MyTheme.mainGreenButtonColor
         view.setTitleColor(.MyTheme.defaultTextColor, for: .normal)
         view.setTitle(title, for: .normal)
         view.titleLabel?.font = font
@@ -25,7 +25,4 @@ extension UIButton {
         return view
 
     }
-    
-    
-    
 }
