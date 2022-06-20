@@ -18,9 +18,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.agencyTextField.addBottomLineWithColor(color: .black, width: 1.0)
-        self.accountTextField.addBottomLineWithColor(color: .black, width: 1.0)
-        self.passwordTextField.addBottomLineWithColor(color: .black, width: 1.0)
+        self.agencyTextField.addBottomLineWithColor(color: .MyTheme.defaultTextColor, width: 1.0)
+        self.accountTextField.addBottomLineWithColor(color: .MyTheme.defaultTextColor, width: 1.0)
+        self.passwordTextField.addBottomLineWithColor(color: .MyTheme.defaultTextColor, width: 1.0)
     }
     
     
@@ -275,7 +275,7 @@ extension UIView {
     func addBottomLineWithColor(color: UIColor, width: CGFloat) {
         
         let bottomBorderLine = CALayer()
-        bottomBorderLine.backgroundColor = UIColor.MyTheme.defaultTextColor.cgColor
+        bottomBorderLine.backgroundColor = color.cgColor
         bottomBorderLine.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
         self.layer.addSublayer(bottomBorderLine)
         
