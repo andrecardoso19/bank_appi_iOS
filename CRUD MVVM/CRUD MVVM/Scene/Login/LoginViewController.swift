@@ -226,7 +226,8 @@ class LoginViewController: UIViewController {
             
             accountTextField.topAnchor.constraint(equalTo: agencyTextField.topAnchor),
             accountTextField.leadingAnchor.constraint(equalTo: accountLabel.leadingAnchor),
-            accountTextField.widthAnchor.constraint(equalTo: agencyTextField.widthAnchor),
+//            accountTextField.widthAnchor.constraint(equalTo: agencyTextField.widthAnchor),
+            accountTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
             
             passwordLabel.topAnchor.constraint(equalTo: agencyTextField.bottomAnchor, constant: 5),
             passwordLabel.leadingAnchor.constraint(equalTo: agencyTextField.leadingAnchor),
